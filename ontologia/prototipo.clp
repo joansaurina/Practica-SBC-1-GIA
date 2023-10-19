@@ -4948,12 +4948,12 @@
 	(export ?ALL)
 )
 
-(defmodule soluciones-generacion
+(defmodule generacion-solucion-abstracta
 	(import MAIN ?ALL)
 	(export ?ALL)
 )
 
-(defmodule resultados
+(defmodule presentacion-solucion
 	(import MAIN ?ALL)
 	(export ?ALL)
 )
@@ -4961,14 +4961,14 @@
 
 ;;; Declaracion de templates ---------------------------------------------------------------
 
-(deftemplate datos-procesamiento::velocidad_lectura
+(deftemplate preferencias-recopilacion::velocidad_lectura
     (slot velocidad (type STRING))
 )
 
-(deftemplate datos-procesamiento::paginas
+(deftemplate preferencias-recopilacion::paginas
     (slot num_paginas (type INTEGER)))
 
-(deftemplate datos-procesamiento::grupo_edad
+(deftemplate preferencias-recopilacion::grupo_edad
     (slot grupo (type STRING))
 )
 
@@ -5239,13 +5239,11 @@
         (bind ?tiempo_lectura (read)))
     (modify-instance ?u (tiempo_lectura ?tiempo_lectura))
 
-    (focus datos-procesamiento)
 )
 
 
-; datos-procesamiento -----------------------------------------------------------------
-(defrule datos-procesamiento::inicial "Regla inicial para indicar que se estan procesando sus datos"
-    (declare (salience 15))
+(defrule preferencias-recopilacion::inicial "Regla inicial para indicar que se estan procesando sus datos"
+    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
     =>
     (printout t".........................................................." crlf)
     (printout t crlf)
@@ -5254,8 +5252,9 @@
     (printout t".........................................................." crlf)
 )
 
-(defrule datos-procesamiento::anadir-libros "Se añaden todos los libros"
-    (declare (salience 10))
+(defrule preferencias-recopilacion::anadir-libros "Se añaden todos los libros"
+    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+    (salience 5)
 	=>
     (printout t "Entrando todos los libros..." crlf)
     (printout t crlf)
@@ -5266,8 +5265,8 @@
 	)	
 )
 
-(defrule datos-procesamiento::velocidad_lectura "Regla para determinar la velocidad de lectura del usuario"
-    ?u <- (object (is-a Usuario) (tiempo_lectura ?tiempo_lectura))
+(defrule preferencias-recopilacion::velocidad_lectura "Regla para determinar la velocidad de lectura del usuario"
+    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
     =>
     (if (<= ?tiempo_lectura 66)
         then (bind ?velocidad "rapida")
@@ -5281,7 +5280,7 @@
     (printout t crlf)
 )
 
-(defrule datos-procesamiento::grupo_edad "Regla para determinar el grupo de edad del usuario"
+(defrule preferencias-recopilacion::grupo_edad "Regla para determinar el grupo de edad del usuario"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
     =>
@@ -5303,7 +5302,7 @@
     (printout t crlf)
 )
 
-(defrule datos-procesamiento::calcular_paginas "Regla para calcular el numero de paginas que puede leer el usuario"
+(defrule preferencias-recopilacion::calcular_paginas "Regla para calcular el numero de paginas que puede leer el usuario"
     ?u <- (object (is-a Usuario) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
     (velocidad_lectura (velocidad ?velocidad))
     (grupo_edad (grupo ?grupo))
@@ -5318,7 +5317,11 @@
     (assert (paginas (num_paginas ?paginas)))
     (printout t "Calculando el numero de paginas que puede leer..." crlf)
     (printout t crlf)
+
+    (focus datos-procesamiento)
 )
+
+;;; Datos-procesamiento -------------------------------------------------
 
 (defrule datos-procesamiento::calificacion-paginas: "Regla para calcular la calificacion de los libros segun el numero de paginas"
     ?p <- (paginas (num_paginas ?paginas))
@@ -5358,6 +5361,7 @@
 )
 
 (defrule datos-procesamiento::calificacion-edad
+    (valoracion (nombre "paginas") (calificado "TRUE"))
     ?u <- (object (is-a Usuario) (edad ?edad))
     ?v <- (valoracion (nombre "edad") (calificado "FALSE"))
     ?e <- (grupo_edad (grupo ?grupo))
