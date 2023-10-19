@@ -49,6 +49,9 @@
     (slot nombre
         (type STRING)
         (create-accessor read-write))
+    (slot cluster
+        (type STRING)
+        (create-accessor read-write))
 )
 
 (defclass Lector
@@ -3079,7 +3082,7 @@
             (publico "Adolescentes")
         )
 
-        ([Autor_Class_0] of Autor
+         ([Autor_Class_0] of Autor
             (escribe_genero [Genero_Class_3])
             (escribe_subgenero [Subgenero_Class_9])
             (media_paginas 418.0)
@@ -3088,6 +3091,7 @@
             (popularidad 36.0) 
             (media_fecha_publicacion 1950.0)
             (nombre "A. E. van Vogt")
+            (cluster "7)
         )
 
         ([Autor_Class_1] of Autor
@@ -3099,6 +3103,7 @@
             (popularidad 28.0) 
             (media_fecha_publicacion 1843.0)
             (nombre "Adolphe Napoléon Didron")
+            (cluster "4)
         )
 
         ([Autor_Class_2] of Autor
@@ -3110,6 +3115,7 @@
             (popularidad 9.0) 
             (media_fecha_publicacion 2001.0)
             (nombre "Alan Dean Foster")
+            (cluster "7)
         )
 
         ([Autor_Class_3] of Autor
@@ -3121,6 +3127,7 @@
             (popularidad 24.33) 
             (media_fecha_publicacion 1933.67)
             (nombre "Albert Camus")
+            (cluster "2)
         )
 
         ([Autor_Class_4] of Autor
@@ -3132,6 +3139,7 @@
             (popularidad 24.0) 
             (media_fecha_publicacion 1890.0)
             (nombre "Alfred William Pollard")
+            (cluster "4)
         )
 
         ([Autor_Class_5] of Autor
@@ -3143,6 +3151,7 @@
             (popularidad 16.0) 
             (media_fecha_publicacion 2013.0)
             (nombre "Ann Leckie")
+            (cluster "7)
         )
 
         ([Autor_Class_6] of Autor
@@ -3154,6 +3163,7 @@
             (popularidad 34.0) 
             (media_fecha_publicacion 2007.0)
             (nombre "Anne McCaffrey")
+            (cluster "7)
         )
 
         ([Autor_Class_7] of Autor
@@ -3165,6 +3175,7 @@
             (popularidad 21.5) 
             (media_fecha_publicacion 1989.5)
             (nombre "Arthur C. Clarke")
+            (cluster "8)
         )
 
         ([Autor_Class_8] of Autor
@@ -3176,6 +3187,7 @@
             (popularidad 22.0) 
             (media_fecha_publicacion 2001.0)
             (nombre "Arthur Nelson")
+            (cluster "1)
         )
 
         ([Autor_Class_9] of Autor
@@ -3187,6 +3199,7 @@
             (popularidad 32.0) 
             (media_fecha_publicacion 2016.0)
             (nombre "Artur Blaim")
+            (cluster "9)
         )
 
         ([Autor_Class_10] of Autor
@@ -3198,6 +3211,7 @@
             (popularidad 35.0) 
             (media_fecha_publicacion 1904.0)
             (nombre "August Niemann")
+            (cluster "3)
         )
 
         ([Autor_Class_11] of Autor
@@ -3209,6 +3223,7 @@
             (popularidad 28.5) 
             (media_fecha_publicacion 2017.5)
             (nombre "Becky Chambers")
+            (cluster "7)
         )
 
         ([Autor_Class_12] of Autor
@@ -3220,6 +3235,7 @@
             (popularidad 27.0) 
             (media_fecha_publicacion 1917.0)
             (nombre "Bertha Whitridge Smith")
+            (cluster "3)
         )
 
         ([Autor_Class_13] of Autor
@@ -3231,6 +3247,7 @@
             (popularidad 19.0) 
             (media_fecha_publicacion 1954.0)
             (nombre "Bertrand Russell")
+            (cluster "2)
         )
 
         ([Autor_Class_14] of Autor
@@ -3242,6 +3259,7 @@
             (popularidad 4.0) 
             (media_fecha_publicacion 2015.0)
             (nombre "Blythe Woolston")
+            (cluster "9)
         )
 
         ([Autor_Class_15] of Autor
@@ -3253,6 +3271,7 @@
             (popularidad 25.0) 
             (media_fecha_publicacion 2011.0)
             (nombre "Brandon Sanderson")
+            (cluster "5)
         )
 
         ([Autor_Class_16] of Autor
@@ -3264,6 +3283,7 @@
             (popularidad 35.0) 
             (media_fecha_publicacion 1977.0)
             (nombre "Brian M. Fagan")
+            (cluster "4)
         )
 
         ([Autor_Class_17] of Autor
@@ -3275,6 +3295,7 @@
             (popularidad 35.0) 
             (media_fecha_publicacion 1986.0)
             (nombre "Bruce Sterling")
+            (cluster "0)
         )
 
         ([Autor_Class_18] of Autor
@@ -3286,6 +3307,7 @@
             (popularidad 45.0) 
             (media_fecha_publicacion 2000.0)
             (nombre "Candace Bushnell")
+            (cluster "6)
         )
 
         ([Autor_Class_19] of Autor
@@ -3297,6 +3319,7 @@
             (popularidad 24.0) 
             (media_fecha_publicacion 1980.0)
             (nombre "Carl Sagan")
+            (cluster "8)
         )
 
         ([Autor_Class_20] of Autor
@@ -3308,6 +3331,7 @@
             (popularidad 33.0) 
             (media_fecha_publicacion 1960.5)
             (nombre "Catherine Cookson")
+            (cluster "2)
         )
 
         ([Autor_Class_21] of Autor
@@ -3319,6 +3343,7 @@
             (popularidad 48.0) 
             (media_fecha_publicacion 1984.0)
             (nombre "Cesare Cantù")
+            (cluster "4)
         )
 
         ([Autor_Class_22] of Autor
@@ -3330,6 +3355,7 @@
             (popularidad 51.0) 
             (media_fecha_publicacion 2001.0)
             (nombre "Charlaine Harris")
+            (cluster "5)
         )
 
         ([Autor_Class_23] of Autor
@@ -3341,6 +3367,7 @@
             (popularidad 20.0) 
             (media_fecha_publicacion 1.0)
             (nombre "Charles Dickens")
+            (cluster "8)
         )
 
         ([Autor_Class_24] of Autor
@@ -3352,6 +3379,7 @@
             (popularidad 27.27) 
             (media_fecha_publicacion 2001.91)
             (nombre "Christine Feehan")
+            (cluster "6)
         )
 
         ([Autor_Class_25] of Autor
@@ -3363,6 +3391,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1827.0)
             (nombre "Christopher Columbus")
+            (cluster "8)
         )
 
         ([Autor_Class_26] of Autor
@@ -3374,6 +3403,7 @@
             (popularidad 11.0) 
             (media_fecha_publicacion 2007.0)
             (nombre "Clifford Beal")
+            (cluster "1)
         )
 
         ([Autor_Class_27] of Autor
@@ -3385,6 +3415,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 2016.0)
             (nombre "Cosimo Yap")
+            (cluster "0)
         )
 
         ([Autor_Class_28] of Autor
@@ -3396,6 +3427,7 @@
             (popularidad 33.0) 
             (media_fecha_publicacion 1979.0)
             (nombre "D. Brendan Nagle")
+            (cluster "4)
         )
 
         ([Autor_Class_29] of Autor
@@ -3407,6 +3439,7 @@
             (popularidad 3.0) 
             (media_fecha_publicacion 1982.0)
             (nombre "Danielle Steel")
+            (cluster "6)
         )
 
         ([Autor_Class_30] of Autor
@@ -3418,6 +3451,7 @@
             (popularidad 20.0) 
             (media_fecha_publicacion 1982.0)
             (nombre "David Eddings")
+            (cluster "5)
         )
 
         ([Autor_Class_31] of Autor
@@ -3429,6 +3463,7 @@
             (popularidad 18.0) 
             (media_fecha_publicacion 1973.0)
             (nombre "David Macaulay")
+            (cluster "4)
         )
 
         ([Autor_Class_32] of Autor
@@ -3440,6 +3475,7 @@
             (popularidad 25.2) 
             (media_fecha_publicacion 2000.6)
             (nombre "Debbie Macomber")
+            (cluster "6)
         )
 
         ([Autor_Class_33] of Autor
@@ -3451,6 +3487,7 @@
             (popularidad 11.0) 
             (media_fecha_publicacion 1979.0)
             (nombre "Doris Lessing")
+            (cluster "4)
         )
 
         ([Autor_Class_34] of Autor
@@ -3462,6 +3499,7 @@
             (popularidad 20.0) 
             (media_fecha_publicacion 1919.0)
             (nombre "E. M. Hull")
+            (cluster "6)
         )
 
         ([Autor_Class_35] of Autor
@@ -3473,6 +3511,7 @@
             (popularidad 17.0) 
             (media_fecha_publicacion 2006.0)
             (nombre "Edith Layton")
+            (cluster "1)
         )
 
         ([Autor_Class_36] of Autor
@@ -3484,6 +3523,7 @@
             (popularidad 42.0) 
             (media_fecha_publicacion 1997.0)
             (nombre "Eiichiro Oda")
+            (cluster "1)
         )
 
         ([Autor_Class_37] of Autor
@@ -3495,6 +3535,7 @@
             (popularidad 29.0) 
             (media_fecha_publicacion 1986.0)
             (nombre "Ellen Tanner Marsh")
+            (cluster "1)
         )
 
         ([Autor_Class_38] of Autor
@@ -3506,6 +3547,7 @@
             (popularidad 11.0) 
             (media_fecha_publicacion 1923.0)
             (nombre "Emily Post")
+            (cluster "2)
         )
 
         ([Autor_Class_39] of Autor
@@ -3517,6 +3559,7 @@
             (popularidad 22.0) 
             (media_fecha_publicacion 1968.0)
             (nombre "Erich von Däniken")
+            (cluster "4)
         )
 
         ([Autor_Class_40] of Autor
@@ -3528,6 +3571,7 @@
             (popularidad 46.0) 
             (media_fecha_publicacion 2008.0)
             (nombre "Ernest Cline")
+            (cluster "0)
         )
 
         ([Autor_Class_41] of Autor
@@ -3539,6 +3583,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1476.0)
             (nombre "Eusebius of Caesarea")
+            (cluster "4)
         )
 
         ([Autor_Class_42] of Autor
@@ -3550,6 +3595,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1992.0)
             (nombre "Francis Snare")
+            (cluster "2)
         )
 
         ([Autor_Class_43] of Autor
@@ -3561,6 +3607,7 @@
             (popularidad 15.0) 
             (media_fecha_publicacion 1887.0)
             (nombre "Friedrich Nietzsche")
+            (cluster "2)
         )
 
         ([Autor_Class_44] of Autor
@@ -3572,6 +3619,7 @@
             (popularidad 44.0) 
             (media_fecha_publicacion 1994.0)
             (nombre "Gabriel García Márquez")
+            (cluster "6)
         )
 
         ([Autor_Class_45] of Autor
@@ -3583,6 +3631,7 @@
             (popularidad 17.0) 
             (media_fecha_publicacion 1901.0)
             (nombre "Gaston Maspero")
+            (cluster "4)
         )
 
         ([Autor_Class_46] of Autor
@@ -3594,6 +3643,7 @@
             (popularidad 43.0) 
             (media_fecha_publicacion 1860.0)
             (nombre "George Eliot")
+            (cluster "2)
         )
 
         ([Autor_Class_47] of Autor
@@ -3605,6 +3655,7 @@
             (popularidad 20.0) 
             (media_fecha_publicacion 1952.0)
             (nombre "George Sarton")
+            (cluster "4)
         )
 
         ([Autor_Class_48] of Autor
@@ -3616,6 +3667,7 @@
             (popularidad 14.0) 
             (media_fecha_publicacion 1961.0)
             (nombre "Georges Simenon")
+            (cluster "3)
         )
 
         ([Autor_Class_49] of Autor
@@ -3627,6 +3679,7 @@
             (popularidad 38.0) 
             (media_fecha_publicacion 1894.0)
             (nombre "Georgiĭ Valentinovich Plekhanov")
+            (cluster "2)
         )
 
         ([Autor_Class_50] of Autor
@@ -3638,6 +3691,7 @@
             (popularidad 31.0) 
             (media_fecha_publicacion 1933.0)
             (nombre "Guy Chapman")
+            (cluster "3)
         )
 
         ([Autor_Class_51] of Autor
@@ -3649,6 +3703,7 @@
             (popularidad 32.0) 
             (media_fecha_publicacion 1963.0)
             (nombre "H. Beam Piper")
+            (cluster "7)
         )
 
         ([Autor_Class_52] of Autor
@@ -3660,6 +3715,7 @@
             (popularidad 22.0) 
             (media_fecha_publicacion 2001.0)
             (nombre "Ian McEwan")
+            (cluster "6)
         )
 
         ([Autor_Class_53] of Autor
@@ -3671,6 +3727,7 @@
             (popularidad 27.0) 
             (media_fecha_publicacion 1967.0)
             (nombre "Iris Murdoch")
+            (cluster "2)
         )
 
         ([Autor_Class_54] of Autor
@@ -3682,6 +3739,7 @@
             (popularidad 3.0) 
             (media_fecha_publicacion 2002.0)
             (nombre "Isabel Allende")
+            (cluster "8)
         )
 
         ([Autor_Class_55] of Autor
@@ -3693,6 +3751,7 @@
             (popularidad 32.0) 
             (media_fecha_publicacion 1972.0)
             (nombre "Italo Calvino")
+            (cluster "8)
         )
 
         ([Autor_Class_56] of Autor
@@ -3704,6 +3763,7 @@
             (popularidad 50.0) 
             (media_fecha_publicacion 1918.0)
             (nombre "J. M. Barrie")
+            (cluster "3)
         )
 
         ([Autor_Class_57] of Autor
@@ -3715,6 +3775,7 @@
             (popularidad 15.0) 
             (media_fecha_publicacion 2015.0)
             (nombre "James S. A. Corey")
+            (cluster "7)
         )
 
         ([Autor_Class_58] of Autor
@@ -3726,6 +3787,7 @@
             (popularidad 37.5) 
             (media_fecha_publicacion 1775.5)
             (nombre "Jane Austen")
+            (cluster "2)
         )
 
         ([Autor_Class_59] of Autor
@@ -3737,6 +3799,7 @@
             (popularidad 49.0) 
             (media_fecha_publicacion 1979.0)
             (nombre "Janette Oke")
+            (cluster "6)
         )
 
         ([Autor_Class_60] of Autor
@@ -3748,6 +3811,7 @@
             (popularidad 21.0) 
             (media_fecha_publicacion 1975.0)
             (nombre "Jean Gimpel")
+            (cluster "4)
         )
 
         ([Autor_Class_61] of Autor
@@ -3759,6 +3823,7 @@
             (popularidad 26.0) 
             (media_fecha_publicacion 1976.0)
             (nombre "Jennifer Wilde")
+            (cluster "6)
         )
 
         ([Autor_Class_62] of Autor
@@ -3770,6 +3835,7 @@
             (popularidad 43.0) 
             (media_fecha_publicacion 1889.0)
             (nombre "Jerome Klapka Jerome")
+            (cluster "8)
         )
 
         ([Autor_Class_63] of Autor
@@ -3781,6 +3847,7 @@
             (popularidad 30.67) 
             (media_fecha_publicacion 2002.0)
             (nombre "Jim Butcher")
+            (cluster "5)
         )
 
         ([Autor_Class_64] of Autor
@@ -3792,6 +3859,7 @@
             (popularidad 28.0) 
             (media_fecha_publicacion 1994.0)
             (nombre "Joanna Cole")
+            (cluster "8)
         )
 
         ([Autor_Class_65] of Autor
@@ -3803,6 +3871,7 @@
             (popularidad 34.0) 
             (media_fecha_publicacion 1935.0)
             (nombre "John Buchan")
+            (cluster "3)
         )
 
         ([Autor_Class_66] of Autor
@@ -3814,6 +3883,7 @@
             (popularidad 28.0) 
             (media_fecha_publicacion 2012.0)
             (nombre "John Scalzi")
+            (cluster "7)
         )
 
         ([Autor_Class_67] of Autor
@@ -3825,6 +3895,7 @@
             (popularidad 52.0) 
             (media_fecha_publicacion 2015.0)
             (nombre "Jordan B. Peterson")
+            (cluster "2)
         )
 
         ([Autor_Class_68] of Autor
@@ -3836,6 +3907,7 @@
             (popularidad 25.33) 
             (media_fecha_publicacion 1902.0)
             (nombre "Joseph Conrad")
+            (cluster "8)
         )
 
         ([Autor_Class_69] of Autor
@@ -3847,6 +3919,7 @@
             (popularidad 39.0) 
             (media_fecha_publicacion 2015.0)
             (nombre "Joshua P. Aguayo")
+            (cluster "0)
         )
 
         ([Autor_Class_70] of Autor
@@ -3858,6 +3931,7 @@
             (popularidad 35.0) 
             (media_fecha_publicacion 1993.0)
             (nombre "Joy Hakim")
+            (cluster "8)
         )
 
         ([Autor_Class_71] of Autor
@@ -3869,6 +3943,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1985.0)
             (nombre "Judith McNaught")
+            (cluster "6)
         )
 
         ([Autor_Class_72] of Autor
@@ -3880,6 +3955,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1873.0)
             (nombre "Jules Verne")
+            (cluster "8)
         )
 
         ([Autor_Class_73] of Autor
@@ -3891,6 +3967,7 @@
             (popularidad 40.0) 
             (media_fecha_publicacion 2020.0)
             (nombre "Julia Ember")
+            (cluster "5)
         )
 
         ([Autor_Class_74] of Autor
@@ -3902,6 +3979,7 @@
             (popularidad 28.67) 
             (media_fecha_publicacion 2002.33)
             (nombre "Julia Quinn")
+            (cluster "6)
         )
 
         ([Autor_Class_75] of Autor
@@ -3913,6 +3991,7 @@
             (popularidad 5.0) 
             (media_fecha_publicacion 1901.0)
             (nombre "Julian, of Norwich, 1343-")
+            (cluster "4)
         )
 
         ([Autor_Class_76] of Autor
@@ -3924,6 +4003,7 @@
             (popularidad 20.0) 
             (media_fecha_publicacion 2005.0)
             (nombre "K. C. May")
+            (cluster "5)
         )
 
         ([Autor_Class_77] of Autor
@@ -3935,6 +4015,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 2021.0)
             (nombre "Kalynn Bayron")
+            (cluster "5)
         )
 
         ([Autor_Class_78] of Autor
@@ -3946,6 +4027,7 @@
             (popularidad 40.0) 
             (media_fecha_publicacion 2012.0)
             (nombre "Karen Mahoney")
+            (cluster "5)
         )
 
         ([Autor_Class_79] of Autor
@@ -3957,6 +4039,7 @@
             (popularidad 10.0) 
             (media_fecha_publicacion 2008.0)
             (nombre "Karen Marie Moning")
+            (cluster "5)
         )
 
         ([Autor_Class_80] of Autor
@@ -3968,6 +4051,7 @@
             (popularidad 31.0) 
             (media_fecha_publicacion 2019.0)
             (nombre "Kat Cho")
+            (cluster "5)
         )
 
         ([Autor_Class_81] of Autor
@@ -3979,6 +4063,7 @@
             (popularidad 34.0) 
             (media_fecha_publicacion 1972.0)
             (nombre "Kathleen E. Woodiwiss")
+            (cluster "6)
         )
 
         ([Autor_Class_82] of Autor
@@ -3990,6 +4075,7 @@
             (popularidad 46.0) 
             (media_fecha_publicacion 1944.0)
             (nombre "Kathleen Winsor")
+            (cluster "6)
         )
 
         ([Autor_Class_83] of Autor
@@ -4001,6 +4087,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 2004.0)
             (nombre "Kay Hooper")
+            (cluster "5)
         )
 
         ([Autor_Class_84] of Autor
@@ -4012,6 +4099,7 @@
             (popularidad 24.0) 
             (media_fecha_publicacion 1984.0)
             (nombre "Kay McMahon")
+            (cluster "1)
         )
 
         ([Autor_Class_85] of Autor
@@ -4023,6 +4111,7 @@
             (popularidad 34.0) 
             (media_fecha_publicacion 2016.0)
             (nombre "Kelly Regan Barnhill")
+            (cluster "5)
         )
 
         ([Autor_Class_86] of Autor
@@ -4034,6 +4123,7 @@
             (popularidad 23.0) 
             (media_fecha_publicacion 1962.0)
             (nombre "Ken Kesey")
+            (cluster "2)
         )
 
         ([Autor_Class_87] of Autor
@@ -4045,6 +4135,7 @@
             (popularidad 12.0) 
             (media_fecha_publicacion 1994.5)
             (nombre "Kevin J. Anderson")
+            (cluster "7)
         )
 
         ([Autor_Class_88] of Autor
@@ -4056,6 +4147,7 @@
             (popularidad 11.0) 
             (media_fecha_publicacion 2012.0)
             (nombre "Kiera Cass")
+            (cluster "9)
         )
 
         ([Autor_Class_89] of Autor
@@ -4067,6 +4159,7 @@
             (popularidad 16.0) 
             (media_fecha_publicacion 2012.0)
             (nombre "Kim Stanley Robinson")
+            (cluster "7)
         )
 
         ([Autor_Class_90] of Autor
@@ -4078,6 +4171,7 @@
             (popularidad 8.0) 
             (media_fecha_publicacion 2012.0)
             (nombre "Kris Rampersad")
+            (cluster "1)
         )
 
         ([Autor_Class_91] of Autor
@@ -4089,6 +4183,7 @@
             (popularidad 27.0) 
             (media_fecha_publicacion 2007.0)
             (nombre "Laurie Keller")
+            (cluster "2)
         )
 
         ([Autor_Class_92] of Autor
@@ -4100,6 +4195,7 @@
             (popularidad 7.0) 
             (media_fecha_publicacion 2004.0)
             (nombre "Louis de Bernières")
+            (cluster "6)
         )
 
         ([Autor_Class_93] of Autor
@@ -4111,6 +4207,7 @@
             (popularidad 16.0) 
             (media_fecha_publicacion 1848.0)
             (nombre "Louisa May Alcott")
+            (cluster "2)
         )
 
         ([Autor_Class_94] of Autor
@@ -4122,6 +4219,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1572.0)
             (nombre "Luís de Camões")
+            (cluster "8)
         )
 
         ([Autor_Class_95] of Autor
@@ -4133,6 +4231,7 @@
             (popularidad 25.0) 
             (media_fecha_publicacion 2007.0)
             (nombre "Lynsay Sands")
+            (cluster "6)
         )
 
         ([Autor_Class_96] of Autor
@@ -4144,6 +4243,7 @@
             (popularidad 34.33) 
             (media_fecha_publicacion 2001.33)
             (nombre "Margaret Atwood")
+            (cluster "9)
         )
 
         ([Autor_Class_97] of Autor
@@ -4155,6 +4255,7 @@
             (popularidad 36.0) 
             (media_fecha_publicacion 2003.0)
             (nombre "Margaret Peterson Haddix")
+            (cluster "9)
         )
 
         ([Autor_Class_98] of Autor
@@ -4166,6 +4267,7 @@
             (popularidad 29.0) 
             (media_fecha_publicacion 2009.0)
             (nombre "Mark Schroeder")
+            (cluster "2)
         )
 
         ([Autor_Class_99] of Autor
@@ -4177,6 +4279,7 @@
             (popularidad 12.25) 
             (media_fecha_publicacion 1840.5)
             (nombre "Mark Twain")
+            (cluster "8)
         )
 
         ([Autor_Class_100] of Autor
@@ -4188,6 +4291,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1954.0)
             (nombre "Marta Hillers")
+            (cluster "3)
         )
 
         ([Autor_Class_101] of Autor
@@ -4199,6 +4303,7 @@
             (popularidad 30.0) 
             (media_fecha_publicacion 2016.0)
             (nombre "Martha Hall Kelly")
+            (cluster "3)
         )
 
         ([Autor_Class_102] of Autor
@@ -4210,6 +4315,7 @@
             (popularidad 15.0) 
             (media_fecha_publicacion 2015.0)
             (nombre "Marti Melville")
+            (cluster "1)
         )
 
         ([Autor_Class_103] of Autor
@@ -4221,6 +4327,7 @@
             (popularidad 14.0) 
             (media_fecha_publicacion 1818.0)
             (nombre "Mary Wollstonecraft Shelley")
+            (cluster "8)
         )
 
         ([Autor_Class_104] of Autor
@@ -4232,6 +4339,7 @@
             (popularidad 16.0) 
             (media_fecha_publicacion 1996.0)
             (nombre "Masaomi Kanzaki")
+            (cluster "0)
         )
 
         ([Autor_Class_105] of Autor
@@ -4243,6 +4351,7 @@
             (popularidad 35.0) 
             (media_fecha_publicacion 2004.0)
             (nombre "Matthew Kapell")
+            (cluster "0)
         )
 
         ([Autor_Class_106] of Autor
@@ -4254,6 +4363,7 @@
             (popularidad 52.0) 
             (media_fecha_publicacion 2016.0)
             (nombre "Max Harms")
+            (cluster "0)
         )
 
         ([Autor_Class_107] of Autor
@@ -4265,6 +4375,7 @@
             (popularidad 33.0) 
             (media_fecha_publicacion 1994.0)
             (nombre "Melissa Scott")
+            (cluster "0)
         )
 
         ([Autor_Class_108] of Autor
@@ -4276,6 +4387,7 @@
             (popularidad 43.0) 
             (media_fecha_publicacion 1980.0)
             (nombre "Michael Crichton")
+            (cluster "4)
         )
 
         ([Autor_Class_109] of Autor
@@ -4287,6 +4399,7 @@
             (popularidad 37.0) 
             (media_fecha_publicacion 1990.0)
             (nombre "Michael Pondsmith")
+            (cluster "0)
         )
 
         ([Autor_Class_110] of Autor
@@ -4298,6 +4411,7 @@
             (popularidad 12.0) 
             (media_fecha_publicacion 1991.0)
             (nombre "Michael Swanwick")
+            (cluster "0)
         )
 
         ([Autor_Class_111] of Autor
@@ -4309,6 +4423,7 @@
             (popularidad 18.0) 
             (media_fecha_publicacion 1900.0)
             (nombre "Murasaki Shikibu")
+            (cluster "4)
         )
 
         ([Autor_Class_112] of Autor
@@ -4320,6 +4435,7 @@
             (popularidad 35.0) 
             (media_fecha_publicacion 2006.0)
             (nombre "National Geographic Learning")
+            (cluster "8)
         )
 
         ([Autor_Class_113] of Autor
@@ -4331,6 +4447,7 @@
             (popularidad 34.5) 
             (media_fecha_publicacion 2003.5)
             (nombre "Neil Gaiman")
+            (cluster "5)
         )
 
         ([Autor_Class_114] of Autor
@@ -4342,6 +4459,7 @@
             (popularidad 12.0) 
             (media_fecha_publicacion 1995.0)
             (nombre "Nel Noddings")
+            (cluster "2)
         )
 
         ([Autor_Class_115] of Autor
@@ -4353,6 +4471,7 @@
             (popularidad 11.0) 
             (media_fecha_publicacion 1929.0)
             (nombre "Nella Larsen")
+            (cluster "2)
         )
 
         ([Autor_Class_116] of Autor
@@ -4364,6 +4483,7 @@
             (popularidad 28.0) 
             (media_fecha_publicacion 2002.0)
             (nombre "Nicholas Grabowsky")
+            (cluster "5)
         )
 
         ([Autor_Class_117] of Autor
@@ -4375,6 +4495,7 @@
             (popularidad 39.0) 
             (media_fecha_publicacion 1980.0)
             (nombre "Nicholas Russell Murray")
+            (cluster "1)
         )
 
         ([Autor_Class_118] of Autor
@@ -4386,6 +4507,7 @@
             (popularidad 30.0) 
             (media_fecha_publicacion 1989.33)
             (nombre "Nora Roberts")
+            (cluster "6)
         )
 
         ([Autor_Class_119] of Autor
@@ -4397,6 +4519,7 @@
             (popularidad 2.0) 
             (media_fecha_publicacion 1893.0)
             (nombre "Oscar Wilde")
+            (cluster "2)
         )
 
         ([Autor_Class_120] of Autor
@@ -4408,6 +4531,7 @@
             (popularidad 13.0) 
             (media_fecha_publicacion 1842.0)
             (nombre "P. C. F. Daunou")
+            (cluster "4)
         )
 
         ([Autor_Class_121] of Autor
@@ -4419,6 +4543,7 @@
             (popularidad 11.0) 
             (media_fecha_publicacion 1991.0)
             (nombre "Pat Cadigan")
+            (cluster "0)
         )
 
         ([Autor_Class_122] of Autor
@@ -4430,6 +4555,7 @@
             (popularidad 32.0) 
             (media_fecha_publicacion 1927.0)
             (nombre "Philip Gosse")
+            (cluster "1)
         )
 
         ([Autor_Class_123] of Autor
@@ -4441,6 +4567,7 @@
             (popularidad 34.0) 
             (media_fecha_publicacion 1939.0)
             (nombre "Pirenne, Henri")
+            (cluster "4)
         )
 
         ([Autor_Class_124] of Autor
@@ -4452,6 +4579,7 @@
             (popularidad 28.0) 
             (media_fecha_publicacion 1960.0)
             (nombre "Poul Anderson")
+            (cluster "4)
         )
 
         ([Autor_Class_125] of Autor
@@ -4463,6 +4591,7 @@
             (popularidad 30.0) 
             (media_fecha_publicacion 1953.0)
             (nombre "R. W. Southern")
+            (cluster "4)
         )
 
         ([Autor_Class_126] of Autor
@@ -4474,6 +4603,7 @@
             (popularidad 28.0) 
             (media_fecha_publicacion 1972.0)
             (nombre "Raoul Vaneigem")
+            (cluster "2)
         )
 
         ([Autor_Class_127] of Autor
@@ -4485,6 +4615,7 @@
             (popularidad 16.0) 
             (media_fecha_publicacion 1976.0)
             (nombre "Richard Kieckhefer")
+            (cluster "4)
         )
 
         ([Autor_Class_128] of Autor
@@ -4496,6 +4627,7 @@
             (popularidad 20.0) 
             (media_fecha_publicacion 2008.0)
             (nombre "Richelle Mead")
+            (cluster "5)
         )
 
         ([Autor_Class_129] of Autor
@@ -4507,6 +4639,7 @@
             (popularidad 27.0) 
             (media_fecha_publicacion 2002.0)
             (nombre "Rick Atkinson")
+            (cluster "3)
         )
 
         ([Autor_Class_130] of Autor
@@ -4518,6 +4651,7 @@
             (popularidad 21.5) 
             (media_fecha_publicacion 1968.5)
             (nombre "Roald Dahl")
+            (cluster "3)
         )
 
         ([Autor_Class_131] of Autor
@@ -4529,6 +4663,7 @@
             (popularidad 17.0) 
             (media_fecha_publicacion 1996.0)
             (nombre "Robert Wardy")
+            (cluster "2)
         )
 
         ([Autor_Class_132] of Autor
@@ -4540,6 +4675,7 @@
             (popularidad 45.0) 
             (media_fecha_publicacion 2001.0)
             (nombre "Roger A. Freedman")
+            (cluster "8)
         )
 
         ([Autor_Class_133] of Autor
@@ -4551,6 +4687,7 @@
             (popularidad 52.0) 
             (media_fecha_publicacion 1999.0)
             (nombre "Rosemary Rogers")
+            (cluster "1)
         )
 
         ([Autor_Class_134] of Autor
@@ -4562,6 +4699,7 @@
             (popularidad 52.0) 
             (media_fecha_publicacion 1946.0)
             (nombre "S. L. A. Marshall")
+            (cluster "3)
         )
 
         ([Autor_Class_135] of Autor
@@ -4573,6 +4711,7 @@
             (popularidad 17.0) 
             (media_fecha_publicacion 2022.0)
             (nombre "Saara El-Arifi")
+            (cluster "5)
         )
 
         ([Autor_Class_136] of Autor
@@ -4584,6 +4723,7 @@
             (popularidad 23.0) 
             (media_fecha_publicacion 2002.0)
             (nombre "Sandra Brown")
+            (cluster "2)
         )
 
         ([Autor_Class_137] of Autor
@@ -4595,6 +4735,7 @@
             (popularidad 31.0) 
             (media_fecha_publicacion 1993.0)
             (nombre "Sara Orwig")
+            (cluster "1)
         )
 
         ([Autor_Class_138] of Autor
@@ -4606,6 +4747,7 @@
             (popularidad 31.67) 
             (media_fecha_publicacion 2015.0)
             (nombre "Sarah J. Maas")
+            (cluster "5)
         )
 
         ([Autor_Class_139] of Autor
@@ -4617,6 +4759,7 @@
             (popularidad 50.0) 
             (media_fecha_publicacion 2007.0)
             (nombre "Sherryl Woods")
+            (cluster "6)
         )
 
         ([Autor_Class_140] of Autor
@@ -4628,6 +4771,7 @@
             (popularidad 31.0) 
             (media_fecha_publicacion 2008.0)
             (nombre "Steven Erikson")
+            (cluster "5)
         )
 
         ([Autor_Class_141] of Autor
@@ -4639,6 +4783,7 @@
             (popularidad 12.0) 
             (media_fecha_publicacion 2008.0)
             (nombre "Susan Wiggs")
+            (cluster "6)
         )
 
         ([Autor_Class_142] of Autor
@@ -4650,6 +4795,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 2008.0)
             (nombre "Suzanne Collins")
+            (cluster "9)
         )
 
         ([Autor_Class_143] of Autor
@@ -4661,6 +4807,7 @@
             (popularidad 33.0) 
             (media_fecha_publicacion 2013.0)
             (nombre "Suzanne Young")
+            (cluster "9)
         )
 
         ([Autor_Class_144] of Autor
@@ -4672,6 +4819,7 @@
             (popularidad 37.0) 
             (media_fecha_publicacion 1992.0)
             (nombre "Toni Morrison")
+            (cluster "2)
         )
 
         ([Autor_Class_145] of Autor
@@ -4683,6 +4831,7 @@
             (popularidad 52.0) 
             (media_fecha_publicacion 1971.0)
             (nombre "Ursula K. Le Guin")
+            (cluster "9)
         )
 
         ([Autor_Class_146] of Autor
@@ -4694,6 +4843,7 @@
             (popularidad 22.0) 
             (media_fecha_publicacion 1935.0)
             (nombre "V. Gordon Childe")
+            (cluster "4)
         )
 
         ([Autor_Class_147] of Autor
@@ -4705,6 +4855,7 @@
             (popularidad 9.0) 
             (media_fecha_publicacion 1905.0)
             (nombre "Various")
+            (cluster "4)
         )
 
         ([Autor_Class_148] of Autor
@@ -4716,6 +4867,7 @@
             (popularidad 42.0) 
             (media_fecha_publicacion 2005.5)
             (nombre "Veronica Roth")
+            (cluster "9)
         )
 
         ([Autor_Class_149] of Autor
@@ -4727,6 +4879,7 @@
             (popularidad 36.0) 
             (media_fecha_publicacion 1915.0)
             (nombre "Virginia Woolf")
+            (cluster "8)
         )
 
         ([Autor_Class_150] of Autor
@@ -4738,6 +4891,7 @@
             (popularidad 21.0) 
             (media_fecha_publicacion 1929.0)
             (nombre "Walter Lippmann")
+            (cluster "2)
         )
 
         ([Autor_Class_151] of Autor
@@ -4749,6 +4903,7 @@
             (popularidad 17.0) 
             (media_fecha_publicacion 1800.0)
             (nombre "Washington Irving")
+            (cluster "8)
         )
 
         ([Autor_Class_152] of Autor
@@ -4760,6 +4915,7 @@
             (popularidad 1.0) 
             (media_fecha_publicacion 1993.0)
             (nombre "Wilhelmina Baird")
+            (cluster "0)
         )
 
         ([Autor_Class_153] of Autor
@@ -4771,6 +4927,7 @@
             (popularidad 37.0) 
             (media_fecha_publicacion 1550.0)
             (nombre "William Langland")
+            (cluster "4)
         )
 )
 
