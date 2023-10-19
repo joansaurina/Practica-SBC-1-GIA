@@ -5405,6 +5405,22 @@
 )
 
 
+(defrule datos-procesamiento:autor
+    (valoracion (nombre "paginas") (calificado "TRUE"))
+    ?u <- (object (is-a Usuario) (autor ?autoru))
+    ?v <- (valoracion (nombre "autor"))
+    ?l <- (object (is-a Libro) (autor ?autorl) (nombre ?nombrel))
+    (test (member$ ?autorl ?autoru))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificaciones ?p))
+    (test (eq ?nombrel ?nombres))
+
+    =>
+
+    (bind ?p (+ ?p 50))
+    (modify ?v (calificado "TRUE"))
+)
+
+
 
 ;;; Función de Bienvenida -------------------------------------------------------------
 (defrule MAIN::initialRule "Regla inicial"
