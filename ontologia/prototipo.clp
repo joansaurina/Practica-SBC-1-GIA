@@ -4983,6 +4983,8 @@
 (deffacts datos-procesamiento::valoradas
     (valoracion (nombre "paginas") (calificado "FALSE"))
     (valoracion (nombre "edad")   (calificado "FALSE"))
+    (valoracion (nombre "autor") (calificado "FALSE"))
+    (valoracion (nombre "autores_cluster") (calificado "FALSE"))
 )
 
 
