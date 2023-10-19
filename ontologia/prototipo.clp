@@ -5323,18 +5323,24 @@
 (defrule datos-procesamiento::calificacion-paginas: "Regla para calcular la calificacion de los libros segun el numero de paginas"
     ?p <- (paginas (num_paginas ?paginas))
     ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro))
-    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     (test (<= (abs (- ?paginas ?paginas_libro))50))
     (test (eq ?nombrelibro ?nombresugerencia))
+    (not (valorado-paginas ?nombrelibro))
 
     =>
     (bind ?diferencia (- ?paginas ?paginas_libro))
     (bind ?exponent (* -1 (/ ?diferencia 20))) 
     (bind ?puntuacion (* 15 (exp ?exponent)))
-    
     (bind ?puntuacion (round ?puntuacion))
 
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "La longitud del libro concuerda con la que el usuario desea leer: +" ?puntuacion " puntos!."))
+
     (bind ?c (+ ?c ?puntuacion))
+
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorado-paginas ?nombrelibro))
 )
 
 
@@ -5359,7 +5365,6 @@
     =>
     (bind ?c (+ ?c 5))
 )
-
 
 ;;; Función de Bienvenida -------------------------------------------------------------
 (defrule MAIN::initialRule "Regla inicial"
