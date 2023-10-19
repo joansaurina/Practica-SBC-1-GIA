@@ -5360,7 +5360,7 @@
     (modify ?v (calificado "TRUE"))
 )
 
-(defrule datos-procesamiento::calificacion-edad
+(defrule datos-procesamiento::calificacion-edad: "Regla para calcular la calificacion de los libros segun el grupo de edad"
     (valoracion (nombre "paginas") (calificado "TRUE"))
     ?u <- (object (is-a Usuario) (edad ?edad))
     ?v <- (valoracion (nombre "edad") (calificado "FALSE"))
