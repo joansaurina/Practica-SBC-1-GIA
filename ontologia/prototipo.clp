@@ -4972,19 +4972,15 @@
     (slot grupo (type STRING))
 )
 
-(deftemplate datos-procesamiento::valoracion
-    (slot calificado (type STRING))
-    (slot nombre (type STRING))
+(deftemplate datos-procesamiento::lista-edades
+    (multislot edades (type STRING))
 )
 
 
 ;;; Declaracion de facts -------------------------------------------------------------------
 
-(deffacts datos-procesamiento::valoradas
-    (valoracion (nombre "paginas") (calificado "FALSE"))
-    (valoracion (nombre "edad")   (calificado "FALSE"))
-    (valoracion (nombre "autor") (calificado "FALSE"))
-    (valoracion (nombre "autores_cluster") (calificado "FALSE"))
+(deffacts datos-procesamiento::edad
+    (lista-edades (edades "Críos" "Adolescentes" "Adulto-Joven" "Adulto" "Ancianos"))
 )
 
 
@@ -5256,7 +5252,6 @@
 
 (defrule preferencias-recopilacion::anadir-libros "Se añaden todos los libros"
     ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
-    (salience 5)
 	=>
     (printout t "Entrando todos los libros..." crlf)
     (printout t crlf)
@@ -5327,101 +5322,43 @@
 
 (defrule datos-procesamiento::calificacion-paginas: "Regla para calcular la calificacion de los libros segun el numero de paginas"
     ?p <- (paginas (num_paginas ?paginas))
-    ?v <- (valoracion (nombre "paginas") (calificado "FALSE"))
+    ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c))
+    (test (<= (abs (- ?paginas ?paginas_libro))50))
+    (test (eq ?nombrelibro ?nombresugerencia))
+
     =>
-    (bind $?sugerencias (find-all-instances ((?inst Sugerencia)) TRUE))
-    (printout t "Priorizando libros segun tus preferencias de paginas..." crlf)
-    (printout t crlf)
-    (bind ?llibres (find-all-instances ((?inst Libro)) TRUE))
-
-    (progn$ (?llibre ?llibres)
-
-        (bind ?nombre (send ?llibre get-nombre))
-        
-        (bind ?paginas_libro (send ?llibre get-paginas))
-        (bind ?diferencia (abs (- ?paginas ?paginas_libro)))
-        (if (> ?diferencia 50)
-            then 
-            (bind ?puntuacion 0)
-            else 
-            (bind ?exponent (* -1 (/ ?diferencia 10))) 
-            (bind ?puntuacion (* 25 (exp ?exponent)))
-        )
-
-        (bind ?puntuacion (round ?puntuacion))
-
-        (progn$ (?sugerencia ?sugerencias)
-            (if (eq ?nombre (send ?sugerencia get-nombre))
-                then 
-                (modify-instance ?sugerencia (calificacion (+ (send ?sugerencia get-calificacion) ?puntuacion))) 
-                (break)
-            )
-        )
-    )
-
-    (modify ?v (calificado "TRUE"))
-)
-
-(defrule datos-procesamiento::calificacion-edad: "Regla para calcular la calificacion de los libros segun el grupo de edad"
-    (valoracion (nombre "paginas") (calificado "TRUE"))
-    ?u <- (object (is-a Usuario) (edad ?edad))
-    ?v <- (valoracion (nombre "edad") (calificado "FALSE"))
-    ?e <- (grupo_edad (grupo ?grupo))
-    =>
-    (bind $?sugerencias (find-all-instances ((?inst Sugerencia)) TRUE))
-    (printout t "Priorizando libros segun tus preferencias de edad..." crlf)
-    (printout t crlf)
-    (bind ?llibres (find-all-instances ((?inst Libro)) TRUE))
-
-    (bind ?publicos (create$ "Críos" "Adolescentes" "Adulto-Joven" "Adulto" "Ancianos"))
+    (bind ?diferencia (- ?paginas ?paginas_libro))
+    (bind ?exponent (* -1 (/ ?diferencia 20))) 
+    (bind ?puntuacion (* 15 (exp ?exponent)))
     
-    (progn$ (?llibre ?llibres)
+    (bind ?puntuacion (round ?puntuacion))
 
-        (bind ?nombre (send ?llibre get-nombre))
-        (bind ?publico_libro (send ?llibre get-publico))
-        
-        (if (eq ?grupo ?publico_libro)
-            then 
-            (bind ?puntuacion 15)
-            else 
-            (bind ?x (member$ ?grupo ?publicos))
-            (bind ?y (member$ ?publico_libro ?publicos))
-            (bind ?distancia (abs (- ?x ?y)))
-            (if (<= ?distancia 1)
-                then (bind ?puntuacion 5)
-                else (bind ?puntuacion 0)
-            )
-        )
-
-        (progn$ (?sugerencia ?sugerencias)
-            (if (eq ?nombre (send ?sugerencia get-nombre))
-                then 
-                (modify-instance ?sugerencia (calificacion (+ (send ?sugerencia get-calificacion) ?puntuacion))) 
-                (break)
-            )
-        )
-    )
-
-    (modify ?v (calificado "TRUE"))
-
+    (bind ?c (+ ?c ?puntuacion))
 )
 
 
-(defrule datos-procesamiento:autor
-    (valoracion (nombre "paginas") (calificado "TRUE"))
-    ?u <- (object (is-a Usuario) (autor ?autoru))
-    ?v <- (valoracion (nombre "autor"))
-    ?l <- (object (is-a Libro) (autor ?autorl) (nombre ?nombrel))
-    (test (member$ ?autorl ?autoru))
-    ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificaciones ?p))
-    (test (eq ?nombrel ?nombres))
+(defrule datos-procesamiento::calificacion-edad-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad"
+    ?e <- (grupo_edad (grupo ?grupo))
+    ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (test (eq ?grupo ?publico_libro))
+    =>
+    (bind ?c (+ ?c 15))
+)
+
+(defrule datos-procesamiento::calificacion-edad-no-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad, no exacta."
+    ?e <- (grupo_edad (grupo ?grupo))
+    ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    ?llista <- (lista-edades (edades $?edades))
+    (test (= (abs (- (member$ ?grupo $?edades) (member$ ?publico_libro $?edades))) 1))
 
     =>
-
-    (bind ?p (+ ?p 50))
-    (modify ?v (calificado "TRUE"))
+    (bind ?c (+ ?c 5))
 )
-
 
 
 ;;; Función de Bienvenida -------------------------------------------------------------
@@ -5429,7 +5366,7 @@
 	(declare (salience 10))
 	=>
 	(printout t".........................................................." crlf)
-  	(printout t"                       Tu libro ideal                       " crlf)
+  	(printout t"                       JOANETTu libro ideal                       " crlf)
 	(printout t".........................................................." crlf)
   	(printout t crlf)  	
 	(printout t"Bienvenido! A continuacion se le formularan una serie de preguntas para poder recomendarle uno o varios libros acorde a sus preferencias." crlf)
