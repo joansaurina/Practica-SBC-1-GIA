@@ -1,0 +1,198 @@
+Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,genre,subgenre,title,authors,first_publish_year,has_fulltext,Pages,Rating (0-5),Number of Characters,minutes_to_read,Weeks on Best-Seller List,Estilo de Escritura,Publico
+0,0,0,0,Realistic,social,Zur Genealogie der Moral,Friedrich Nietzsche,1887,True,745,2.7,46,1266.5,15,Estilo epistolar,Críos
+1,1,1,1,Realistic,social,12 Rules for Life,Jordan B. Peterson,2015,True,134,2.6,37,227.8,52,Narrativa en tercera persona,Adolescentes
+2,2,2,2,Realistic,social,Kate Hannigan,Catherine Cookson,1950,True,663,3.5,68,1127.1,36,Estilo experimental,Adolescentes
+3,3,3,3,Realistic,social,Anarchisme et socialisme,Georgiĭ Valentinovich Plekhanov,1894,True,449,3.0,43,763.3,38,Estilo epistolar,Adolescentes
+4,4,4,4,Realistic,social,The sovereignty of good over other concepts,Iris Murdoch,1967,True,198,4.4,71,336.6,27,Narrativa en segunda persona,Adulto
+5,5,5,5,Realistic,social,A preface to morals,Walter Lippmann,1929,True,284,3.0,53,482.8,21,Narrativa en tercera persona,Ancianos
+6,6,6,6,Realistic,social,Human Society in Ethics and Politics,Bertrand Russell,1954,True,340,3.1,88,578.0,19,Estilo minimalista,Ancianos
+7,7,7,7,Realistic,social,The revolution of everyday life,Raoul Vaneigem,1972,True,263,3.0,78,447.1,28,Estilo minimalista,Adulto-Joven
+8,8,8,8,Realistic,social,Noncognitivism in Ethics,Mark Schroeder,2009,False,481,2.8,46,817.6999999999999,29,Estilo descriptivo,Adulto-Joven
+9,9,9,9,Realistic,social,The nature of moral thinking,Francis Snare,1992,True,397,3.3,49,674.9,1,Narrativa en tercera persona,Críos
+10,10,10,10,Realistic,social,The Birth of Rhetoric,Robert Wardy,1996,True,510,3.4,66,867.0,17,Narrativa en segunda persona,Adulto
+11,11,11,11,Realistic,social,Philosophy of Education,Nel Noddings,1995,True,337,3.5,56,572.9,12,Estilo experimental,Adulto-Joven
+12,12,12,12,Realistic,psychological,Silas Marner,George Eliot,1860,True,318,3.0,15,540.6,43,Narrativa en tercera persona,Adulto-Joven
+13,13,13,13,Realistic,psychological,The Stranger,Albert Camus,1942,True,212,3.8,81,360.4,16,Narrativa en tercera persona,Ancianos
+14,14,14,14,Realistic,psychological,The Secret Agent,Joseph Conrad,1907,True,541,2.9,89,919.7,1,Estilo minimalista,Críos
+15,15,15,15,Realistic,psychological,La Peste,Albert Camus,1942,True,396,2.4,64,673.1999999999999,25,Monólogo interior,Críos
+16,16,16,16,Realistic,psychological,La chute,Albert Camus,1917,True,478,3.9,79,812.6,32,Estilo descriptivo,Adolescentes
+17,17,17,17,Realistic,psychological,One Flew Over the Cuckoo's Nest,Ken Kesey,1962,True,347,3.3,60,589.9,23,Narrativa en primera persona,Críos
+18,18,18,18,Realistic,psychological,The Blind Assassin,Margaret Atwood,2000,True,271,4.1,35,460.7,12,Estilo descriptivo,Ancianos
+19,19,19,19,Realistic,psychological,Passing,Nella Larsen,1929,True,95,3.6,50,161.5,11,Narrativa en tercera persona,Adolescentes
+20,20,20,20,Realistic,psychological,Jazz,Toni Morrison,1992,True,603,3.2,77,1025.1,37,Narrativa en tercera persona,Críos
+21,21,21,21,Realistic,psychological,The Crush,Sandra Brown,2002,True,427,4.3,45,725.9,23,Narrativa en tercera persona,Adulto
+22,22,22,22,Realistic,manners,Pride and Prejudice,Jane Austen,1602,True,602,4.3,44,1023.4,33,Estilo experimental,Adulto
+23,23,23,23,Realistic,manners,Little Women,Louisa May Alcott,1848,True,242,4.3,73,411.4,16,Estilo epistolar,Ancianos
+24,24,24,24,Realistic,manners,The Importance of Being Earnest,Oscar Wilde,1893,True,198,3.1,35,336.6,2,Narrativa en primera persona,Adulto
+25,25,25,25,Realistic,manners,Etiquette,Emily Post,1923,True,403,4.1,41,685.1,11,Estilo minimalista,Críos
+26,26,26,26,Realistic,manners,Novels (Pride and Prejudice / Sense and Sensibility),Jane Austen,1949,True,185,3.2,91,314.5,42,Narrativa en tercera persona,Adolescentes
+27,27,27,27,Realistic,manners,Feathers In The Fire,Catherine Cookson,1971,True,389,3.4,90,661.3,30,Estilo minimalista,Adulto
+28,28,28,28,Realistic,manners,Do Unto Otters,Laurie Keller,2007,True,431,2.8,43,732.6999999999999,27,Narrativa en primera persona,Adulto-Joven
+29,29,29,29,Historical,medieval,Genji monogatari,Murasaki Shikibu,1900,True,292,3.0,54,496.4,18,Narrativa en segunda persona,Críos
+30,30,30,30,Historical,medieval,Piers the Plowman,William Langland,1550,True,293,3.4,58,498.1,37,Narrativa en segunda persona,Críos
+31,31,31,31,Historical,medieval,"Revelations of divine love, recorded by Julian, anchoress at Norwich, A.D. 1373","Julian, of Norwich, 1343-",1901,True,404,2.8,53,686.8,5,Narrativa en tercera persona,Adolescentes
+32,32,32,32,Historical,medieval,English Miracle Plays,Alfred William Pollard,1890,True,251,3.6,54,426.7,24,Narrativa en primera persona,Adulto
+33,33,33,33,Historical,medieval,Mohomet et Charlemagne,"Pirenne, Henri",1939,True,298,2.8,50,506.6,34,Narrativa en tercera persona,Críos
+34,34,34,34,Historical,medieval,Everyman And Other Interludes - Mystery Plays and  Miracle Plays,Various,1905,True,457,3.1,35,776.9,9,Narrativa en segunda persona,Adolescentes
+35,35,35,35,Historical,medieval,The making of the Middle Ages,R. W. Southern,1953,True,149,3.3,72,253.3,30,Monólogo interior,Críos
+36,36,36,36,Historical,medieval,The High Crusade,Poul Anderson,1960,True,330,3.0,60,561.0,28,Estilo descriptivo,Adulto-Joven
+37,37,37,37,Historical,medieval,Cathedral,David Macaulay,1973,True,309,2.3,48,525.3,18,Estilo experimental,Adulto-Joven
+38,38,38,38,Historical,medieval,European witch trials,Richard Kieckhefer,1976,True,433,4.6,51,736.1,16,Estilo epistolar,Críos
+39,39,39,39,Historical,medieval,Iconographie chrétienne,Adolphe Napoléon Didron,1843,True,453,3.3,64,770.1,28,Estilo epistolar,Adulto-Joven
+40,40,40,40,Historical,medieval,The medieval machine,Jean Gimpel,1975,True,308,4.2,15,523.6,21,Narrativa en tercera persona,Ancianos
+41,41,41,41,Historical,ancient civilization,Ecclesiastical history,Eusebius of Caesarea,1476,True,442,3.6,72,751.4,1,Narrativa en tercera persona,Ancianos
+42,42,42,42,Historical,ancient civilization,Congo,Michael Crichton,1980,True,502,3.5,73,853.4,43,Narrativa en segunda persona,Adulto-Joven
+43,43,43,43,Historical,ancient civilization,Histoire universelle,Cesare Cantù,1984,False,147,2.9,57,249.9,48,Monólogo interior,Adulto-Joven
+44,44,44,44,Historical,ancient civilization,What happened in history,V. Gordon Childe,1942,True,410,3.8,37,697.0,21,Narrativa en segunda persona,Adulto
+45,45,45,45,Historical,ancient civilization,"History of Egypt, Chaldea, Syria, Babylonia, And Assyria",Gaston Maspero,1901,True,374,3.4,45,635.8,17,Estilo experimental,Críos
+46,46,46,46,Historical,ancient civilization,Cours d'études historiques,P. C. F. Daunou,1842,True,127,2.6,66,215.9,13,Estilo epistolar,Adulto-Joven
+47,47,47,47,Historical,ancient civilization,People of the earth,Brian M. Fagan,1977,True,349,3.5,62,593.3,35,Monólogo interior,Críos
+48,48,48,48,Historical,ancient civilization,Shikasta,Doris Lessing,1979,True,650,3.5,51,1105.0,11,Narrativa en segunda persona,Críos
+49,49,49,49,Historical,ancient civilization,The Ancient World,D. Brendan Nagle,1979,True,315,3.1,60,535.5,33,Estilo minimalista,Adulto
+50,50,50,50,Historical,ancient civilization,Erinnerungen an die Zukunft,Erich von Däniken,1968,True,492,5.0,64,836.4,22,Estilo experimental,Adulto
+51,51,51,51,Historical,ancient civilization,A history of science,George Sarton,1952,True,235,2.9,66,399.5,20,Monólogo interior,Adulto-Joven
+52,52,52,52,Historical,ancient civilization,Most ancient East,V. Gordon Childe,1928,True,269,4.1,35,457.3,23,Monólogo interior,Ancianos
+53,53,53,53,Historical,world war,Echoes of the war,J. M. Barrie,1918,True,150,4.9,29,255.0,50,Narrativa en primera persona,Adulto
+54,54,54,54,Historical,world war,The King's Grace,John Buchan,1935,True,494,3.9,63,839.8,34,Estilo epistolar,Críos
+55,55,55,55,Historical,world war,Over to You - Ten Stories of Flyers and Flying,Roald Dahl,1946,True,217,4.0,52,368.9,28,Narrativa en segunda persona,Críos
+56,56,56,56,Historical,world war,Eine Frau in Berlin. Tagebuchaufzeichnungen vom 20. April bis 22. Juni 1945,Marta Hillers,1954,True,535,3.6,43,909.5,1,Narrativa en segunda persona,Adolescentes
+57,57,57,57,Historical,world war,An Army at Dawn,Rick Atkinson,2002,True,374,2.6,39,635.8,27,Narrativa en segunda persona,Críos
+58,58,58,58,Historical,world war,Le Train,Georges Simenon,1961,True,340,2.4,32,578.0,14,Estilo epistolar,Adulto
+59,59,59,59,Historical,world war,Collected Short Stories [51 stories],Roald Dahl,1991,True,348,3.3,87,591.6,15,Estilo epistolar,Críos
+60,60,60,60,Historical,world war,Lilac Girls,Martha Hall Kelly,2016,False,77,4.0,76,130.9,30,Monólogo interior,Adulto
+61,61,61,61,Historical,world war,Bastogne,S. L. A. Marshall,1946,False,343,3.8,22,583.1,52,Estilo epistolar,Adolescentes
+62,62,62,62,Historical,world war,Only a Dog,Bertha Whitridge Smith,1917,True,202,3.9,43,343.4,27,Estilo minimalista,Adulto
+63,63,63,63,Historical,world war,A passionate prodigality,Guy Chapman,1933,True,271,3.1,56,460.7,31,Narrativa en segunda persona,Adulto
+64,64,64,64,Historical,world war,The Coming Conquest of England,August Niemann,1904,True,381,2.8,41,647.6999999999999,35,Narrativa en segunda persona,Críos
+65,65,65,65,Romantic,contemporary romance,Sea Swept,Nora Roberts,1968,True,530,3.4,55,901.0,45,Estilo minimalista,Adolescentes
+66,66,66,66,Romantic,contemporary romance,Chesapeake Blue,Nora Roberts,2002,True,275,3.2,41,467.5,26,Monólogo interior,Adulto-Joven
+67,67,67,67,Romantic,contemporary romance,Four Blondes,Candace Bushnell,2000,True,115,3.4,64,195.5,45,Estilo epistolar,Ancianos
+68,68,68,68,Romantic,contemporary romance,Inner Harbor,Nora Roberts,1998,True,715,3.6,55,1215.5,19,Narrativa en tercera persona,Críos
+69,69,69,69,Romantic,contemporary romance,16 Lighthouse Road,Debbie Macomber,2001,True,256,3.2,74,435.2,32,Estilo descriptivo,Adolescentes
+70,70,70,70,Romantic,contemporary romance,Once in a Lifetime,Danielle Steel,1982,True,318,3.0,32,540.6,3,Monólogo interior,Adulto-Joven
+71,71,71,71,Romantic,contemporary romance,Feels Like Family,Sherryl Woods,2007,True,305,3.4,85,518.5,50,Narrativa en segunda persona,Críos
+72,72,72,72,Romantic,contemporary romance,44 Cranberry Point,Debbie Macomber,2004,True,347,4.0,50,589.9,26,Estilo minimalista,Adulto-Joven
+73,73,73,73,Romantic,contemporary romance,Snowfall at Willow Lake,Susan Wiggs,2008,True,581,4.0,33,987.7,12,Narrativa en segunda persona,Ancianos
+74,74,74,74,Romantic,contemporary romance,Montana,Debbie Macomber,1997,True,247,3.3,77,419.9,1,Monólogo interior,Críos
+75,75,75,75,Romantic,contemporary romance,204 Rosewood Lane,Debbie Macomber,2002,True,52,4.2,57,88.39999999999999,37,Narrativa en segunda persona,Adolescentes
+76,76,76,76,Romantic,contemporary romance,Dakota Born,Debbie Macomber,1999,True,499,3.0,93,848.3,30,Estilo minimalista,Adulto
+77,77,77,77,Romantic,historical romance,Forever Amber,Kathleen Winsor,1944,True,247,3.3,55,419.9,46,Monólogo interior,Ancianos
+78,78,78,78,Romantic,historical romance,Atonement,Ian McEwan,2001,True,551,4.8,64,936.7,22,Estilo descriptivo,Adulto
+79,79,79,79,Romantic,historical romance,Del amor y otros demonios,Gabriel García Márquez,1994,True,88,3.7,27,149.6,44,Estilo descriptivo,Críos
+80,80,80,80,Romantic,historical romance,The Sheik,E. M. Hull,1919,True,246,3.8,58,418.2,20,Estilo epistolar,Adolescentes
+81,81,81,81,Romantic,historical romance,Birds Without Wings,Louis de Bernières,2004,True,440,3.5,40,748.0,7,Estilo experimental,Adulto-Joven
+82,82,82,82,Romantic,historical romance,Love Comes Softly,Janette Oke,1979,True,182,4.1,23,309.4,49,Estilo experimental,Adulto-Joven
+83,83,83,83,Romantic,historical romance,The Duke and I,Julia Quinn,2000,True,819,3.4,44,1392.3,52,Estilo minimalista,Adulto-Joven
+84,84,84,84,Romantic,historical romance,The Flame and the Flower,Kathleen E. Woodiwiss,1972,True,403,3.1,45,685.1,34,Estilo minimalista,Adolescentes
+85,85,85,85,Romantic,historical romance,"To Sir Phillip, With Love",Julia Quinn,2003,True,160,3.7,15,272.0,24,Estilo descriptivo,Críos
+86,86,86,86,Romantic,historical romance,Un furieux amour,Jennifer Wilde,1976,True,298,4.1,77,506.6,26,Estilo minimalista,Adulto
+87,87,87,87,Romantic,historical romance,When He Was Wicked,Julia Quinn,2004,True,339,3.6,67,576.3,10,Narrativa en tercera persona,Adolescentes
+88,88,88,88,Romantic,historical romance,"Whitney, My Love",Judith McNaught,1985,True,537,4.7,62,912.9,1,Estilo experimental,Adulto-Joven
+89,89,89,89,Romantic,paranormal romance,Dark Possession,Christine Feehan,2007,True,415,3.2,38,705.5,52,Monólogo interior,Adulto-Joven
+90,90,90,90,Romantic,paranormal romance,Dark Magic,Christine Feehan,2000,True,330,3.5,69,561.0,16,Narrativa en segunda persona,Adolescentes
+91,91,91,91,Romantic,paranormal romance,Dark Prince,Christine Feehan,1999,True,457,4.0,47,776.9,36,Estilo descriptivo,Adulto
+92,92,92,92,Romantic,paranormal romance,Dark Challenge,Christine Feehan,2000,True,441,3.8,39,749.6999999999999,48,Estilo minimalista,Críos
+93,93,93,93,Romantic,paranormal romance,Dark Desire,Christine Feehan,1999,True,255,3.4,50,433.5,23,Narrativa en primera persona,Críos
+94,94,94,94,Romantic,paranormal romance,Dark Demon,Christine Feehan,2002,True,421,3.3,75,715.6999999999999,3,Estilo epistolar,Adolescentes
+95,95,95,95,Romantic,paranormal romance,Dark Fire,Christine Feehan,2001,True,247,3.0,49,419.9,34,Narrativa en tercera persona,Adulto
+96,96,96,96,Romantic,paranormal romance,Dark Gold,Christine Feehan,2000,True,153,3.6,39,260.1,29,Narrativa en primera persona,Críos
+97,97,97,97,Romantic,paranormal romance,Dark Celebration,Christine Feehan,2006,True,344,2.9,85,584.8,30,Estilo epistolar,Ancianos
+98,98,98,98,Romantic,paranormal romance,Bite me if you can,Lynsay Sands,2007,True,502,3.8,85,853.4,25,Narrativa en primera persona,Adulto-Joven
+99,99,99,99,Romantic,paranormal romance,Dark Destiny,Christine Feehan,2004,True,455,3.2,51,773.5,17,Estilo descriptivo,Críos
+100,100,100,100,Romantic,paranormal romance,Dark Symphony,Christine Feehan,2003,True,452,4.0,61,768.4,12,Narrativa en primera persona,Adulto-Joven
+101,101,101,101,Science Fiction,space opera,Space Viking,H. Beam Piper,1963,True,159,3.6,70,270.3,32,Narrativa en primera persona,Adulto
+102,102,102,102,Science Fiction,space opera,The Voyage of the Space Beagle,A. E. van Vogt,1950,True,418,3.9,65,710.6,36,Monólogo interior,Adulto
+103,103,103,103,Science Fiction,space opera,"The Long Way to a Small, Angry Planet",Becky Chambers,2014,True,315,3.6,54,535.5,52,Monólogo interior,Adolescentes
+104,104,104,104,Science Fiction,space opera,2312,Kim Stanley Robinson,2012,True,84,3.9,71,142.79999999999998,16,Estilo minimalista,Críos
+105,105,105,105,Science Fiction,space opera,Star Wars Episode VII - The Force Awakens,Alan Dean Foster,2001,True,246,2.2,54,418.2,9,Estilo experimental,Adolescentes
+106,106,106,106,Science Fiction,space opera,Star Wars - Jedi Academy Trilogy - Jedi Search,Kevin J. Anderson,1994,True,453,2.7,74,770.1,22,Narrativa en tercera persona,Adulto-Joven
+107,107,107,107,Science Fiction,space opera,Ancillary Justice,Ann Leckie,2013,True,463,3.0,40,787.1,16,Estilo experimental,Adulto-Joven
+108,108,108,108,Science Fiction,space opera,"The Galaxy, and the Ground Within",Becky Chambers,2021,False,161,3.9,30,273.7,5,Estilo minimalista,Adulto-Joven
+109,109,109,109,Science Fiction,space opera,Dragon Harper,Anne McCaffrey,2007,True,414,3.5,66,703.8,34,Estilo descriptivo,Adulto-Joven
+110,110,110,110,Science Fiction,space opera,Nemesis Games,James S. A. Corey,2015,True,271,3.4,69,460.7,15,Estilo minimalista,Críos
+111,111,111,111,Science Fiction,space opera,Redshirts,John Scalzi,2012,True,531,3.8,72,902.7,28,Narrativa en segunda persona,Adolescentes
+112,112,112,112,Science Fiction,space opera,Star Wars - Darksaber,Kevin J. Anderson,1995,True,498,3.9,51,846.6,2,Narrativa en primera persona,Adulto-Joven
+113,113,113,113,Science Fiction,dystopian fiction,The Handmaid's Tale,Margaret Atwood,1985,True,409,3.4,83,695.3,52,Estilo descriptivo,Adulto
+114,114,114,114,Science Fiction,dystopian fiction,The Hunger Games,Suzanne Collins,2008,True,342,3.6,76,581.4,1,Narrativa en tercera persona,Críos
+115,115,115,115,Science Fiction,dystopian fiction,Divergent,Veronica Roth,2010,True,143,3.6,68,243.1,40,Estilo epistolar,Críos
+116,116,116,116,Science Fiction,dystopian fiction,Allegiant,Veronica Roth,2001,True,320,3.2,35,544.0,44,Monólogo interior,Críos
+117,117,117,117,Science Fiction,dystopian fiction,The One (The Selection #3),Kiera Cass,2012,True,181,4.3,48,307.7,11,Estilo epistolar,Críos
+118,118,118,118,Science Fiction,dystopian fiction,The Testaments,Margaret Atwood,2019,True,480,3.4,71,816.0,39,Estilo epistolar,Adolescentes
+119,119,119,119,Science Fiction,dystopian fiction,The Lathe of Heaven,Ursula K. Le Guin,1971,True,142,4.0,86,241.4,52,Estilo minimalista,Ancianos
+120,120,120,120,Science Fiction,dystopian fiction,Martians,Blythe Woolston,2015,True,290,3.3,88,493.0,4,Narrativa en primera persona,Críos
+121,121,121,121,Science Fiction,dystopian fiction,Utopian Visions and Revisions,Artur Blaim,2016,False,602,3.5,62,1023.4,32,Estilo experimental,Ancianos
+122,122,122,122,Science Fiction,dystopian fiction,The Program,Suzanne Young,2013,True,379,3.5,64,644.3,33,Narrativa en tercera persona,Adulto
+123,123,123,123,Science Fiction,dystopian fiction,Among the Barons (Shadow Children),Margaret Peterson Haddix,2004,False,313,3.7,47,532.1,25,Narrativa en segunda persona,Adolescentes
+124,124,124,124,Science Fiction,dystopian fiction,Among the Imposters,Margaret Peterson Haddix,2002,False,656,3.9,100,1115.2,47,Narrativa en primera persona,Críos
+125,125,125,125,Science Fiction,cyberpunk,Ready Player One,Ernest Cline,2008,True,1,3.8,80,1.7,46,Estilo experimental,Críos
+126,126,126,126,Science Fiction,cyberpunk,Stations of the Tide,Michael Swanwick,1991,True,313,3.4,56,532.1,12,Estilo experimental,Críos
+127,127,127,127,Science Fiction,cyberpunk,Synners,Pat Cadigan,1991,True,244,3.3,48,414.8,11,Narrativa en primera persona,Críos
+128,128,128,128,Science Fiction,cyberpunk,Trouble and her friends,Melissa Scott,1994,True,581,2.8,83,987.7,33,Narrativa en tercera persona,Adolescentes
+129,129,129,129,Science Fiction,cyberpunk,Opening Moves,Cosimo Yap,2016,False,230,3.3,23,391.0,1,Estilo epistolar,Ancianos
+130,130,130,130,Science Fiction,cyberpunk,Mirrorshades,Bruce Sterling,1986,True,233,3.1,17,396.1,35,Narrativa en tercera persona,Críos
+131,131,131,131,Science Fiction,cyberpunk,Jacking in to the Matrix franchise,Matthew Kapell,2004,True,617,3.9,46,1048.9,35,Estilo experimental,Ancianos
+132,132,132,132,Science Fiction,cyberpunk,Crystal Society,Max Harms,2016,False,504,3.4,40,856.8,52,Estilo descriptivo,Críos
+133,133,133,133,Science Fiction,cyberpunk,The Lost Thorn,Joshua P. Aguayo,2015,False,294,3.1,69,499.8,39,Narrativa en segunda persona,Críos
+134,134,134,134,Science Fiction,cyberpunk,Crashcourse,Wilhelmina Baird,1993,True,391,3.5,98,664.6999999999999,1,Estilo epistolar,Críos
+135,135,135,135,Science Fiction,cyberpunk,"Xenon, Volume 1",Masaomi Kanzaki,1996,False,354,2.9,75,601.8,16,Estilo minimalista,Críos
+136,136,136,136,Science Fiction,cyberpunk,Cyberpunk 2.0.2.0.,Michael Pondsmith,1990,False,149,3.9,57,253.3,37,Estilo descriptivo,Ancianos
+137,137,137,137,Fantasy,high fantasy,Pawn of Prophecy,David Eddings,1982,True,546,2.8,37,928.2,20,Narrativa en segunda persona,Críos
+138,138,138,138,Fantasy,high fantasy,The Way of Kings,Brandon Sanderson,2010,True,408,3.2,48,693.6,1,Narrativa en tercera persona,Críos
+139,139,139,139,Fantasy,high fantasy,Heir of Fire,Sarah J. Maas,2014,True,526,3.2,36,894.1999999999999,23,Monólogo interior,Ancianos
+140,140,140,140,Fantasy,high fantasy,Words of Radiance,Brandon Sanderson,2012,True,355,3.4,69,603.5,49,Monólogo interior,Adulto
+141,141,141,141,Fantasy,high fantasy,Queen of Shadows,Sarah J. Maas,2015,True,492,3.4,36,836.4,32,Estilo minimalista,Adulto-Joven
+142,142,142,142,Fantasy,high fantasy,Empire of Storms,Sarah J. Maas,2016,True,222,3.0,58,377.4,40,Narrativa en tercera persona,Adulto-Joven
+143,143,143,143,Fantasy,high fantasy,The Girl Who Drank the Moon,Kelly Regan Barnhill,2016,True,461,3.8,61,783.6999999999999,34,Narrativa en primera persona,Adulto-Joven
+144,144,144,144,Fantasy,high fantasy,Final Strife,Saara El-Arifi,2022,False,450,3.4,47,765.0,17,Estilo minimalista,Adulto
+145,145,145,145,Fantasy,high fantasy,The Kinshield Legacy,K. C. May,2005,False,475,4.0,51,807.5,20,Narrativa en segunda persona,Críos
+146,146,146,146,Fantasy,high fantasy,Ruinsong,Julia Ember,2020,False,285,3.5,73,484.5,40,Monólogo interior,Críos
+147,147,147,147,Fantasy,high fantasy,"Memories of Ice (The Malazan Book of the Fallen, Book 3)",Steven Erikson,2005,False,361,3.8,69,613.6999999999999,26,Monólogo interior,Críos
+148,148,148,148,Fantasy,high fantasy,The Crippled God,Steven Erikson,2011,False,160,3.7,50,272.0,36,Narrativa en segunda persona,Ancianos
+149,149,149,149,Fantasy,low fantasy,Wicked Fox,Kat Cho,2019,False,248,3.8,64,421.6,31,Narrativa en primera persona,Ancianos
+150,150,150,150,Fantasy,urban fantasy,American Gods,Neil Gaiman,2001,True,436,3.4,69,741.1999999999999,32,Estilo epistolar,Ancianos
+151,151,151,151,Fantasy,urban fantasy,"Dead Until Dark (Sookie Stackhouse, #1)",Charlaine Harris,2001,True,172,3.3,64,292.4,51,Estilo epistolar,Ancianos
+152,152,152,152,Fantasy,urban fantasy,Storm Front,Jim Butcher,1997,True,313,3.7,21,532.1,45,Estilo descriptivo,Adulto
+153,153,153,153,Fantasy,urban fantasy,Fool Moon,Jim Butcher,2001,True,291,2.5,42,494.7,21,Monólogo interior,Adulto-Joven
+154,154,154,154,Fantasy,urban fantasy,La Veggente (Hunting Fear),Kay Hooper,2004,True,400,3.8,65,680.0,1,Narrativa en segunda persona,Críos
+155,155,155,155,Fantasy,urban fantasy,Small favor,Jim Butcher,2008,True,448,3.6,44,761.6,26,Narrativa en primera persona,Adolescentes
+156,156,156,156,Fantasy,urban fantasy,"The Wood Queen (The Iron Witch Trilogy, Book 2)",Karen Mahoney,2012,True,451,3.5,54,766.6999999999999,40,Monólogo interior,Adulto-Joven
+157,157,157,157,Fantasy,urban fantasy,Vampire Academy,Richelle Mead,2008,False,282,4.0,38,479.4,20,Estilo epistolar,Ancianos
+158,158,158,158,Fantasy,urban fantasy,The Everborn,Nicholas Grabowsky,2002,False,537,3.5,38,912.9,28,Estilo minimalista,Adulto
+159,159,159,159,Fantasy,urban fantasy,This Poison Heart,Kalynn Bayron,2021,False,339,3.5,74,576.3,1,Narrativa en tercera persona,Adolescentes
+160,160,160,160,Fantasy,urban fantasy,Feverborn,Karen Marie Moning,2008,True,311,4.0,82,528.6999999999999,10,Narrativa en tercera persona,Adulto
+161,161,161,161,Fantasy,urban fantasy,Novels (American Gods / Anansi Boys),Neil Gaiman,2006,True,353,4.0,15,600.1,37,Estilo descriptivo,Adulto
+162,162,162,162,Adventure,pirate,ONE PIECE 1,Eiichiro Oda,1997,True,226,3.7,78,384.2,42,Estilo experimental,Adolescentes
+163,163,163,163,Adventure,pirate,The Tudor navy,Arthur Nelson,2001,True,181,4.7,55,307.7,22,Narrativa en primera persona,Adulto-Joven
+164,164,164,164,Adventure,pirate,Under the Mistletoe,Sara Orwig,1993,True,504,3.3,67,856.8,31,Estilo epistolar,Adulto-Joven
+165,165,165,165,Adventure,pirate,LiTTscapes - Landscapes of Fiction from Trinidad and Tobago,Kris Rampersad,2012,False,323,2.8,44,549.1,8,Estilo epistolar,Adulto-Joven
+166,166,166,166,Adventure,pirate,Quelch's gold,Clifford Beal,2007,True,220,3.4,44,374.0,11,Estilo minimalista,Adulto
+167,167,167,167,Adventure,pirate,For the Love of a Pirate,Edith Layton,2006,True,597,3.4,64,1014.9,17,Narrativa en tercera persona,Adulto-Joven
+168,168,168,168,Adventure,pirate,In Your Arms,Rosemary Rogers,1999,True,183,3.3,33,311.1,52,Narrativa en primera persona,Adulto
+169,169,169,169,Adventure,pirate,Ecstasy's Conquest,Kay McMahon,1984,True,205,3.0,42,348.5,24,Estilo minimalista,Críos
+170,170,170,170,Adventure,pirate,Silk and Splendour,Ellen Tanner Marsh,1986,True,319,2.5,93,542.3,29,Narrativa en segunda persona,Ancianos
+171,171,171,171,Adventure,pirate,Early West Carroll Parish Louisiana Marriage Index 1877-1903+Book E,Nicholas Russell Murray,1980,False,369,3.2,62,627.3,39,Estilo experimental,Adolescentes
+172,172,172,172,Adventure,pirate,"A General History of the Pirates, Vol II",Philip Gosse,1927,False,205,3.6,64,348.5,32,Monólogo interior,Ancianos
+173,173,173,173,Adventure,pirate,Onyx Rising Deja vu,Marti Melville,2015,False,255,3.5,66,433.5,15,Narrativa en tercera persona,Adolescentes
+174,174,174,174,Adventure,travel,Adventures of Huckleberry Finn,Mark Twain,1707,True,243,3.9,53,413.1,1,Estilo epistolar,Críos
+175,175,175,175,Adventure,travel,"Frankenstein or, The Modern Prometheus",Mary Wollstonecraft Shelley,1818,True,536,3.3,39,911.2,14,Estilo minimalista,Adulto-Joven
+176,176,176,176,Adventure,travel,A Connecticut Yankee in King Arthur's Court,Mark Twain,1889,True,475,3.9,48,807.5,3,Narrativa en primera persona,Ancianos
+177,177,177,177,Adventure,travel,Three men in a boat (to say nothing of the dog),Jerome Klapka Jerome,1889,True,211,3.9,66,358.7,43,Narrativa en segunda persona,Adulto
+178,178,178,178,Adventure,travel,Voyage Out,Virginia Woolf,1915,True,282,4.8,70,479.4,36,Estilo descriptivo,Adolescentes
+179,179,179,179,Adventure,travel,Heart of Darkness,Joseph Conrad,1899,True,594,4.1,69,1009.8,27,Estilo experimental,Críos
+180,180,180,180,Adventure,travel,Roughing It,Mark Twain,1872,True,244,3.6,15,414.8,35,Narrativa en primera persona,Adulto-Joven
+181,181,181,181,Adventure,travel,Os Lusíadas,Luís de Camões,1572,True,262,3.3,67,445.4,1,Monólogo interior,Adulto
+182,182,182,182,Adventure,travel,Lord Jim,Joseph Conrad,1900,True,383,4.0,35,651.1,48,Estilo epistolar,Adulto-Joven
+183,183,183,183,Adventure,travel,Tom Sawyer Abroad,Mark Twain,1894,True,554,3.3,55,941.8,10,Narrativa en segunda persona,Adulto-Joven
+184,184,184,184,Adventure,travel,Le Tour du Monde en Quatre-Vingts Jours,Jules Verne,1873,True,878,3.6,34,1492.6,1,Estilo descriptivo,Adulto
+185,185,185,185,Adventure,travel,Martin Chuzzlewit,Charles Dickens,1,True,342,2.9,43,581.4,20,Monólogo interior,Adolescentes
+186,186,186,186,Adventure,exploration,Contact,Carl Sagan,1980,True,577,3.1,73,980.9,24,Monólogo interior,Adulto
+187,187,187,187,Adventure,exploration,The life and voyages of Christopher Columbus,Washington Irving,1800,True,580,3.8,40,986.0,17,Estilo descriptivo,Adulto
+188,188,188,188,Adventure,exploration,Diario,Christopher Columbus,1827,True,424,4.1,30,720.8,1,Monólogo interior,Adolescentes
+189,189,189,189,Adventure,exploration,Theme Sets. Ice,National Geographic Learning,2006,True,378,3.3,30,642.6,35,Narrativa en segunda persona,Ancianos
+190,190,190,190,Adventure,exploration,La ciudad de las bestias,Isabel Allende,2002,True,188,4.2,45,319.6,3,Estilo descriptivo,Adulto-Joven
+191,191,191,191,Adventure,exploration,"2010, odyssey two",Arthur C. Clarke,1982,True,145,3.4,55,246.5,15,Estilo descriptivo,Adolescentes
+192,192,192,192,Adventure,exploration,Le città invisibili,Italo Calvino,1972,True,343,4.2,66,583.1,32,Monólogo interior,Ancianos
+193,193,193,193,Adventure,exploration,A History of US-All the People 1945-1996 #10,Joy Hakim,1993,True,483,4.7,63,821.1,35,Estilo minimalista,Adulto
+194,194,194,194,Adventure,exploration,The Magic School Bus,Joanna Cole,1994,True,337,3.0,38,572.9,28,Narrativa en tercera persona,Ancianos
+195,195,195,195,Adventure,exploration,3001,Arthur C. Clarke,1997,True,511,3.2,39,868.6999999999999,28,Monólogo interior,Ancianos
+196,196,196,196,Adventure,exploration,Universe,Roger A. Freedman,2001,True,316,3.6,73,537.1999999999999,45,Estilo descriptivo,Adolescentes
