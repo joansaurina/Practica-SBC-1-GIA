@@ -5239,7 +5239,6 @@
 
 )
 
-
 (defrule preferencias-recopilacion::inicial "Regla inicial para indicar que se estan procesando sus datos"
     ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
     =>
@@ -5250,75 +5249,150 @@
     (printout t".........................................................." crlf)
 )
 
-(defrule preferencias-recopilacion::anadir-libros "Se añaden todos los libros"
+(defrule preferencias-recopilacion::anadir-libro "Regla para crear una instancia de Sugerencia por cada libro."
     ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
-	=>
-    (printout t "Entrando todos los libros..." crlf)
-    (printout t crlf)
-	(bind $?libros (find-all-instances ((?inst Libro)) TRUE))
-	(progn$ (?libro ?libros)
-        (bind ?nombrelibro (send ?libro get-nombre))
-		(make-instance (sym-cat Libro_sugerencia- (gensym)) of Sugerencia (nombre ?nombrelibro) (calificacion 0))
-	)	
-)
-
-(defrule preferencias-recopilacion::velocidad_lectura "Regla para determinar la velocidad de lectura del usuario"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+	?l <- (object (is-a Libro) (nombre ?nombrelibro))
     =>
-    (if (<= ?tiempo_lectura 66)
-        then (bind ?velocidad "rapida")
-        else (if (and (> ?tiempo_lectura 66) (<= ?tiempo_lectura 102))
-                then (bind ?velocidad "media")
-                else (bind ?velocidad "lenta")
-        )
-    )
-    (assert (velocidad_lectura (velocidad ?velocidad)))
-    (printout t "Determinando su velocidad de lectura..." crlf)
-    (printout t crlf)
+    ;make instance of sugerencia with whichever nameusing symcat:
+    (make-instance (gensym*) of Sugerencia (nombre ?nombrelibro) (calificacion 0) (argumento ""))
+
 )
 
-(defrule preferencias-recopilacion::grupo_edad "Regla para determinar el grupo de edad del usuario"
+(defrule preferencias-recopilacion::velocidad_lectura-rapida "Regla para determinar la velocidad de lectura del usuario-rapida"
+    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+    (test (<= ?tiempo_lectura 66))
+    =>
+    (bind ?velocidad "rapida")
+    (assert (velocidad_lectura (velocidad ?velocidad))) 
+)
+
+(defrule preferencias-recopilacion::velocidad_lectura-media "Regla para determinar la velocidad de lectura del usuario-media"
+    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+    (test (and (> ?tiempo_lectura 66) (<= ?tiempo_lectura 102)))
+    =>
+    (bind ?velocidad "media")
+    (assert (velocidad_lectura (velocidad ?velocidad)))  
+)
+
+(defrule preferencias-recopilacion::velocidad_lectura-lenta "Regla para determinar la velocidad de lectura del usuario-lenta"
+    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+    (test (> ?tiempo_lectura 102))
+    =>
+    (bind ?velocidad "lenta")
+    (assert (velocidad_lectura (velocidad ?velocidad)))  
+)
+
+(defrule preferencias-recopilacion::grupo_edad-crios "Regla para determinar el grupo de edad del usuario-críos"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
+    (test (and (>= ?edad 1) (<= ?edad 12)))
     =>
-    (if (and (>= ?edad 1) (<= ?edad 12))
-        then (bind ?grupo "Críos")
-        else (if (and (> ?edad 12) (<= ?edad 20))
-                then (bind ?grupo "Adolescentes")
-                else (if (and (> ?edad 20) (<= ?edad 25))
-                        then (bind ?grupo "Adulto-Joven")
-                        else (if (and (> ?edad 25) (<= ?edad 60))
-                                then (bind ?grupo "Adulto")
-                                else (bind ?grupo "Ancianos")
-                        )
-                )
-        )
-    )
+    (bind ?grupo "Críos")
     (assert (grupo_edad (grupo ?grupo)))
-    (printout t "Determinando su grupo de edad..." crlf)
-    (printout t crlf)
 )
 
-(defrule preferencias-recopilacion::calcular_paginas "Regla para calcular el numero de paginas que puede leer el usuario"
+(defrule preferencias-recopilacion::grupo_edad-adolescentes "Regla para determinar el grupo de edad del usuario-adolescentes"
+    ?u <- (object (is-a Usuario) (edad ?edad))
+    (velocidad_lectura (velocidad ?velocidad))
+    (test (and (> ?edad 12) (<= ?edad 20)))
+    =>
+    (bind ?grupo "Adolescentes")
+    (assert (grupo_edad (grupo ?grupo)))
+)
+
+(defrule preferencias-recopilacion::grupo_edad-adulto-joven "Regla para determinar el grupo de edad del usuario-adulto-joven"
+    ?u <- (object (is-a Usuario) (edad ?edad))
+    (velocidad_lectura (velocidad ?velocidad))
+    (test (and (> ?edad 20) (<= ?edad 35)))
+    =>
+    (bind ?grupo "Adulto-Joven")
+    (assert (grupo_edad (grupo ?grupo)))
+)
+
+(defrule preferencias-recopilacion::grupo_edad-adulto "Regla para determinar el grupo de edad del usuario-adulto"
+    ?u <- (object (is-a Usuario) (edad ?edad))
+    (velocidad_lectura (velocidad ?velocidad))
+    (test (and (> ?edad 35) (<= ?edad 65)))
+    =>
+    (bind ?grupo "Adulto")
+    (assert (grupo_edad (grupo ?grupo)))
+)
+
+(defrule preferencias-recopilacion::grupo_edad-ancianos "Regla para determinar el grupo de edad del usuario-ancianos"
+    ?u <- (object (is-a Usuario) (edad ?edad))
+    (velocidad_lectura (velocidad ?velocidad))
+    (test (and (> ?edad 65) (<= ?edad 100)))
+    =>
+    (bind ?grupo "Ancianos")
+    (assert (grupo_edad (grupo ?grupo)))
+)
+
+(defrule preferencias-recopilacion::calcular_paginas-rapida "Regla para calcular el numero de paginas que puede leer el usuario-rapida"
     ?u <- (object (is-a Usuario) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
     (velocidad_lectura (velocidad ?velocidad))
     (grupo_edad (grupo ?grupo))
+    (test (eq ?velocidad "rapida"))
     =>
-    (if (eq ?velocidad "rapida")
-        then (bind ?paginas (* ?tiempo_diario ?tiempo_total 7 0.9))
-        else (if (eq ?velocidad "media")
-                then (bind ?paginas (* ?tiempo_diario ?tiempo_total 7 0.59))
-                else (bind ?paginas (* ?tiempo_diario ?tiempo_total 7 0.3))
-        )
-    )
+    (bind ?paginas (* ?tiempo_diario ?tiempo_total 7 0.9))
+        
     (assert (paginas (num_paginas ?paginas)))
-    (printout t "Calculando el numero de paginas que puede leer..." crlf)
-    (printout t crlf)
+    (focus datos-procesamiento)
+)
 
+(defrule preferencias-recopilacion::calcular_paginas-media "Regla para calcular el numero de paginas que puede leer el usuario-media"
+    ?u <- (object (is-a Usuario) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
+    (velocidad_lectura (velocidad ?velocidad))
+    (grupo_edad (grupo ?grupo))
+    (test (eq ?velocidad "media"))
+    =>
+    (bind ?paginas (* ?tiempo_diario ?tiempo_total 7 0.59))
+    (assert (paginas (num_paginas ?paginas)))
+    (focus datos-procesamiento)
+)
+
+(defrule preferencias-recopilacion::calcular_paginas-lenta "Regla para calcular el numero de paginas que puede leer el usuario-lenta"
+    ?u <- (object (is-a Usuario) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
+    (velocidad_lectura (velocidad ?velocidad))
+    (grupo_edad (grupo ?grupo))
+    (test (eq ?velocidad "lenta"))
+    =>
+    (bind ?paginas (* ?tiempo_diario ?tiempo_total 7 0.3))
+    (assert (paginas (num_paginas ?paginas)))
     (focus datos-procesamiento)
 )
 
 ;;; Datos-procesamiento -------------------------------------------------
+
+(defrule datos-procesamiento::calificacion-edad-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad"
+    ?e <- (grupo_edad (grupo ?grupo))
+    ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (test (eq ?grupo ?publico_libro))
+    (not (valorando-edad ?nombrelibro))
+    =>
+    (bind ?c (+ ?c 15))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro esta dirigido al grupo de edad que el usuario ha indicado: +15 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-edad ?nombrelibro))
+)
+
+(defrule datos-procesamiento::calificacion-edad-no-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad, no exacta."
+    ?e <- (grupo_edad (grupo ?grupo))
+    ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    ?llista <- (lista-edades (edades $?edades))
+    (test (= (abs (- (member$ ?grupo $?edades) (member$ ?publico_libro $?edades))) 1))
+    (not (valorando-edad ?nombrelibro))
+    =>
+    (bind ?c (+ ?c 5))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro esta dirigido a un grupo de edad cercano al que el usuario ha indicado: +5 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-edad ?nombrelibro))
+)
 
 (defrule datos-procesamiento::calificacion-paginas: "Regla para calcular la calificacion de los libros segun el numero de paginas"
     ?p <- (paginas (num_paginas ?paginas))
@@ -5343,28 +5417,6 @@
     (assert (valorado-paginas ?nombrelibro))
 )
 
-
-(defrule datos-procesamiento::calificacion-edad-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad"
-    ?e <- (grupo_edad (grupo ?grupo))
-    ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
-    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c))
-    (test (eq ?nombrelibro ?nombresugerencia))
-    (test (eq ?grupo ?publico_libro))
-    =>
-    (bind ?c (+ ?c 15))
-)
-
-(defrule datos-procesamiento::calificacion-edad-no-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad, no exacta."
-    ?e <- (grupo_edad (grupo ?grupo))
-    ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
-    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c))
-    (test (eq ?nombrelibro ?nombresugerencia))
-    ?llista <- (lista-edades (edades $?edades))
-    (test (= (abs (- (member$ ?grupo $?edades) (member$ ?publico_libro $?edades))) 1))
-
-    =>
-    (bind ?c (+ ?c 5))
-)
 
 ;;; Función de Bienvenida -------------------------------------------------------------
 (defrule MAIN::initialRule "Regla inicial"
