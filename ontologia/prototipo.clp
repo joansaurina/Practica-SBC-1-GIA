@@ -18,7 +18,7 @@
 ;;; características e intereses proporcionados.
 ;;; ---------------------------------------------------------------------
 
-
+(defglobal ?*lista-sugerencias* = (create$))
 ;;; Classes----------------------------------------------------------------
 
 (defclass Autor
@@ -85,16 +85,13 @@
     (slot modas
         (type SYMBOL)
         (create-accessor read-write))
-    (slot minutos_lectura_diarios
-        (type INTEGER)
-        (create-accessor read-write))
     (slot edad
         (type INTEGER)                          
         (create-accessor read-write))
     (slot tiempo_lectura
         (type INTEGER)
         (create-accessor read-write))
-    (slot decada
+    (multislot decada
         (type INTEGER)                          
         (create-accessor read-write))
 )
@@ -3086,7 +3083,6 @@
             (publico "Adolescentes")
         )
 
-        
         ([Autor_Class_0] of Autor
             (escribe_genero [Genero_Class_3])
             (escribe_subgenero [Subgenero_Class_9])
@@ -4937,7 +4933,6 @@
 )
 
 
-
 ;;; Declaracion de modulos ------------------------------------------------------------------
 (defmodule MAIN (export ?ALL))
 
@@ -4950,6 +4945,12 @@
 	(import MAIN ?ALL)
 	(import preferencias-recopilacion deftemplate ?ALL)
 	(export ?ALL)
+)
+
+(defmodule computar-puntuaciones
+    (import MAIN ?ALL)
+    (import preferencias-recopilacion deftemplate ?ALL)
+    (export ?ALL)
 )
 
 (defmodule generacion-solucion-abstracta
@@ -4976,14 +4977,14 @@
     (slot grupo (type STRING))
 )
 
-(deftemplate datos-procesamiento::lista-edades
+(deftemplate computar-puntuaciones::lista-edades
     (multislot edades (type STRING))
 )
 
 
 ;;; Declaracion de facts -------------------------------------------------------------------
 
-(deffacts datos-procesamiento::edad
+(deffacts computar-puntuaciones::edad
     (lista-edades (edades "Críos" "Adolescentes" "Adulto-Joven" "Adulto" "Ancianos"))
 )
 
@@ -4992,7 +4993,6 @@
 
 ; Preferencias-recopilacion -------------------------------------------------
 
-;Usuario preguntas personales
 (defrule preferencias-recopilacion::establecer_nombre "Regla para establecer el nombre del usuario"
     =>
     (printout t "Por favor, introduzca su nombre: ")
@@ -5002,7 +5002,7 @@
 )
 
 (defrule preferencias-recopilacion::establecer_edad "Regla para establecer la edad del usuario ya creado"
-    ?u <- (object (is-a Usuario) (nombre ?nombre))
+    ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, introduzca su edad: ")
     (bind ?edad (read))
@@ -5014,7 +5014,7 @@
 )
 
 (defrule preferencias-recopilacion::establecer_tiempo_lectura "Regla para establecer el tiempo de lectura del usuario diario"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad))
+    ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, introduzca el tiempo que dedica a la lectura (en minutos) cada dia: ")
     (bind ?tiempo_diario (read))
@@ -5026,7 +5026,7 @@
 )
 
 (defrule preferencias-recopilacion::tiempo_lectura_total "Regla para medir tiempo que quiere dedicar a leer el usuario"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario))
+    ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, diga el tiempo que dedicaria como maximo para leer un libro (en semanas):  ")
     (bind ?tiempo_total (read))
@@ -5038,7 +5038,7 @@
     (printout t "" crlf)
 )
 (defrule preferencias-recopilacion::lugar_lectura "Regla para establecer el tiempo de lectura del usuario diario (opciones)"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
+    ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, seleccione el lugar donde suele leer: " crlf)
     (printout t " Opciones: 1.Transporte publico  2.Casa 3.Parque 4.Cafeteria 5.Cualquiera" crlf)
@@ -5064,7 +5064,7 @@
 )
 
 (defrule preferencias-recopilacion::momento "Regla para ver el momento de lectura"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura))
+    ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, seleccione el momento en el que suele leer: " crlf)
     (printout t "Opciones: 1.Manana 2.Tarde 3.Noche 4.Cualquiera" crlf)
@@ -5089,7 +5089,7 @@
 )
 
 (defrule preferencias-recopilacion::modas "Regla para ver si se fija en las modas"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento))
+    ?u <- (object (is-a Usuario))
     =>
     (printout t "Usted se fija en las modas: " crlf)
     (printout t "Opciones: 1.Si 2.No" crlf)
@@ -5112,7 +5112,7 @@
 )
 
 (defrule preferencias-recopilacion::valoracion "Regla para ver si se fija en las valoraciones"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas))
+    ?u <- (object (is-a Usuario))
     =>
     (printout t "Usted se fija en las valoraciones de los libros que lee: " crlf)
     (printout t "Opciones: 1.Si 2.No" crlf)
@@ -5136,11 +5136,72 @@
 
 
 
+(defrule preferencias-recopilacion::decada "Regla para ver si tiene alguna preferencia de decada"
+    ?u <- (object (is-a Usuario))
+    =>
+    
+    (printout t "Te gusta leer libros de una decada en especifico?" crlf)
+    (printout t "(Selecciona una o mas, ingresa el numero correspondiente a cada decada)" crlf)
+    (printout t "1. 1900" crlf)
+    (printout t "2. 1910" crlf)
+    (printout t "3. 1920" crlf)
+    (printout t "4. 1930" crlf)
+    (printout t "5. 1940" crlf)
+    (printout t "6. 1950" crlf)
+    (printout t "7. 1960" crlf)
+    (printout t "8. 1970" crlf)
+    (printout t "9. 1980" crlf)
+    (printout t "10. 1990" crlf)
+    (printout t "11. 2000" crlf)
+    (printout t "12. 2010" crlf)
+    (printout t "0. Terminar la seleccion" crlf)
+   
+   (bind ?decada_fav (create$))
+   (while TRUE
+       (printout t "Ingresa el numero de la decada que te gusta (o 0 para terminar): ")
+       (bind ?opcion (read))
+       (bind ?decada "")
+       (switch ?opcion
+            (case 1 then (bind ?decada 1900))
+            (case 2 then (bind ?decada 1910))
+            (case 3 then (bind ?decada 1920))
+            (case 4 then (bind ?decada 1930))
+            (case 5 then (bind ?decada 1940))
+            (case 6 then (bind ?decada 1950))
+            (case 7 then (bind ?decada 1960))
+            (case 8 then (bind ?decada 1970))
+            (case 9 then (bind ?decada 1980))
+            (case 10 then (bind ?decada 1990))
+            (case 11 then (bind ?decada 2000))
+            (case 12 then (bind ?decada 2010))
+        
+        )
+            
+       (if (and (numberp ?opcion) (> ?opcion 0) (<= ?opcion 12))
+           then (if (not (member$ ?decada ?decada_fav))
+               then (bind ?decada_fav (create$ ?decada_fav ?decada))
+               else (printout t "Ya seleccionaste esta decada. Por favor, selecciona una diferente." crlf)
+           )
+           else (if (= ?opcion 0)
+                   then (break)
+                   else (printout t "Opción invalida. Por favor, selecciona un numero valido." crlf)
+           )
+       )
+   )    
+   
+    (if (eq (length$ ?decada_fav) 0)
+    then
+    (modify-instance ?u (decada "Cualquiera"))
+    else
+    (modify-instance ?u (decada ?decada_fav))
+)
+)
 
 
 (defrule preferencias-recopilacion::genero_fav "Regla para escoger sus generos favoritos"
-   ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion))
+   ?u <- (object (is-a Usuario))
    =>
+   (printout t crlf)
    (printout t "Que generos te gusta leer?" crlf)
    (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada genero)" crlf)
    (printout t "1. Realistic" crlf)
@@ -5188,11 +5249,11 @@
 )
 
 (defrule preferencias-recopilacion::subgeneros-favoritos
-   ?u <- (object (is-a Usuario) (nombre ?nombre) (genero $?genero_fav))
+   ?u <- (object (is-a Usuario) (genero $?genero_fav))
    =>
     (bind ?subgeneros (find-all-instances ((?s Subgenero )) (member$ ?s:subgenero_de ?genero_fav)))
-
-    (printout t "Que subgeneros te gusta leer?" crlf)
+    (printout t crlf)
+    (printout t "Que subgeneros de los generos que has seleccionado anteriormente te gusta leer?" crlf)
     (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada subgenero)" crlf)
 
     (bind ?i 1)
@@ -5231,8 +5292,9 @@
 )
        
 (defrule preferencias-recopilacion::tiempo_lectura "Regla para medir el tiempo de lectura del usuario"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav))
+    ?u <- (object (is-a Usuario))
     =>
+    (printout t crlf)
     (printout t "Por favor, lea el siguiente parrafo cronometrando cuando ha tardado: " crlf)
     (printout t "" crlf)
     (printout t "Titulo: Las Estrellas de la Eternidad" crlf)
@@ -5255,8 +5317,21 @@
 
 )
 
-(defrule preferencias-recopilacion::inicial "Regla inicial para indicar que se estan procesando sus datos"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+(defrule preferencias-recopilacion::a_datos "Regla para pasar al modulo datos procesamiento"
+    (declare (salience -100))
+    =>
+    (printout t".........................................................." crlf)
+    (printout t crlf)
+    (printout t "Recopilando sus datos..." crlf)
+    (printout t crlf)
+    (focus datos-procesamiento)
+)
+
+;;; Datos-procesamiento -------------------------------------------------
+
+
+(defrule datos-procesamiento::inicial "Regla inicial para indicar que se estan procesando sus datos"
+    (declare (salience 100))
     =>
     (printout t".........................................................." crlf)
     (printout t crlf)
@@ -5265,39 +5340,31 @@
     (printout t".........................................................." crlf)
 )
 
-(defrule preferencias-recopilacion::anadir-libro "Regla para crear una instancia de Sugerencia por cada libro."
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
-	?l <- (object (is-a Libro) (nombre ?nombrelibro))
-    =>
-    (make-instance (gensym*) of Sugerencia (nombre ?nombrelibro) (calificacion 0) (argumento ""))
-
-)
-
-(defrule preferencias-recopilacion::velocidad_lectura-rapida "Regla para determinar la velocidad de lectura del usuario-rapida"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+(defrule datos-procesamiento::velocidad_lectura-rapida "Regla para determinar la velocidad de lectura del usuario-rapida"
+    ?u <- (object (is-a Usuario) (tiempo_lectura ?tiempo_lectura))
     (test (<= ?tiempo_lectura 66))
     =>
     (bind ?velocidad "rapida")
     (assert (velocidad_lectura (velocidad ?velocidad))) 
 )
 
-(defrule preferencias-recopilacion::velocidad_lectura-media "Regla para determinar la velocidad de lectura del usuario-media"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+(defrule datos-procesamiento::velocidad_lectura-media "Regla para determinar la velocidad de lectura del usuario-media"
+    ?u <- (object (is-a Usuario) (tiempo_lectura ?tiempo_lectura))
     (test (and (> ?tiempo_lectura 66) (<= ?tiempo_lectura 102)))
     =>
     (bind ?velocidad "media")
     (assert (velocidad_lectura (velocidad ?velocidad)))  
 )
 
-(defrule preferencias-recopilacion::velocidad_lectura-lenta "Regla para determinar la velocidad de lectura del usuario-lenta"
-    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
+(defrule datos-procesamiento::velocidad_lectura-lenta "Regla para determinar la velocidad de lectura del usuario-lenta"
+    ?u <- (object (is-a Usuario) (tiempo_lectura ?tiempo_lectura))
     (test (> ?tiempo_lectura 102))
     =>
     (bind ?velocidad "lenta")
     (assert (velocidad_lectura (velocidad ?velocidad)))  
 )
 
-(defrule preferencias-recopilacion::grupo_edad-crios "Regla para determinar el grupo de edad del usuario-críos"
+(defrule datos-procesamiento::grupo_edad-crios "Regla para determinar el grupo de edad del usuario-críos"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
     (test (and (>= ?edad 1) (<= ?edad 12)))
@@ -5306,7 +5373,7 @@
     (assert (grupo_edad (grupo ?grupo)))
 )
 
-(defrule preferencias-recopilacion::grupo_edad-adolescentes "Regla para determinar el grupo de edad del usuario-adolescentes"
+(defrule datos-procesamiento::grupo_edad-adolescentes "Regla para determinar el grupo de edad del usuario-adolescentes"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
     (test (and (> ?edad 12) (<= ?edad 20)))
@@ -5315,7 +5382,7 @@
     (assert (grupo_edad (grupo ?grupo)))
 )
 
-(defrule preferencias-recopilacion::grupo_edad-adulto-joven "Regla para determinar el grupo de edad del usuario-adulto-joven"
+(defrule datos-procesamiento::grupo_edad-adulto-joven "Regla para determinar el grupo de edad del usuario-adulto-joven"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
     (test (and (> ?edad 20) (<= ?edad 35)))
@@ -5324,7 +5391,7 @@
     (assert (grupo_edad (grupo ?grupo)))
 )
 
-(defrule preferencias-recopilacion::grupo_edad-adulto "Regla para determinar el grupo de edad del usuario-adulto"
+(defrule datos-procesamiento::grupo_edad-adulto "Regla para determinar el grupo de edad del usuario-adulto"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
     (test (and (> ?edad 35) (<= ?edad 65)))
@@ -5333,7 +5400,7 @@
     (assert (grupo_edad (grupo ?grupo)))
 )
 
-(defrule preferencias-recopilacion::grupo_edad-ancianos "Regla para determinar el grupo de edad del usuario-ancianos"
+(defrule datos-procesamiento::grupo_edad-ancianos "Regla para determinar el grupo de edad del usuario-ancianos"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
     (test (and (> ?edad 65) (<= ?edad 100)))
@@ -5342,7 +5409,7 @@
     (assert (grupo_edad (grupo ?grupo)))
 )
 
-(defrule preferencias-recopilacion::calcular_paginas-rapida "Regla para calcular el numero de paginas que puede leer el usuario-rapida"
+(defrule datos-procesamiento::calcular_paginas-rapida "Regla para calcular el numero de paginas que puede leer el usuario-rapida"
     ?u <- (object (is-a Usuario) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
     (velocidad_lectura (velocidad ?velocidad))
     (grupo_edad (grupo ?grupo))
@@ -5354,7 +5421,7 @@
     (focus datos-procesamiento)
 )
 
-(defrule preferencias-recopilacion::calcular_paginas-media "Regla para calcular el numero de paginas que puede leer el usuario-media"
+(defrule datos-procesamiento::calcular_paginas-media "Regla para calcular el numero de paginas que puede leer el usuario-media"
     ?u <- (object (is-a Usuario) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
     (velocidad_lectura (velocidad ?velocidad))
     (grupo_edad (grupo ?grupo))
@@ -5365,7 +5432,7 @@
     (focus datos-procesamiento)
 )
 
-(defrule preferencias-recopilacion::calcular_paginas-lenta "Regla para calcular el numero de paginas que puede leer el usuario-lenta"
+(defrule datos-procesamiento::calcular_paginas-lenta "Regla para calcular el numero de paginas que puede leer el usuario-lenta"
     ?u <- (object (is-a Usuario) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total))
     (velocidad_lectura (velocidad ?velocidad))
     (grupo_edad (grupo ?grupo))
@@ -5376,9 +5443,22 @@
     (focus datos-procesamiento)
 )
 
-;;; Datos-procesamiento -------------------------------------------------
+(defrule datos-procesamiento::a_computar "Regla para pasar al modulo computar-puntuaciones"
+    (declare (salience -1000))
+    =>
+    (focus computar-puntuaciones)
+)
 
-(defrule datos-procesamiento::calificacion-edad-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad"
+;;; Computar-puntuaciones -------------------------------------------------
+
+(defrule computar-puntuaciones::anadir-libro "Regla para crear una instancia de Sugerencia por cada libro."
+	?l <- (object (is-a Libro) (nombre ?nombrelibro))
+    =>
+    (make-instance (gensym*) of Sugerencia (nombre ?nombrelibro) (calificacion 0) (argumento ""))
+
+)
+
+(defrule computar-puntuaciones::calificacion-edad-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad"
     ?e <- (grupo_edad (grupo ?grupo))
     ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
@@ -5393,7 +5473,7 @@
     (assert (valorando-edad ?nombrelibro))
 )
 
-(defrule datos-procesamiento::calificacion-edad-no-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad, no exacta."
+(defrule computar-puntuaciones::calificacion-edad-no-exacta: "Regla para calcular la calificacion de los libros segun el grupo de edad, no exacta."
     ?e <- (grupo_edad (grupo ?grupo))
     ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro)(publico ?publico_libro))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
@@ -5409,7 +5489,7 @@
     (assert (valorando-edad ?nombrelibro))
 )
 
-(defrule datos-procesamiento::calificacion-paginas: "Regla para calcular la calificacion de los libros segun el numero de paginas"
+(defrule computar-puntuaciones::calificacion-paginas: "Regla para calcular la calificacion de los libros segun el numero de paginas"
     ?p <- (paginas (num_paginas ?paginas))
     ?l <- (object (is-a Libro) (paginas ?paginas_libro) (nombre ?nombrelibro))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
@@ -5418,13 +5498,12 @@
     (not (valorado-paginas ?nombrelibro))
 
     =>
-    (bind ?diferencia (- ?paginas ?paginas_libro))
+    (bind ?diferencia (abs(- ?paginas ?paginas_libro)))
     (bind ?exponent (* -1 (/ ?diferencia 20))) 
     (bind ?puntuacion (* 15 (exp ?exponent)))
     (bind ?puntuacion (round ?puntuacion))
 
-    (bind $?a (insert$ $?a (+ (length$ $?a) 1) (str-cat "La longitud del libro concuerda con la que el usuario desea leer: " (str-cat ?puntuacion " puntos!."))))
-
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) (str-cat "La longitud del libro concuerda con la que el usuario desea leer: +" (str-cat ?puntuacion " puntos!."))))
 
     (bind ?c (+ ?c ?puntuacion))
 
@@ -5433,7 +5512,7 @@
     (assert (valorado-paginas ?nombrelibro))
 )
 
-(defrule datos-procesamiento::calificacion-momento-noche: "Regla para calcular la calificacion de los libros segun el momento-noche"
+(defrule computar-puntuaciones::calificacion-momento-noche: "Regla para calcular la calificacion de los libros segun el momento-noche"
     ?l <- (object (is-a Libro) (nombre ?nombrelibro) (complejidad ?co))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     ?u <- (object (is-a Usuario) (momento ?momento))
@@ -5450,7 +5529,7 @@
 
 )
 
-(defrule datos-procesamiento::calificacion-momento-tarde: "Regla para calcular la calificacion de los libros segun el momento-tarde"
+(defrule computar-puntuaciones::calificacion-momento-tarde: "Regla para calcular la calificacion de los libros segun el momento-tarde"
     ?l <- (object (is-a Libro) (nombre ?nombrelibro) (complejidad ?co))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     ?u <- (object (is-a Usuario) (momento ?momento))
@@ -5467,7 +5546,7 @@
 
 )
 
-(defrule datos-procesamiento::calificacion-momento-manana: "Regla para calcular la calificacion de los libros segun el momento-manana"
+(defrule computar-puntuaciones::calificacion-momento-manana: "Regla para calcular la calificacion de los libros segun el momento-manana"
     ?l <- (object (is-a Libro) (nombre ?nombrelibro) (complejidad ?co))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     ?u <- (object (is-a Usuario) (momento ?momento))
@@ -5484,18 +5563,67 @@
 
 )
 
-(defrule datos-procesamiento::presentacion-solucion "Regla para pasar al modulo presentacion-solucion"
+(defrule computar-puntuaciones::calificacion-decada-exacta: "Regla para calcular la calificacion de los libros segun la decada-exacta"
+    ?u <- (object (is-a Usuario) (decada ?decada))
+    ?l <- (object (is-a Libro) (nombre ?nombrelibro) (publicacion ?publicacion))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (not (valorando-decada ?nombrelibro))
+    (test (and (>= ?publicacion ?decada) (<= ?publicacion (+ ?decada 9))))
+    =>
+    (bind ?c (+ ?c 15))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro se publico en la decada que el usuario ha indicado: +15 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-decada ?nombrelibro))
+)
+
+(defrule computar-puntuaciones::calificacion-decada-vecina: "Regla para calcular la calificacion de los libros segun la decada-vecina"
+    ?u <- (object (is-a Usuario) (decada ?decada))
+    ?l <- (object (is-a Libro) (nombre ?nombrelibro) (publicacion ?publicacion))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (not (valorando-decada ?nombrelibro))
+    (test (not (and (>= ?publicacion ?decada) (<= ?publicacion (+ ?decada 9)))))
+    (test (or (= ?publicacion (+ ?decada 10)) (= ?publicacion (- ?decada 10))))
+    =>
+    (bind ?c (+ ?c 10))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro se publico en una decada muy cercana a la que el usuario ha indicado: +10 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-decada ?nombrelibro))
+)
+
+(defrule computar-puntuaciones::calificacion-decada-vecina2: "Regla para calcular la calificacion de los libros segun la decada-vecina2"
+    ?u <- (object (is-a Usuario) (decada ?decada))
+    ?l <- (object (is-a Libro) (nombre ?nombrelibro) (publicacion ?publicacion))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (not (valorando-decada ?nombrelibro))
+    (test (not (and (>= ?publicacion ?decada) (<= ?publicacion (+ ?decada 9)))))
+    (test (not (or (= ?publicacion (+ ?decada 10)) (= ?publicacion (- ?decada 10)))))
+    (test (or (= ?publicacion (+ ?decada 20)) (= ?publicacion (- ?decada 20))))
+    =>
+    (bind ?c (+ ?c 5))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro se publico en una decada cercana a la que el usuario ha indicado: +5 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-decada ?nombrelibro))
+)
+
+(defrule computar-puntuaciones::presentacion-solucion "Regla para pasar al modulo presentacion-solucion"
     (declare (salience -1000))
     =>
     (printout t "Buscando los mejores libros para usted..." crlf)
-    (focus presentacion-solucion)
+    (focus generacion-solucion-abstracta)
 )
 
 
-;;; Presentacion-solucion -------------------------------------------------
+;;; Generación de solución abstracta -------------------------------------------------
 
 
-(deffunction presentacion-solucion::ordenar-sugerencias (?lista)
+
+(deffunction generacion-solucion-abstracta::ordenar-sugerencias (?lista)
     (bind ?len (length$ ?lista))
     (loop-for-count (?i 1 (- ?len 1))
         (loop-for-count (?j 1 (- ?len ?i))
@@ -5513,6 +5641,23 @@
     ?lista
 )
 
+
+(defrule generacion-solucion-abstracta::manejar-sugerencias
+    =>
+    (bind ?lista (find-all-instances ((?s Sugerencia)) TRUE))
+    (bind ?lista (generacion-solucion-abstracta::ordenar-sugerencias ?lista))
+    (bind ?*lista-sugerencias* ?lista)
+    
+    (printout t".........................................................." crlf)
+    (printout t crlf)
+    (printout t "Encontrando los mejores libros..." crlf)
+    (printout t crlf)
+    (printout t".........................................................." crlf)
+
+    (focus presentacion-solucion)
+)
+
+;;; Presentación de solución -------------------------------------------------
 
 (deffunction presentacion-solucion::imprimir-top-5 (?lista)
     (bind ?len (min 5 (length$ ?lista)))
@@ -5537,9 +5682,9 @@
 )
 
 (defrule presentacion-solucion::manejar-sugerencias
+
     =>
-    (bind ?lista (find-all-instances ((?s Sugerencia)) TRUE))
-    (bind ?lista (presentacion-solucion::ordenar-sugerencias ?lista))
+    (bind ?lista ?*lista-sugerencias* )
     (presentacion-solucion::imprimir-top-5 ?lista)
 )
 
@@ -5550,7 +5695,7 @@
 	(declare (salience 10))
 	=>
 	(printout t".........................................................." crlf)
-  	(printout t"                       JOANETTu libro ideal                       " crlf)
+  	(printout t"                       Tu libro ideal                       " crlf)
 	(printout t".........................................................." crlf)
   	(printout t crlf)  	
 	(printout t"Bienvenido! A continuacion se le formularan una serie de preguntas para poder recomendarle uno o varios libros acorde a sus preferencias." crlf)
