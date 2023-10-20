@@ -94,7 +94,11 @@
     (slot tiempo_lectura
         (type INTEGER)
         (create-accessor read-write))
+    (slot decada
+        (type INTEGER)                          
+        (create-accessor read-write))
 )
+
 
 (defclass Usuario_pasado
     (is-a Lector)
@@ -5129,6 +5133,10 @@
     (modify-instance ?u (se_fija_valoraciones ?valoracion))
     (printout t "" crlf)
 )
+
+
+
+
 
 (defrule preferencias-recopilacion::genero_fav "Regla para escoger sus generos favoritos"
    ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion))
