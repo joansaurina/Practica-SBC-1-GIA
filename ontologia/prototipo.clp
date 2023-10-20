@@ -5417,6 +5417,56 @@
     (assert (valorado-paginas ?nombrelibro))
 )
 
+(defrule datos-procesamiento::calificacion-momento-noche: "Regla para calcular la calificacion de los libros segun el momento-noche"
+    ?l <- (object (is-a Libro) (nombre ?nombrelibro) (complejidad ?co))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    ?u <- (object (is-a Usuario) (momento ?momento))
+    (test (eq ?momento "Noche"))
+    (test (<= ?co 30))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (not (valorando-momento ?nombrelibro))
+    =>
+    (bind ?c (+ ?c 10))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro se puede leer en el momento que el usuario ha indicado: +10 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-momento ?nombrelibro))
+)
+
+(defrule datos-procesamiento::calificacion-momento-tarde: "Regla para calcular la calificacion de los libros segun el momento-tarde"
+    ?l <- (object (is-a Libro) (nombre ?nombrelibro) (complejidad ?co))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    ?u <- (object (is-a Usuario) (momento ?momento))
+    (test (eq ?momento "Tarde"))
+    (test (and (<= ?co 70) (>= ?co 31)))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (not (valorando-momento ?nombrelibro))
+    =>
+    (bind ?c (+ ?c 10))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro se puede leer en el momento que el usuario ha indicado: +10 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-momento ?nombrelibro))
+)
+
+(defrule datos-procesamiento::calificacion-momento-manana: "Regla para calcular la calificacion de los libros segun el momento-manana"
+    ?l <- (object (is-a Libro) (nombre ?nombrelibro) (complejidad ?co))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
+    ?u <- (object (is-a Usuario) (momento ?momento))
+    (test (eq ?momento "Manana"))
+    (test (>= ?co 70))
+    (test (eq ?nombrelibro ?nombresugerencia))
+    (not (valorando-momento ?nombrelibro))
+    =>
+    (bind ?c (+ ?c 10))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro se puede leer en el momento que el usuario ha indicado: +10 puntos!."))
+    (send ?s put-calificacion ?c)
+    (send ?s put-argumento $?a)
+    (assert (valorando-momento ?nombrelibro))
+)
+
+
+
 
 ;;; Función de Bienvenida -------------------------------------------------------------
 (defrule MAIN::initialRule "Regla inicial"
