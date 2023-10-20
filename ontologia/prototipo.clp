@@ -5171,8 +5171,12 @@
    )    
    
     (bind ?generos (find-all-instances ((?g Genero )) (member$ ?g:nombre ?genero_fav)))
+    (if (eq (length$ ?generos) 0)
+    then
+    (modify-instance ?u (genero "Cualquiera"))
+    else
     (modify-instance ?u (genero ?generos))
-
+)
 )
 
 (defrule preferencias-recopilacion::subgeneros-favoritos
@@ -5210,8 +5214,12 @@
                )
            )
        )
-       
+    (if (eq (length$ ?subgenero_fav) 0)
+    then
+    (modify-instance ?u (subgenero "Cualquiera"))
+    else
     (modify-instance ?u (subgenero ?subgenero_fav))
+)
 )
        
 (defrule preferencias-recopilacion::tiempo_lectura "Regla para medir el tiempo de lectura del usuario"
@@ -5253,7 +5261,6 @@
     ?u <- (object (is-a Usuario) (nombre ?nombre) (edad ?edad) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (lugar ?lugar_lectura) (momento ?momento) (modas ?modas) (se_fija_valoraciones ?valoracion) (genero $?genero_fav) (subgenero $?subgenero_fav) (tiempo_lectura ?tiempo_lectura))
 	?l <- (object (is-a Libro) (nombre ?nombrelibro))
     =>
-    ;make instance of sugerencia with whichever nameusing symcat:
     (make-instance (gensym*) of Sugerencia (nombre ?nombrelibro) (calificacion 0) (argumento ""))
 
 )
@@ -5408,7 +5415,8 @@
     (bind ?puntuacion (* 15 (exp ?exponent)))
     (bind ?puntuacion (round ?puntuacion))
 
-    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "La longitud del libro concuerda con la que el usuario desea leer: +" ?puntuacion " puntos!."))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) (str-cat "La longitud del libro concuerda con la que el usuario desea leer: " (str-cat ?puntuacion " puntos!."))))
+
 
     (bind ?c (+ ?c ?puntuacion))
 
@@ -5431,6 +5439,7 @@
     (send ?s put-calificacion ?c)
     (send ?s put-argumento $?a)
     (assert (valorando-momento ?nombrelibro))
+
 )
 
 (defrule datos-procesamiento::calificacion-momento-tarde: "Regla para calcular la calificacion de los libros segun el momento-tarde"
@@ -5447,6 +5456,7 @@
     (send ?s put-calificacion ?c)
     (send ?s put-argumento $?a)
     (assert (valorando-momento ?nombrelibro))
+
 )
 
 (defrule datos-procesamiento::calificacion-momento-manana: "Regla para calcular la calificacion de los libros segun el momento-manana"
@@ -5463,8 +5473,67 @@
     (send ?s put-calificacion ?c)
     (send ?s put-argumento $?a)
     (assert (valorando-momento ?nombrelibro))
+
 )
 
+(defrule datos-procesamiento::presentacion-solucion "Regla para pasar al modulo presentacion-solucion"
+    (declare (salience -1000))
+    =>
+    (printout t "Buscando los mejores libros para usted..." crlf)
+    (focus presentacion-solucion)
+)
+
+
+;;; Presentacion-solucion -------------------------------------------------
+
+
+(deffunction presentacion-solucion::ordenar-sugerencias (?lista)
+    (bind ?len (length$ ?lista))
+    (loop-for-count (?i 1 (- ?len 1))
+        (loop-for-count (?j 1 (- ?len ?i))
+            (bind ?sugerencia1 (nth$ ?j ?lista))
+            (bind ?sugerencia2 (nth$ (+ ?j 1) ?lista))
+            (bind ?calificacion1 (send ?sugerencia1 get-calificacion))
+            (bind ?calificacion2 (send ?sugerencia2 get-calificacion))
+            (if (< ?calificacion1 ?calificacion2)
+                then
+                (bind ?lista (replace$ ?lista ?j ?j ?sugerencia2))
+                (bind ?lista (replace$ ?lista (+ ?j 1) (+ ?j 1) ?sugerencia1))
+            )
+        )
+    )
+    ?lista
+)
+
+
+(deffunction presentacion-solucion::imprimir-top-5 (?lista)
+    (bind ?len (min 5 (length$ ?lista)))
+    (printout t crlf)
+    (printout t "Top 5 sugerencias:" crlf)
+    (printout t crlf)
+    (loop-for-count (?i 1 ?len)
+        (bind ?sugerencia (nth$ ?i ?lista))
+        (bind ?calificacion (send ?sugerencia get-calificacion))
+        (bind ?nombre (send ?sugerencia get-nombre))
+        (printout t".........................................................." crlf)
+        (printout t ?i ". Sugerencia: " ?nombre " - Calificacion: " ?calificacion crlf)
+        (printout t".........................................................." crlf)
+        (printout t crlf)
+        (printout t "Se ha escogido este libro por las siguientes razones: " crlf)
+        (bind ?argumento (send ?sugerencia get-argumento))
+        (loop-for-count (?j 1 (length$ ?argumento))
+            (printout t (nth$ ?j ?argumento) crlf)
+        )
+        (printout t crlf)
+    )
+)
+
+(defrule presentacion-solucion::manejar-sugerencias
+    =>
+    (bind ?lista (find-all-instances ((?s Sugerencia)) TRUE))
+    (bind ?lista (presentacion-solucion::ordenar-sugerencias ?lista))
+    (presentacion-solucion::imprimir-top-5 ?lista)
+)
 
 
 
