@@ -64,7 +64,7 @@
     (multislot subgenero           
         (type INSTANCE)
         (create-accessor read-write))
-    (slot autor
+    (multislot autor
         (type INSTANCE)
         (create-accessor read-write))
     (slot tiempo_total
@@ -5290,6 +5290,7 @@
     (modify-instance ?u (subgenero ?subgenero_fav))
 )
 )
+
        
 (defrule preferencias-recopilacion::tiempo_lectura "Regla para medir el tiempo de lectura del usuario"
     ?u <- (object (is-a Usuario))
@@ -5565,6 +5566,7 @@
 
 (defrule computar-puntuaciones::calificacion-decada-exacta: "Regla para calcular la calificacion de los libros segun la decada-exacta"
     ?u <- (object (is-a Usuario) (decada ?decada))
+    (test (not (eq ?decada "Cualquiera")))
     ?l <- (object (is-a Libro) (nombre ?nombrelibro) (publicacion ?publicacion))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     (test (eq ?nombrelibro ?nombresugerencia))
@@ -5580,6 +5582,7 @@
 
 (defrule computar-puntuaciones::calificacion-decada-vecina: "Regla para calcular la calificacion de los libros segun la decada-vecina"
     ?u <- (object (is-a Usuario) (decada ?decada))
+    (test (not (eq ?decada "Cualquiera")))
     ?l <- (object (is-a Libro) (nombre ?nombrelibro) (publicacion ?publicacion))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     (test (eq ?nombrelibro ?nombresugerencia))
@@ -5596,6 +5599,7 @@
 
 (defrule computar-puntuaciones::calificacion-decada-vecina2: "Regla para calcular la calificacion de los libros segun la decada-vecina2"
     ?u <- (object (is-a Usuario) (decada ?decada))
+    (test (not (eq ?decada "Cualquiera")))
     ?l <- (object (is-a Libro) (nombre ?nombrelibro) (publicacion ?publicacion))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     (test (eq ?nombrelibro ?nombresugerencia))
@@ -5609,6 +5613,24 @@
     (send ?s put-calificacion ?c)
     (send ?s put-argumento $?a)
     (assert (valorando-decada ?nombrelibro))
+)
+
+(defrule computar-puntuaciones::autor-favorito
+    ?u <- (object (is-a Usuario) (autor $?autoru))
+    ?l <- (object (is-a Libro) (escrito_por ?autorl) (nombre ?nombrel))
+    (not (valorando-autor ?nombrel))
+    (test (member$ ?autorl $?autoru))
+    ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento ?a))
+    (test (eq ?nombrel ?nombres))
+
+
+    =>
+
+    (bind ?p (+ ?p 50))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El autor del libro está entre los favoritos del usuario: +20 puntos!."))
+    (send ?s put-calificacion ?p)
+    (send ?s put-argumento $?a)
+    (assert (valorando-autor ?nombrel))
 )
 
 (defrule computar-puntuaciones::presentacion-solucion "Regla para pasar al modulo presentacion-solucion"
