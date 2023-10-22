@@ -208,12 +208,19 @@
     (slot nombre
 		(type STRING)
 		(create-accessor read-write))
+    (slot escrito_por
+		(type STRING)
+		(create-accessor read-write))
+    (slot publicacion
+		(type INTEGER)
+		(create-accessor read-write))
     (slot calificacion
         (type FLOAT)
         (create-accessor read-write))
     (multislot argumento
 		(type STRING)
 		(create-accessor read-write))
+    
 )
 
 
@@ -401,7 +408,7 @@
             (popularidad 15)
             (complejidad 46)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_1] of Libro
@@ -527,7 +534,7 @@
             (popularidad 1)
             (complejidad 49)
             (estilo "Narrativa en tercera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_10] of Libro
@@ -597,7 +604,7 @@
             (popularidad 1)
             (complejidad 89)
             (estilo "Estilo minimalista")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_15] of Libro
@@ -611,7 +618,7 @@
             (popularidad 25)
             (complejidad 64)
             (estilo "Monólogo interior")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_16] of Libro
@@ -639,7 +646,7 @@
             (popularidad 23)
             (complejidad 60)
             (estilo "Narrativa en primera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_18] of Libro
@@ -681,7 +688,7 @@
             (popularidad 37)
             (complejidad 77)
             (estilo "Narrativa en tercera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_21] of Libro
@@ -751,7 +758,7 @@
             (popularidad 11)
             (complejidad 41)
             (estilo "Estilo minimalista")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_26] of Libro
@@ -807,7 +814,7 @@
             (popularidad 18)
             (complejidad 54)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_30] of Libro
@@ -821,7 +828,7 @@
             (popularidad 37)
             (complejidad 58)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_31] of Libro
@@ -863,7 +870,7 @@
             (popularidad 34)
             (complejidad 50)
             (estilo "Narrativa en tercera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_34] of Libro
@@ -891,7 +898,7 @@
             (popularidad 30)
             (complejidad 72)
             (estilo "Monólogo interior")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_36] of Libro
@@ -933,7 +940,7 @@
             (popularidad 16)
             (complejidad 51)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_39] of Libro
@@ -1031,7 +1038,7 @@
             (popularidad 17)
             (complejidad 45)
             (estilo "Estilo experimental")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_46] of Libro
@@ -1059,7 +1066,7 @@
             (popularidad 35)
             (complejidad 62)
             (estilo "Monólogo interior")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_48] of Libro
@@ -1073,7 +1080,7 @@
             (popularidad 11)
             (complejidad 51)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_49] of Libro
@@ -1157,7 +1164,7 @@
             (popularidad 34)
             (complejidad 63)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_55] of Libro
@@ -1171,7 +1178,7 @@
             (popularidad 28)
             (complejidad 52)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_56] of Libro
@@ -1199,7 +1206,7 @@
             (popularidad 27)
             (complejidad 39)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_58] of Libro
@@ -1227,7 +1234,7 @@
             (popularidad 15)
             (complejidad 87)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_60] of Libro
@@ -1297,7 +1304,7 @@
             (popularidad 35)
             (complejidad 41)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_65] of Libro
@@ -1353,7 +1360,7 @@
             (popularidad 19)
             (complejidad 55)
             (estilo "Narrativa en tercera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_69] of Libro
@@ -1395,7 +1402,7 @@
             (popularidad 50)
             (complejidad 85)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_72] of Libro
@@ -1437,7 +1444,7 @@
             (popularidad 1)
             (complejidad 77)
             (estilo "Monólogo interior")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_75] of Libro
@@ -1507,7 +1514,7 @@
             (popularidad 44)
             (complejidad 27)
             (estilo "Estilo descriptivo")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_80] of Libro
@@ -1591,7 +1598,7 @@
             (popularidad 24)
             (complejidad 15)
             (estilo "Estilo descriptivo")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_86] of Libro
@@ -1689,7 +1696,7 @@
             (popularidad 48)
             (complejidad 39)
             (estilo "Estilo minimalista")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_93] of Libro
@@ -1703,7 +1710,7 @@
             (popularidad 23)
             (complejidad 50)
             (estilo "Narrativa en primera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_94] of Libro
@@ -1745,7 +1752,7 @@
             (popularidad 29)
             (complejidad 39)
             (estilo "Narrativa en primera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_97] of Libro
@@ -1787,7 +1794,7 @@
             (popularidad 17)
             (complejidad 51)
             (estilo "Estilo descriptivo")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_100] of Libro
@@ -1857,7 +1864,7 @@
             (popularidad 16)
             (complejidad 71)
             (estilo "Estilo minimalista")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_105] of Libro
@@ -1941,7 +1948,7 @@
             (popularidad 15)
             (complejidad 69)
             (estilo "Estilo minimalista")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_111] of Libro
@@ -1997,7 +2004,7 @@
             (popularidad 1)
             (complejidad 76)
             (estilo "Narrativa en tercera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_115] of Libro
@@ -2011,7 +2018,7 @@
             (popularidad 40)
             (complejidad 68)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_116] of Libro
@@ -2025,7 +2032,7 @@
             (popularidad 44)
             (complejidad 35)
             (estilo "Monólogo interior")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_117] of Libro
@@ -2039,7 +2046,7 @@
             (popularidad 11)
             (complejidad 48)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_118] of Libro
@@ -2081,7 +2088,7 @@
             (popularidad 4)
             (complejidad 88)
             (estilo "Narrativa en primera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_121] of Libro
@@ -2137,7 +2144,7 @@
             (popularidad 47)
             (complejidad 100)
             (estilo "Narrativa en primera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_125] of Libro
@@ -2151,7 +2158,7 @@
             (popularidad 46)
             (complejidad 80)
             (estilo "Estilo experimental")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_126] of Libro
@@ -2165,7 +2172,7 @@
             (popularidad 12)
             (complejidad 56)
             (estilo "Estilo experimental")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_127] of Libro
@@ -2179,7 +2186,7 @@
             (popularidad 11)
             (complejidad 48)
             (estilo "Narrativa en primera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_128] of Libro
@@ -2221,7 +2228,7 @@
             (popularidad 35)
             (complejidad 17)
             (estilo "Narrativa en tercera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_131] of Libro
@@ -2249,7 +2256,7 @@
             (popularidad 52)
             (complejidad 40)
             (estilo "Estilo descriptivo")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_133] of Libro
@@ -2263,7 +2270,7 @@
             (popularidad 39)
             (complejidad 69)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_134] of Libro
@@ -2277,7 +2284,7 @@
             (popularidad 1)
             (complejidad 98)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_135] of Libro
@@ -2291,7 +2298,7 @@
             (popularidad 16)
             (complejidad 75)
             (estilo "Estilo minimalista")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_136] of Libro
@@ -2319,7 +2326,7 @@
             (popularidad 20)
             (complejidad 37)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_138] of Libro
@@ -2333,7 +2340,7 @@
             (popularidad 1)
             (complejidad 48)
             (estilo "Narrativa en tercera persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_139] of Libro
@@ -2431,7 +2438,7 @@
             (popularidad 20)
             (complejidad 51)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_146] of Libro
@@ -2445,7 +2452,7 @@
             (popularidad 40)
             (complejidad 73)
             (estilo "Monólogo interior")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_147] of Libro
@@ -2459,7 +2466,7 @@
             (popularidad 26)
             (complejidad 69)
             (estilo "Monólogo interior")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_148] of Libro
@@ -2557,7 +2564,7 @@
             (popularidad 1)
             (complejidad 65)
             (estilo "Narrativa en segunda persona")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_155] of Libro
@@ -2767,7 +2774,7 @@
             (popularidad 24)
             (complejidad 42)
             (estilo "Estilo minimalista")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_170] of Libro
@@ -2837,7 +2844,7 @@
             (popularidad 1)
             (complejidad 53)
             (estilo "Estilo epistolar")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_175] of Libro
@@ -2907,7 +2914,7 @@
             (popularidad 27)
             (complejidad 69)
             (estilo "Estilo experimental")
-            (publico "Críos")
+            (publico "Infantes")
         )
 
         ([Libro_Class_180] of Libro
@@ -8379,8 +8386,9 @@
 ;;; Declaracion de facts -------------------------------------------------------------------
 
 (deffacts computar-puntuaciones::edad
-    (lista-edades (edades "Críos" "Adolescentes" "Adulto-Joven" "Adulto" "Ancianos"))
+    (lista-edades (edades "Infantes" "Adolescentes" "Adulto-Joven" "Adulto" "Ancianos"))
 )
+
 
 
 ;;; Declaracion de reglas ------------------------------------------------------------------
@@ -8396,9 +8404,9 @@
 )
 
 (defrule preferencias-recopilacion::establecer_edad "Regla para establecer la edad del usuario ya creado"
-    ?u <- (object (is-a Usuario))
+    ?u <- (object (is-a Usuario) (nombre ?nombre))
     =>
-    (printout t "Por favor, introduzca su edad: ")
+    (printout t "Encantado " ?nombre "!" " Por favor, introduzca su edad: ")
     (bind ?edad (read))
     (while (not (numberp ?edad))
         (printout t "Por favor, introduzca su edad: ")
@@ -8422,10 +8430,10 @@
 (defrule preferencias-recopilacion::tiempo_lectura_total "Regla para medir tiempo que quiere dedicar a leer el usuario"
     ?u <- (object (is-a Usuario))
     =>
-    (printout t "Por favor, diga el tiempo que dedicaria como maximo para leer un libro (en semanas):  ")
+    (printout t "Por favor, indique el tiempo durante el que desearía estar leyendo el libro (en semanas):  ")
     (bind ?tiempo_total (read))
     (while (not(numberp ?tiempo_total))
-        (printout t "Por favor, diga el tiempo que dedicaria como maximo para leer un libro (en semanas):  ")
+        (printout t "Por favor, indique el tiempo durante el que desearía estar leyendo el libro (en semanas):  ")
         (bind ?tiempo_total (read)))
     
     (modify-instance ?u (tiempo_total ?tiempo_total))
@@ -8436,6 +8444,8 @@
     ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, seleccione el lugar donde suele leer: " crlf)
+    (printout t "(Esta seleccion tendrá impacto sobre la complejidad de los libros recomenados, si no le importa leer libros complejos en lugares ruidosos, introduzca 'cualquiera') " crlf)
+
     (printout t " Opciones: 1.Transporte publico  2.Casa 3.Parque 4.Cafeteria 5.Cualquiera" crlf)
     
     (bind ?opciones (create$ 1 2 3 4 5))
@@ -8459,9 +8469,13 @@
 )
 
 (defrule preferencias-recopilacion::momento "Regla para ver el momento de lectura"
+
     ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, seleccione el momento en el que suele leer: " crlf)
+    (printout t "(Esta seleccion tendrá impacto sobre la complejidad de los libros recomenados, si no le importa leer libros complejos en su momento de lectura en cuestión, introduzca 'cualquiera') " crlf)
+
+    
     (printout t "Opciones: 1.Manana 2.Tarde 3.Noche 4.Cualquiera" crlf)
     
     (bind ?opciones (create$ 1 2 3 4))
@@ -8486,7 +8500,7 @@
 (defrule preferencias-recopilacion::modas "Regla para ver si se fija en las modas"
     ?u <- (object (is-a Usuario))
     =>
-    (printout t "Usted se fija en las modas: " crlf)
+    (printout t "Suele disfrutar especialmente de libros populares / best-seller?: " crlf)
     (printout t "Opciones: 1.Si 2.No" crlf)
     
     (bind ?opciones (create$ 1 2))
@@ -8509,7 +8523,7 @@
 (defrule preferencias-recopilacion::valoracion "Regla para ver si se fija en las valoraciones"
     ?u <- (object (is-a Usuario))
     =>
-    (printout t "Usted se fija en las valoraciones de los libros que lee: " crlf)
+    (printout t "Se fija en las valoraciones de los libros que lee? " crlf)
     (printout t "Opciones: 1.Si 2.No" crlf)
     
     (bind ?opciones (create$ 1 2))
@@ -8529,11 +8543,12 @@
     (printout t "" crlf)
 )
 
-(defrule preferencias-recopilacion::decada "Regla para ver si tiene alguna preferencia de decada"
+(defrule preferencias-recopilacion::decada "Regla para ver si tiene alguna preferencia de década"
     ?u <- (object (is-a Usuario))
     =>
-    (printout t "Te gusta leer libros de una decada en especifico?" crlf)
-    (printout t "(Selecciona una o mas, ingresa el numero correspondiente a cada decada)" crlf)
+    
+    (printout t "Le gusta leer libros de una década en especifico?" crlf)
+    (printout t "(Selecciona una o más, ingresa el numero correspondiente a cada década. Si le es irrelevante, seleccione 'Terminar la selección')" crlf)
     (printout t "1. 1900" crlf)
     (printout t "2. 1910" crlf)
     (printout t "3. 1920" crlf)
@@ -8550,7 +8565,7 @@
    
    (bind ?decada_fav (create$))
    (while TRUE
-       (printout t "Ingresa el numero de la decada que te gusta (o 0 para terminar): ")
+       (printout t "Ingresa el numero de la década que te gusta (o 0 para terminar): ")
        (bind ?opcion (read))
        (bind ?decada "")
        (switch ?opcion
@@ -8566,16 +8581,17 @@
             (case 10 then (bind ?decada 1990))
             (case 11 then (bind ?decada 2000))
             (case 12 then (bind ?decada 2010))
+        
         )
             
        (if (and (numberp ?opcion) (> ?opcion 0) (<= ?opcion 12))
            then (if (not (member$ ?decada ?decada_fav))
                then (bind ?decada_fav (create$ ?decada_fav ?decada))
-               else (printout t "Ya seleccionaste esta decada. Por favor, selecciona una diferente." crlf)
+               else (printout t "Ya seleccionaste esta década. Por favor, selecciona una diferente." crlf)
            )
            else (if (= ?opcion 0)
                    then (break)
-                   else (printout t "Opción invalida. Por favor, selecciona un numero valido." crlf)
+                   else (printout t "Opción inválida. Por favor, selecciona un numero válido." crlf)
            )
        )
    )    
@@ -8588,12 +8604,12 @@
 )
 )
 
-(defrule preferencias-recopilacion::genero_fav "Regla para escoger sus generos favoritos"
+(defrule preferencias-recopilacion::genero_fav "Regla para escoger sus géneros favoritos"
    ?u <- (object (is-a Usuario))
    =>
    (printout t crlf)
-   (printout t "Que generos te gusta leer?" crlf)
-   (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada genero)" crlf)
+   (printout t "Que géneros te gusta leer?" crlf)
+   (printout t "(Selecciona uno o más, ingresa el numero correspondiente a cada género. Si le es irrelevante, seleccione 'Terminar la selección')" crlf)
    (printout t "1. Realistic" crlf)
    (printout t "2. Romantic" crlf)
    (printout t "3. Science Fiction" crlf)
@@ -8614,6 +8630,7 @@
             (case 4 then (bind ?genero_nombre "Fantasy"))
             (case 5 then (bind ?genero_nombre "Adventure"))
             (case 6 then (bind ?genero_nombre "Historical"))
+        
         )
             
        (if (and (numberp ?opcion) (> ?opcion 0) (<= ?opcion 6))
@@ -8644,7 +8661,7 @@
     (bind ?subgeneros (find-all-instances ((?s Subgenero )) (member$ ?s:subgenero_de ?genero_fav)))
     (printout t crlf)
     (printout t "Que subgeneros de los generos que has seleccionado anteriormente te gusta leer?" crlf)
-    (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada subgenero)" crlf)
+    (printout t "(Selecciona uno o más, ingresa el numero correspondiente a cada subgenero.  Si le es irrelevante, seleccione 'Terminar la selección')" crlf)
 
     (bind ?i 1)
     (foreach ?subgenre ?subgeneros
@@ -8681,15 +8698,61 @@
 )
 )
 
+
+(defrule preferencias-recopilacion::agregar-autores
+    ?u <- (object (is-a Usuario) (autor $?autores))
+    =>
+    (printout t "¿Quieres agregar algún autor que te gusten? (si/no): ")
+    (bind ?respuesta (lowcase (read)))
+
+    (if (or (eq ?respuesta si) (eq ?respuesta s))
+        then
+        (bind ?autores_fav (create$ ?autores))
+        (bind ?terminar FALSE)
+        (while (not ?terminar)
+            (printout t "Ingresa el nombre del autor que te gusta entre doble comillas y con las iniciales en mayúsculas (o 'terminar' para finalizar): " crlf)
+            (bind ?nombre_autor (read))
+
+            (if (or (eq ?nombre_autor terminar) (eq ?nombre_autor ""))
+                then (bind ?terminar TRUE)
+                else
+                (bind ?autor_instancia (find-instance ((?a Autor)) (eq ?a:nombre ?nombre_autor)))
+                (if ?autor_instancia
+                    then
+                    (if (not (member$ ?autor_instancia ?autores_fav))
+                        then (bind ?autores_fav (create$ ?autores_fav ?autor_instancia))
+                        else (printout t "El autor es desconocido. Por favor, ingresa otro autor." crlf)
+                    )
+                    else (printout t "" crlf)
+                )
+            )
+        )
+        (if (eq ?terminar FALSE)
+            then (printout t "No se realizaron cambios en la lista de autores." crlf)
+            else (if (and (member$ "Cualquiera" ?autores_fav) (> (length$ ?autores_fav) 1))
+                    then 
+                    (bind ?autores_fav (delete-member$ ?autores_fav "Cualquiera"))
+                    (modify-instance ?u (autor ?autores_fav))
+                    else
+                    (modify-instance ?u (autor ?autores_fav))
+            )
+
+
+
+        )
+    )
+)
+
 (defrule preferencias-recopilacion::autores-favoritos
    ?u <- (object (is-a Usuario) (subgenero $?subgenerou))
+    (test (>= (length$ $?subgenerou)  1))
     (test (not(member$ "Cualquiera" $?subgenerou)))
 
    =>
     (bind ?autores (find-all-instances ((?a Autor)) (member$ ?a:escribe_subgenero ?subgenerou)))
     (printout t crlf)
-    (printout t "A continuación, se le propondrán unos autores, seleccione los que le gusten" crlf)
-    (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada autor)" crlf)
+    (printout t "A continuacion, se le propondrán una serie de autores del subgenero seleccionado, seleccione los que más le gusten." crlf)
+    (printout t "(Selecciona uno o más, ingresa el numero correspondiente a cada autor)" crlf)
 
     (bind ?i 1)
     (foreach ?autor ?autores
@@ -8730,13 +8793,13 @@
     ?u <- (object (is-a Usuario))
     =>
     (printout t crlf)
-    (printout t "Por favor, lea el siguiente parrafo cronometrando cuando ha tardado: " crlf)
+    (printout t "Por favor, lea el siguiente párrafo cronometrando cuanto ha tardado: " crlf)
     (printout t "" crlf)
     (printout t "Titulo: Las Estrellas de la Eternidad" crlf)
     (printout t "Capitulo 5: El Bosque Susurrante" crlf)
     (printout t "La suave brisa recorria los caminos empedrados de Lumara, el antiguo pueblo oculto detras de las montanas esmeralda. Las hojas de los arboles brillaban con los colores de un crepusculo eterno, reflejando tonos de naranja, morado y rosa que solo se podrian encontrar en los suenos mas vividos de un artista. Ariana caminaba descalza, dejando que las frescas piedras de cuarzo masajearan sus pies cansados mientras se abria paso a traves de la niebla de terciopelo." crlf)
     (printout t "A lo lejos, el Bosque Susurrante llamaba su nombre, las antiguas secuoyas se inclinaban suavemente, como si quisieran contarle los secretos mas oscuros del universo. Cada paso que daba la acercaba mas a la verdad que tanto ansiaba, pero tambien la envolvia mas profundamente en el misterio que el bosque guardaba." crlf)
-    (printout t "Una luz eterea comenzo a filtrarse entre las ramas, creando patrones enigmaticos que danzaban en el suelo forestal. Las sombras jugaban entre los arboles, susurrando las historias de los antiguos, de los que vinieron antes y de los que vendran despues. Una sensacion de asombro y temor lleno el corazon de Ariana mientras avanzaba, sintiendo la energia vibrante del lugar llenar su ser." crlf)
+    (printout t "Una luz eterea comenzó a filtrarse entre las ramas, creando patrones enigmaticos que danzaban en el suelo forestal. Las sombras jugaban entre los arboles, susurrando las historias de los antiguos, de los que vinieron antes y de los que vendran despues. Una sensacion de asombro y temor lleno el corazon de Ariana mientras avanzaba, sintiendo la energia vibrante del lugar llenar su ser." crlf)
     (printout t "De repente, una figura aparecio entre las sombras. Era una criatura de una belleza indescriptible, con ojos que contenian las estrellas del cosmos y alas que brillaban con los colores de la aurora. La criatura extendio su mano, invitando a Ariana a acercarse." crlf)
     (printout t "No temas, buscadora de verdades -dijo con una voz que resono como una melodia celestial. - Estas aqui para descubrir, para aprender y para crecer. Pero recuerda, no todo lo que brilla lleva la luz de la verdad." crlf)
     (printout t "Ariana, con el corazon latiendo con fuerza, acepto la mano de la criatura, permitiendose ser guiada a traves de los caminos ocultos del Bosque Susurrante. Los arboles comenzaron a hablar, sus hojas susurraban palabras de sabiduria, y las flores brillaban con una luz suave, iluminando las paginas oscuras de los secretos que estaban por revelarse." crlf)
@@ -8749,6 +8812,7 @@
         (printout t "El tiempo de lectura del parrafo ha sido de: " crlf)
         (bind ?tiempo_lectura (read)))
     (modify-instance ?u (tiempo_lectura ?tiempo_lectura))
+
 )
 
 (defrule preferencias-recopilacion::a_datos "Regla para pasar al modulo datos procesamiento"
@@ -8760,7 +8824,6 @@
     (printout t crlf)
     (focus datos-procesamiento)
 )
-
 
 ; Datos-procesamiento -------------------------------------------------
 
@@ -8798,12 +8861,12 @@
     (assert (velocidad_lectura (velocidad ?velocidad)))  
 )
 
-(defrule datos-procesamiento::grupo_edad-crios "Regla para determinar el grupo de edad del usuario-críos"
+(defrule datos-procesamiento::grupo_edad-crios "Regla para determinar el grupo de edad del usuario-Infantes"
     ?u <- (object (is-a Usuario) (edad ?edad))
     (velocidad_lectura (velocidad ?velocidad))
     (test (and (>= ?edad 1) (<= ?edad 12)))
     =>
-    (bind ?grupo "Críos")
+    (bind ?grupo "Infantes")
     (assert (grupo_edad (grupo ?grupo)))
 )
 
@@ -8886,9 +8949,9 @@
 ; Computar-puntuaciones -------------------------------------------------
 
 (defrule computar-puntuaciones::anadir-libro "Regla para crear una instancia de Sugerencia por cada libro."
-	?l <- (object (is-a Libro) (nombre ?nombrelibro))
+	?l <- (object (is-a Libro) (nombre ?nombrelibro) (escrito_por ?autor) (publicacion ?publicacion))
     =>
-    (make-instance (gensym*) of Sugerencia (nombre ?nombrelibro) (calificacion 0) (argumento ""))
+    (make-instance (gensym*) of Sugerencia (nombre ?nombrelibro) (escrito_por ?autor) (publicacion ?publicacion) (calificacion 0) (argumento ""))
 
 )
 
@@ -9116,7 +9179,6 @@
 
 (defrule computar-puntuaciones::crear-lista-autores
     ?u <- (object (is-a Usuario) (autor $?autoru))
-    (test (> (length$ $?autoru)  1))
     (test (not (eq $?autoru "Cualquiera")))
     =>
     (bind ?lista (create$))
@@ -9139,7 +9201,9 @@
     (test (eq ?autor2 (send ?autorl get-nombre)))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
+
     =>
+
     (bind ?p (+ ?p 10))
     (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El autor del libro es parecido a uno de los autores favoritos del usuario: +10 puntos!."))
     (send ?s put-calificacion ?p)
@@ -9186,7 +9250,9 @@
     (test (member$ ?generol $?generou))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
+
     =>
+
     (bind ?p (+ ?p 22))
     (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El genero del libro esta entre los favoritos del usuario: +22 puntos!."))
     (send ?s put-calificacion ?p)
@@ -9201,7 +9267,9 @@
     (test (member$ ?sgenerol $?sgenerou))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
+
     =>
+
     (bind ?p (+ ?p 15))
     (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El subgenero del libro esta entre los favoritos del usuario: +15 puntos!."))
     (send ?s put-calificacion ?p)
@@ -9239,7 +9307,9 @@
 (defrule generacion-solucion-abstracta::libros-pasados-parecidos
     ?u <- (object (is-a Usuario)(genero $?genero) (subgenero $?subgenero) (edad ?edad) (lugar ?lugar) (momento ?momento) (decada $?decada) (autor $?autor) (tiempo_lectura ?tiempo_lectura) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (se_fija_valoraciones ?se_fija_valoraciones))
     ?up <- (object (is-a Usuario_pasado)(libro_leido ?libro_leido) (genero $?genero_pasado) (lugar ?lugar_pasado) (subgenero $?subgenero_pasado) (edad ?edad_pasado) (momento ?momento_pasado) (decada $?decada_pasado) (autor $?autor_pasado) (tiempo_lectura ?tiempo_lectura_pasado) (tiempo_diario ?tiempo_diario_pasado) (tiempo_total ?tiempo_total_pasado) (se_fija_valoraciones ?se_fija_valoraciones_pasado) (me_gusto ?me_gusto))
+    
     =>
+    ;asigna a ?num (?me_gusto menos 5):
     (bind ?num (- ?me_gusto 5))
     (bind ?libro_leido_nombre (send ?libro_leido get-nombre))
     (bind ?genero_comun (member$ $?genero $?genero_pasado))
@@ -9270,7 +9340,9 @@
     (if (and (>= ?coincidencias 3) (<= ?coincidencias 5)) 
         then 
         (bind ?num (* 2 ?num))
+    
     )
+
     (if (> ?coincidencias 5) then (bind ?num (* 2.4 ?num)))
 
     (assert (libro-pasado-parecido ?libro_leido_nombre ?num))
@@ -9281,6 +9353,7 @@
     ?s <- (object (is-a Sugerencia) (nombre ?nombre) (calificacion ?calificacion) (argumento $?argumento))
     (libro-pasado-parecido ?nombre ?num)
     (not (valorando-libro-pasado-parecido ?nombre))
+
     =>
     (bind ?calificacion (+ ?calificacion ?num))
     (bind $?argumento (insert$ $?argumento (+ (length$ $?argumento) 1) (str-cat "El libro ha sido leido por un usuario muy similar a usted: " (str-cat ?num " puntos!."))))
@@ -9293,6 +9366,7 @@
 (defrule generacion-solucion-abstracta::manejar-sugerencias
     (declare (salience -1000))
     =>
+    
     (bind ?lista (find-all-instances ((?s Sugerencia)) TRUE))
     (bind ?lista (generacion-solucion-abstracta::ordenar-sugerencias ?lista))
     (bind ?*lista-sugerencias* ?lista)
@@ -9309,8 +9383,8 @@
 
 ; Presentación de solución -------------------------------------------------
 
-(deffunction presentacion-solucion::imprimir-top-5 (?lista)
-    (bind ?len (min 5 (length$ ?lista)))
+(deffunction presentacion-solucion::imprimir-top-3 (?lista)
+    (bind ?len (min 3 (length$ ?lista)))
     (printout t crlf)
     (printout t "Top 5 sugerencias:" crlf)
     (printout t crlf)
@@ -9318,8 +9392,10 @@
         (bind ?sugerencia (nth$ ?i ?lista))
         (bind ?calificacion (send ?sugerencia get-calificacion))
         (bind ?nombre (send ?sugerencia get-nombre))
+        (bind ?autor (send ?sugerencia get-escrito_por))
+        (bind ?publicacion (send ?sugerencia get-publicacion))
         (printout t".........................................................." crlf)
-        (printout t ?i ". Sugerencia: " ?nombre " - Calificacion: " ?calificacion crlf)
+        (printout t ?i ". Sugerencia: " ?nombre " - " (send ?autor get-nombre)", " ?publicacion".          " "Calificacion: " ?calificacion crlf)
         (printout t".........................................................." crlf)
         (printout t crlf)
         (printout t "Se ha escogido este libro por las siguientes razones: " crlf)
@@ -9329,6 +9405,7 @@
         )
         (printout t crlf)
     )
+    (printout t "Si ha leido alguno de los libros recomendados, le agradeceria su feedback para poder seguir mejorando el sistema." crlf "Muchas gracias y hasta otra!" crlf crlf)
     (bind ?sugerencia (nth$ 1 ?lista))
     (bind ?calificacion (send ?sugerencia get-calificacion))
     (bind ?nombre (send ?sugerencia get-nombre))
@@ -9351,7 +9428,7 @@
     =>
     (bind ?lista ?*lista-sugerencias* )
     
-    (bind ?resultado (presentacion-solucion::imprimir-top-5 ?lista))
+    (bind ?resultado (presentacion-solucion::imprimir-top-3 ?lista))
 
     (bind ?nombre (first$ ?resultado))
     (bind ?calificacion (nth$ 2 ?resultado))
@@ -9361,6 +9438,7 @@
     (send ?u delete_past_usuario)
     (send ?l delete_past_fake)
     (assert (valorando-sugerencias))
+    
 )
 
 
@@ -9372,7 +9450,11 @@
   	(printout t"                       Tu libro ideal                       " crlf)
 	(printout t".........................................................." crlf)
   	(printout t crlf)  	
-	(printout t"Bienvenido! A continuacion se le formularan una serie de preguntas para poder recomendarle uno o varios libros acorde a sus preferencias." crlf)
+	(printout t"Bienvenido! Soy Bookie, su asistente de lecturas!" crlf)
+    (printout t"A continuacion le formulare una serie de preguntas para ayudarle a encotrar su libro ideal." crlf)
+    (printout t"Estoy orientado en parte por las experiencias de otros usuarios por lo que le agradeceria que, " crlf "al terminar el libro, me diga que le ha parecido." crlf crlf)
+    (printout t"Empecemos!" crlf crlf)
+
 	(printout t crlf)
 	(focus preferencias-recopilacion)
 )
