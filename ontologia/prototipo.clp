@@ -9181,6 +9181,7 @@
 
 (defrule computar-puntuaciones::crear-lista-autores
     ?u <- (object (is-a Usuario) (autor $?autoru))
+     (test (> (length$ $?autoru)  1))
     (test (not (eq $?autoru "Cualquiera")))
     =>
     (bind ?lista (create$))
