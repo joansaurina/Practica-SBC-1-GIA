@@ -8430,10 +8430,10 @@
 (defrule preferencias-recopilacion::tiempo_lectura_total "Regla para medir tiempo que quiere dedicar a leer el usuario"
     ?u <- (object (is-a Usuario))
     =>
-    (printout t "Por favor, indique el tiempo durante el que desearía estar leyendo el libro (en semanas):  ")
+    (printout t "Por favor, indique el tiempo durante el que desearia estar leyendo el libro (en semanas):  ")
     (bind ?tiempo_total (read))
     (while (not(numberp ?tiempo_total))
-        (printout t "Por favor, indique el tiempo durante el que desearía estar leyendo el libro (en semanas):  ")
+        (printout t "Por favor, indique el tiempo durante el que desearia estar leyendo el libro (en semanas):  ")
         (bind ?tiempo_total (read)))
     
     (modify-instance ?u (tiempo_total ?tiempo_total))
@@ -8444,10 +8444,10 @@
     ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, seleccione el lugar donde suele leer: " crlf)
-    (printout t "(Esta seleccion tendrá impacto sobre la complejidad de los libros recomenados, si no le importa leer libros complejos en lugares ruidosos, introduzca 'cualquiera') " crlf)
+    (printout t "(Esta seleccion tendra impacto sobre la complejidad de los libros recomenados, si no le importa leer libros complejos en lugares ruidosos, introduzca 'cualquiera') " crlf)
 
-    (printout t " Opciones: 1.Transporte publico  2.Casa 3.Parque 4.Cafeteria 5.Cualquiera" crlf)
-    
+    (printout t "Opciones: 1.Transporte publico  2.Casa 3.Parque 4.Cafeteria 5.Cualquiera" crlf)
+    (printout t crlf)
     (bind ?opciones (create$ 1 2 3 4 5))
     (bind ?lugar_lectura 0)
     
@@ -8473,7 +8473,7 @@
     ?u <- (object (is-a Usuario))
     =>
     (printout t "Por favor, seleccione el momento en el que suele leer: " crlf)
-    (printout t "(Esta seleccion tendrá impacto sobre la complejidad de los libros recomenados, si no le importa leer libros complejos en su momento de lectura en cuestión, introduzca 'cualquiera') " crlf)
+    (printout t "(Esta seleccion tendra impacto sobre la complejidad de los libros recomenados, si no le importa leer libros complejos en su momento de lectura en cuestion, introduzca 'cualquiera') " crlf)
 
     
     (printout t "Opciones: 1.Manana 2.Tarde 3.Noche 4.Cualquiera" crlf)
@@ -8543,12 +8543,12 @@
     (printout t "" crlf)
 )
 
-(defrule preferencias-recopilacion::decada "Regla para ver si tiene alguna preferencia de década"
+(defrule preferencias-recopilacion::decada "Regla para ver si tiene alguna preferencia de decada"
     ?u <- (object (is-a Usuario))
     =>
     
-    (printout t "Le gusta leer libros de una década en especifico?" crlf)
-    (printout t "(Selecciona una o más, ingresa el numero correspondiente a cada década. Si le es irrelevante, seleccione 'Terminar la selección')" crlf)
+    (printout t "Le gusta leer libros de una decada en especifico?" crlf)
+    (printout t "(Selecciona una o mas, ingresa el numero correspondiente a cada decada. Si le es irrelevante, seleccione 'Terminar la seleccion')" crlf)
     (printout t "1. 1900" crlf)
     (printout t "2. 1910" crlf)
     (printout t "3. 1920" crlf)
@@ -8565,7 +8565,7 @@
    
    (bind ?decada_fav (create$))
    (while TRUE
-       (printout t "Ingresa el numero de la década que te gusta (o 0 para terminar): ")
+       (printout t "Ingresa el numero de la decada que te gusta (o 0 para terminar): ")
        (bind ?opcion (read))
        (bind ?decada "")
        (switch ?opcion
@@ -8587,11 +8587,11 @@
        (if (and (numberp ?opcion) (> ?opcion 0) (<= ?opcion 12))
            then (if (not (member$ ?decada ?decada_fav))
                then (bind ?decada_fav (create$ ?decada_fav ?decada))
-               else (printout t "Ya seleccionaste esta década. Por favor, selecciona una diferente." crlf)
+               else (printout t "Ya seleccionaste esta decada. Por favor, selecciona una diferente." crlf)
            )
            else (if (= ?opcion 0)
                    then (break)
-                   else (printout t "Opción inválida. Por favor, selecciona un numero válido." crlf)
+                   else (printout t "Opcion invalida. Por favor, selecciona un numero valido." crlf)
            )
        )
    )    
@@ -8604,12 +8604,12 @@
 )
 )
 
-(defrule preferencias-recopilacion::genero_fav "Regla para escoger sus géneros favoritos"
+(defrule preferencias-recopilacion::genero_fav "Regla para escoger sus generos favoritos"
    ?u <- (object (is-a Usuario))
    =>
    (printout t crlf)
-   (printout t "Que géneros te gusta leer?" crlf)
-   (printout t "(Selecciona uno o más, ingresa el numero correspondiente a cada género. Si le es irrelevante, seleccione 'Terminar la selección')" crlf)
+   (printout t "Que generos te gusta leer?" crlf)
+   (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada genero. Si le es irrelevante, seleccione 'Terminar la seleccion')" crlf)
    (printout t "1. Realistic" crlf)
    (printout t "2. Romantic" crlf)
    (printout t "3. Science Fiction" crlf)
@@ -8640,7 +8640,7 @@
            )
            else (if (= ?opcion 0)
                    then (break)
-                   else (printout t "Opción invalida. Por favor, selecciona un numero valido." crlf)
+                   else (printout t "Opcion invalida. Por favor, selecciona un numero valido." crlf)
            )
        )
    )    
@@ -8661,7 +8661,7 @@
     (bind ?subgeneros (find-all-instances ((?s Subgenero )) (member$ ?s:subgenero_de ?genero_fav)))
     (printout t crlf)
     (printout t "Que subgeneros de los generos que has seleccionado anteriormente te gusta leer?" crlf)
-    (printout t "(Selecciona uno o más, ingresa el numero correspondiente a cada subgenero.  Si le es irrelevante, seleccione 'Terminar la selección')" crlf)
+    (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada subgenero.  Si le es irrelevante, seleccione 'Terminar la seleccion')" crlf)
 
     (bind ?i 1)
     (foreach ?subgenre ?subgeneros
@@ -8701,8 +8701,9 @@
 
 (defrule preferencias-recopilacion::agregar-autores
     ?u <- (object (is-a Usuario) (autor $?autores))
+    (not (autores-fav-preguntat))
     =>
-    (printout t "¿Quieres agregar algún autor que te gusten? (si/no): ")
+    (printout t "Quieres agregar algun autor que te guste y no haya sido mencionado? (si/no): ")
     (bind ?respuesta (lowcase (read)))
 
     (if (or (eq ?respuesta si) (eq ?respuesta s))
@@ -8710,7 +8711,7 @@
         (bind ?autores_fav (create$ ?autores))
         (bind ?terminar FALSE)
         (while (not ?terminar)
-            (printout t "Ingresa el nombre del autor que te gusta entre doble comillas y con las iniciales en mayúsculas (o 'terminar' para finalizar): " crlf)
+            (printout t "Ingresa el nombre del autor que te gusta entre doble comillas y con las iniciales en mayusculas (o 'terminar' para finalizar): " crlf)
             (bind ?nombre_autor (read))
 
             (if (or (eq ?nombre_autor terminar) (eq ?nombre_autor ""))
@@ -8741,6 +8742,7 @@
 
         )
     )
+    (assert (autores-fav-preguntat))
 )
 
 (defrule preferencias-recopilacion::autores-favoritos
@@ -8751,8 +8753,8 @@
    =>
     (bind ?autores (find-all-instances ((?a Autor)) (member$ ?a:escribe_subgenero ?subgenerou)))
     (printout t crlf)
-    (printout t "A continuacion, se le propondrán una serie de autores del subgenero seleccionado, seleccione los que más le gusten." crlf)
-    (printout t "(Selecciona uno o más, ingresa el numero correspondiente a cada autor)" crlf)
+    (printout t "A continuacion, se le propondran una serie de autores del subgenero seleccionado, seleccione los que mas le gusten." crlf)
+    (printout t "(Selecciona uno o mas, ingresa el numero correspondiente a cada autor)" crlf)
 
     (bind ?i 1)
     (foreach ?autor ?autores
@@ -8793,13 +8795,13 @@
     ?u <- (object (is-a Usuario))
     =>
     (printout t crlf)
-    (printout t "Por favor, lea el siguiente párrafo cronometrando cuanto ha tardado: " crlf)
+    (printout t "Por favor, lea el siguiente parrafo cronometrando cuanto ha tardado: " crlf)
     (printout t "" crlf)
     (printout t "Titulo: Las Estrellas de la Eternidad" crlf)
     (printout t "Capitulo 5: El Bosque Susurrante" crlf)
     (printout t "La suave brisa recorria los caminos empedrados de Lumara, el antiguo pueblo oculto detras de las montanas esmeralda. Las hojas de los arboles brillaban con los colores de un crepusculo eterno, reflejando tonos de naranja, morado y rosa que solo se podrian encontrar en los suenos mas vividos de un artista. Ariana caminaba descalza, dejando que las frescas piedras de cuarzo masajearan sus pies cansados mientras se abria paso a traves de la niebla de terciopelo." crlf)
     (printout t "A lo lejos, el Bosque Susurrante llamaba su nombre, las antiguas secuoyas se inclinaban suavemente, como si quisieran contarle los secretos mas oscuros del universo. Cada paso que daba la acercaba mas a la verdad que tanto ansiaba, pero tambien la envolvia mas profundamente en el misterio que el bosque guardaba." crlf)
-    (printout t "Una luz eterea comenzó a filtrarse entre las ramas, creando patrones enigmaticos que danzaban en el suelo forestal. Las sombras jugaban entre los arboles, susurrando las historias de los antiguos, de los que vinieron antes y de los que vendran despues. Una sensacion de asombro y temor lleno el corazon de Ariana mientras avanzaba, sintiendo la energia vibrante del lugar llenar su ser." crlf)
+    (printout t "Una luz eterea comenzo a filtrarse entre las ramas, creando patrones enigmaticos que danzaban en el suelo forestal. Las sombras jugaban entre los arboles, susurrando las historias de los antiguos, de los que vinieron antes y de los que vendran despues. Una sensacion de asombro y temor lleno el corazon de Ariana mientras avanzaba, sintiendo la energia vibrante del lugar llenar su ser." crlf)
     (printout t "De repente, una figura aparecio entre las sombras. Era una criatura de una belleza indescriptible, con ojos que contenian las estrellas del cosmos y alas que brillaban con los colores de la aurora. La criatura extendio su mano, invitando a Ariana a acercarse." crlf)
     (printout t "No temas, buscadora de verdades -dijo con una voz que resono como una melodia celestial. - Estas aqui para descubrir, para aprender y para crecer. Pero recuerda, no todo lo que brilla lleva la luz de la verdad." crlf)
     (printout t "Ariana, con el corazon latiendo con fuerza, acepto la mano de la criatura, permitiendose ser guiada a traves de los caminos ocultos del Bosque Susurrante. Los arboles comenzaron a hablar, sus hojas susurraban palabras de sabiduria, y las flores brillaban con una luz suave, iluminando las paginas oscuras de los secretos que estaban por revelarse." crlf)
@@ -9113,7 +9115,7 @@
     (assert (valorando-lugar ?nombrelibro))
 )
 
-(defrule computar-puntuaciones::calificacion-lugar-tp: "Regla para calcular la calificacion de los libros segun el lugar-Transporte Público"
+(defrule computar-puntuaciones::calificacion-lugar-tp: "Regla para calcular la calificacion de los libros segun el lugar-Transporte Publico"
     ?l <- (object (is-a Libro) (nombre ?nombrelibro) (complejidad ?co))
     ?s <- (object (is-a Sugerencia) (nombre ?nombresugerencia) (calificacion ?c) (argumento $?a))
     ?u <- (object (is-a Usuario) (lugar ?lugar))
@@ -9405,8 +9407,17 @@
         )
         (printout t crlf)
     )
-    (printout t "Si ha leido alguno de los libros recomendados, le agradeceria su feedback para poder seguir mejorando el sistema." crlf "Muchas gracias y hasta otra!" crlf crlf)
-    (bind ?sugerencia (nth$ 1 ?lista))
+    (printout t".........................................................." crlf)
+    (printout t crlf)
+    (printout t "Que libro de los propuestos va a leer? (1,2,3)" crlf)
+    (printout t crlf)
+    (bind ?eleccion 0)
+    (while (or (< ?eleccion 1) (> ?eleccion 4))
+        (printout t "Por favor, introduzca un numero entre 1 y " ?len crlf)
+        (bind ?eleccion (read))
+    )
+    (printout t "Espero que le guste! Muchas gracias y hasta otra!" crlf)
+    (bind ?sugerencia (nth$ ?eleccion ?lista))
     (bind ?calificacion (send ?sugerencia get-calificacion))
     (bind ?nombre (send ?sugerencia get-nombre))
 
@@ -9434,7 +9445,7 @@
     (bind ?calificacion (nth$ 2 ?resultado))
 
     (send ?l put-x_libro ?nombre)
-    (send ?l copy_past)
+    ;(send ?l copy_past)
     (send ?u delete_past_usuario)
     (send ?l delete_past_fake)
     (assert (valorando-sugerencias))
