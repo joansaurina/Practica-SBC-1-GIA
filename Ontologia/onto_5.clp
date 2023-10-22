@@ -2,7 +2,7 @@
 ;;; onto_5.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology onto_5.ttl
-;;; :Date 22/10/2023 13:20:42
+;;; :Date 22/10/2023 19:05:44
 
 (defclass Lector
     (is-a USER)
@@ -95,6 +95,13 @@
     (slot calificacion
         (type FLOAT)
         (create-accessor read-write))
+    (slot escrito_por
+        (type STRING)
+        (create-accessor read-write))
+    ;;; año de publicación
+    (slot publicacion
+        (type INTEGER)
+        (create-accessor read-write))
     (slot nombre
         (type STRING)
         (create-accessor read-write))
@@ -156,3 +163,5 @@
         (create-accessor read-write))
 )
 
+(definstances instances
+)

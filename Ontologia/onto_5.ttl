@@ -113,6 +113,12 @@
 	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
 	rdfs:range xsd:integer .
 # 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#escrito_por
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#escrito_por> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia> ;
+	rdfs:range xsd:string .
+# 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#estilo
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#estilo> a owl:DatatypeProperty , owl:FunctionalProperty ;
@@ -152,7 +158,7 @@
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#publicacion
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#publicacion> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Libro ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia> , :Libro ;
 	rdfs:range xsd:int ;
 	rdfs:comment "año de publicación" .
 # 
