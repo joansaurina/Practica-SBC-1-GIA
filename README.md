@@ -1,1 +1,1 @@
-# Práctica-SBC-GIA
+# Práctica 1 - SBC-GIA
