@@ -1,0 +1,290 @@
+@prefix : <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/> .
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#comprado_por
+:comprado_por rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Libro ;
+              rdfs:range :Cliente .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#escribe_sobre
+:escribe_sobre rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Autor ;
+               rdfs:range :Género .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#escrito_por
+:escrito_por rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Libro ;
+             rdfs:range :Autor .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#genero_de
+:genero_de rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Libro ;
+           rdfs:range :Género .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#le_gusta
+:le_gusta rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Cliente ;
+          rdfs:range :Autor ,
+                     :Género ,
+                     :Libro .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#subgenero_de
+:subgenero_de rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Subgénero ;
+              rdfs:range :Género .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#complejidad_escritura
+:complejidad_escritura rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain :Autor ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#edad
+:edad rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Persona ;
+      rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#minuts_lectura_setmanals
+:minuts_lectura_setmanals rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdf:type owl:FunctionalProperty ;
+                          rdfs:domain :Cliente ;
+                          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#nombre
+:nombre rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Género ,
+                    :Libro ,
+                    :Persona ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#numero_paginas
+:numero_paginas rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Libro ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#popularidad
+:popularidad rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Autor ,
+                         :Libro ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#temporada_deseedada_lectura_semanas
+:temporada_deseedada_lectura_semanas rdf:type owl:DatatypeProperty ,
+                                              owl:FunctionalProperty ;
+                                     rdfs:domain :Cliente ;
+                                     rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Autor
+:Autor rdf:type owl:Class ;
+       rdfs:subClassOf :Persona ;
+       owl:disjointWith :Cliente .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Cliente
+:Cliente rdf:type owl:Class ;
+         rdfs:subClassOf :Persona .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Género
+:Género rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Libro
+:Libro rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Persona
+:Persona rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Subgénero
+:Subgénero rdf:type owl:Class ;
+           rdfs:subClassOf :Género .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#ai
+:ai rdf:type owl:NamedIndividual ,
+             :Subgénero ;
+    :subgenero_de :ciencia_ficcio ;
+    :nombre "Artificial Intelligence" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#asal
+:asal rdf:type owl:NamedIndividual ,
+               :Cliente ;
+      :le_gusta :esteban ,
+                :gay_fiction ;
+      :edad 20 ;
+      :minuts_lectura_setmanals 1 ;
+      :nombre "Asal" ;
+      :temporada_deseedada_lectura_semanas 24 .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#chatGPT
+:chatGPT rdf:type owl:NamedIndividual ,
+                  :Autor ;
+         :escribe_sobre :ai ;
+         :complejidad_escritura "media" ;
+         :edad 2 ;
+         :nombre "chatGPT" ;
+         :popularidad "alta" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#ciencia_ficcio
+:ciencia_ficcio rdf:type owl:NamedIndividual ,
+                         :Género ;
+                :nombre "Ciencia Ficcio" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#epic_fantasy
+:epic_fantasy rdf:type owl:NamedIndividual ,
+                       :Subgénero ;
+              :subgenero_de :fantasy ;
+              :nombre "Epic Fantasy" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#esteban
+:esteban rdf:type owl:NamedIndividual ,
+                  :Autor ;
+         :escribe_sobre :gay_fiction ;
+         :complejidad_escritura "baja" ;
+         :edad 20 ;
+         :nombre "Esteban" ;
+         :popularidad "baja" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#fantasy
+:fantasy rdf:type owl:NamedIndividual ,
+                  :Género ;
+         :nombre "Fantasy" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#gay_fiction
+:gay_fiction rdf:type owl:NamedIndividual ,
+                      :Subgénero ;
+             :subgenero_de :romance ;
+             :nombre "Gay Fiction" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#george_martin
+:george_martin rdf:type owl:NamedIndividual ,
+                        :Autor ;
+               :escribe_sobre :epic_fantasy ;
+               :complejidad_escritura "baja" ;
+               :edad 64 ;
+               :nombre "George Martin" ;
+               :popularidad "alta" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#got
+:got rdf:type owl:NamedIndividual ,
+              :Libro ;
+     :genero_de :epic_fantasy ;
+     :nombre "Game of Thrones" ;
+     :numero_paginas 564 .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#historia_esteban
+:historia_esteban rdf:type owl:NamedIndividual ,
+                           :Libro ;
+                  :comprado_por :asal ;
+                  :escrito_por :esteban ;
+                  :genero_de :gay_fiction ;
+                  :nombre "Historia Esteban" ;
+                  :numero_paginas 1543 .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#i_robot
+:i_robot rdf:type owl:NamedIndividual ,
+                  :Libro ;
+         :genero_de :ai ;
+         :nombre "I, robot" ;
+         :numero_paginas 125 ;
+         :popularidad "alta" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#romance
+:romance rdf:type owl:NamedIndividual ,
+                  :Género ;
+         :nombre "Romance" .
+
+
+###  http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#serg
+:serg rdf:type owl:NamedIndividual ,
+               :Cliente ;
+      :le_gusta :epic_fantasy ,
+                :got ;
+      :edad 20 ;
+      :minuts_lectura_setmanals 50 ;
+      :nombre "Serg" ;
+      :temporada_deseedada_lectura_semanas 4 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Género
+                :Libro
+                :Persona
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
