@@ -15,6 +15,12 @@
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#autor
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#autor> a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
+	rdfs:range :Autor .
+# 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#escribe_genero
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#escribe_genero> a owl:ObjectProperty , owl:FunctionalProperty ;
@@ -25,6 +31,36 @@
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#escribe_subgenero> a owl:ObjectProperty , owl:FunctionalProperty ;
 	rdfs:domain :Autor ;
+	rdfs:range :Subgenero .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#genero
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#genero> a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
+	rdfs:range :Genero .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#libro_leido
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#libro_leido> a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Usuario_pasado> ;
+	rdfs:range :Libro .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#nombre_libro
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#nombre_libro> a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia> ;
+	rdfs:range :Libro .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#subgenero
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#subgenero> a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
+	rdfs:range :Subgenero .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#subgenero_de
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#subgenero_de> a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain :Libro ;
 	rdfs:range :Subgenero .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/escrito_por
@@ -43,14 +79,6 @@
 	rdfs:domain :Libro ;
 	rdfs:range :Genero .
 # 
-# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/le_gusta
-
-:le_gusta a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	a owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
-	rdfs:range :Autor , :Genero , :Libro , :Subgenero .
-# 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/subgenero_de
 
 :subgenero_de a owl:ObjectProperty , owl:FunctionalProperty ;
@@ -66,23 +94,33 @@
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#argumento
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#argumento> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia> ;
+	rdfs:range xsd:string .
+# 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#autor_concret
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#autor_concret> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
 	rdfs:range xsd:boolean .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#autor_estranjero
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#autor_estranjero> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
 	rdfs:range xsd:boolean .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#calificacion
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#calificacion> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia> ;
+	rdfs:range xsd:integer .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#complejidad
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#complejidad> a owl:DatatypeProperty , owl:FunctionalProperty ;
 	rdfs:domain :Libro ;
-	rdfs:range xsd:int ;
+	rdfs:range xsd:integer ;
 	rdfs:comment "numero de personajes" .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#complejidad_estilo
@@ -107,13 +145,12 @@
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#frecuencia
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#frecuencia> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
 	rdfs:range xsd:integer .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#lugar
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#lugar> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
 	rdfs:range xsd:string .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#media_fecha_publicacion
@@ -140,13 +177,19 @@
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#minutos_lectura_diarios
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#minutos_lectura_diarios> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
 	rdfs:range xsd:integer .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#modas
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#modas> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
+	rdfs:range xsd:boolean .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#momento
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#momento> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
 	rdfs:range xsd:string .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#paginas
@@ -168,23 +211,41 @@
 	rdfs:domain :Libro ;
 	rdfs:range xsd:string .
 # 
-# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#se_fija_en_modas
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#puntuacion
 
-<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#se_fija_en_modas> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#puntuacion> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Usuario_pasado> ;
+	rdfs:range xsd:integer .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#se_fija_valoraciones
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#se_fija_valoraciones> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
 	rdfs:range xsd:boolean .
 # 
-# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#se_fija_en_valoraciones
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#tiempo_diario
 
-<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#se_fija_en_valoraciones> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Usuario ;
-	rdfs:range xsd:boolean .
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#tiempo_diario> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
+	rdfs:range xsd:integer .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#tiempo_lectura
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#tiempo_lectura> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
+	rdfs:range xsd:integer .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#tiempo_total
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#tiempo_total> a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
+	rdfs:range xsd:integer .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#valoracion
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#valoracion> a owl:DatatypeProperty , owl:FunctionalProperty ;
 	rdfs:domain :Libro ;
-	rdfs:range xsd:integer .
+	rdfs:range xsd:float .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/complejidad_escritura
 
@@ -192,14 +253,14 @@
 	rdfs:subPropertyOf owl:topDataProperty ;
 	a owl:FunctionalProperty ;
 	rdfs:domain :Autor ;
-	rdfs:range xsd:string .
+	rdfs:range xsd:float .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/edad
 
 :edad a owl:DatatypeProperty ;
 	rdfs:subPropertyOf owl:topDataProperty ;
 	a owl:FunctionalProperty ;
-	rdfs:domain :Autor , :Usuario ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> ;
 	rdfs:range xsd:integer .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/nombre
@@ -207,7 +268,7 @@
 :nombre a owl:DatatypeProperty ;
 	rdfs:subPropertyOf owl:topDataProperty ;
 	a owl:FunctionalProperty ;
-	rdfs:domain :Autor , :Genero , :Libro , :Subgenero , :Usuario ;
+	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Usuario> , :Autor , :Genero , :Libro , :Subgenero ;
 	rdfs:range xsd:string .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/popularidad
@@ -215,7 +276,7 @@
 :popularidad a owl:DatatypeProperty ;
 	rdfs:subPropertyOf owl:topDataProperty ;
 	a owl:FunctionalProperty ;
-	rdfs:domain :Autor , :Libro , :Usuario ;
+	rdfs:domain :Autor , :Libro ;
 	rdfs:range xsd:int .
 # 
 # 
@@ -227,10 +288,27 @@
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> a owl:Class .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia> a owl:Class .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Usuario
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Usuario> a owl:Class ;
+	rdfs:subClassOf <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> .
+# 
+# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Usuario_pasado
+
+<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Usuario_pasado> a owl:Class ;
+	rdfs:subClassOf <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Lector> .
+# 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/Autor
 
-:Autor a owl:Class ;
-	owl:disjointWith :Usuario .
+:Autor a owl:Class .
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/Genero
 
@@ -244,10 +322,6 @@
 
 :Subgenero a owl:Class ;
 	rdfs:subClassOf :Genero .
-# 
-# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/Usuario
-
-:Usuario a owl:Class .
 # 
 # 
 # 
@@ -266,8 +340,7 @@
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/asal
 
-:asal a owl:NamedIndividual , :Usuario ;
-	:le_gusta :esteban , :gay_fiction ;
+:asal a owl:NamedIndividual ;
 	:edad "20"^^xsd:integer ;
 	:nombre "Asal" .
 # 
@@ -344,8 +417,7 @@
 # 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4/serg
 
-:serg a owl:NamedIndividual , :Usuario ;
-	:le_gusta :epic_fantasy , :got ;
+:serg a owl:NamedIndividual ;
 	:edad "20"^^xsd:integer ;
 	:nombre "Serg" .
 # 
