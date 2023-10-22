@@ -4,13 +4,13 @@
 ;;; Grado: Inteligencia Artificial
 ;;; Universidad: Universitat Politècnica de Catalunya (UPC)
 ;;; 
-;;; Fecha: [Fecha de Creación o Entrega del Proyecto]
+;;; Fecha: 26/10/2023
 ;;; 
 ;;; Autores:
-;;;     - NombreAutor1 <CorreoElectronico1@dominio.com>
-;;;     - NombreAutor2 <CorreoElectronico2@dominio.com>
-;;;     - NombreAutor3 <CorreoElectronico3@dominio.com>
-;;;     - NombreAutor4 <CorreoElectronico4@dominio.com>
+;;;     - Joan Saurina Ricós <joan.saurina@estudiantat.upc.edu>
+;;;     - Sergi Tomàs Martínez <sergi.tomas.martinez@estudiantat.upc.edu>
+;;;     - Esteban Gatein <esteban.gatein@estudiantat.upc.edu >
+;;;     - Asal Mehrabi <asal.mehrabi@estudiantat.upc.edu >
 ;;; 
 ;;; Descripción:
 ;;; Este sistema de recomendación de libros está diseñado para proporcionar 
@@ -19,6 +19,7 @@
 ;;; ---------------------------------------------------------------------
 
 (defglobal ?*lista-sugerencias* = (create$))
+
 ;;; Classes----------------------------------------------------------------
 
 (defclass Autor
