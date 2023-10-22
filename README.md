@@ -1,8 +1,8 @@
 # Práctica 1 - SBC-GIA
 
 ## Miembros del grupo:
-* Joan Saurina
-* Sergi Tomás
+* Joan Saurina i Ricós
+* Sergi Tomàs Martínez
 * Asal Mehrabi
 * Esteban Gatein
 
