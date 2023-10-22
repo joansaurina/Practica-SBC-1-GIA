@@ -8383,7 +8383,6 @@
 )
 
 
-
 ;;; Declaracion de reglas ------------------------------------------------------------------
 
 ; Preferencias-recopilacion -------------------------------------------------
@@ -8533,7 +8532,6 @@
 (defrule preferencias-recopilacion::decada "Regla para ver si tiene alguna preferencia de decada"
     ?u <- (object (is-a Usuario))
     =>
-    
     (printout t "Te gusta leer libros de una decada en especifico?" crlf)
     (printout t "(Selecciona una o mas, ingresa el numero correspondiente a cada decada)" crlf)
     (printout t "1. 1900" crlf)
@@ -8568,7 +8566,6 @@
             (case 10 then (bind ?decada 1990))
             (case 11 then (bind ?decada 2000))
             (case 12 then (bind ?decada 2010))
-        
         )
             
        (if (and (numberp ?opcion) (> ?opcion 0) (<= ?opcion 12))
@@ -8617,7 +8614,6 @@
             (case 4 then (bind ?genero_nombre "Fantasy"))
             (case 5 then (bind ?genero_nombre "Adventure"))
             (case 6 then (bind ?genero_nombre "Historical"))
-        
         )
             
        (if (and (numberp ?opcion) (> ?opcion 0) (<= ?opcion 6))
@@ -8753,7 +8749,6 @@
         (printout t "El tiempo de lectura del parrafo ha sido de: " crlf)
         (bind ?tiempo_lectura (read)))
     (modify-instance ?u (tiempo_lectura ?tiempo_lectura))
-
 )
 
 (defrule preferencias-recopilacion::a_datos "Regla para pasar al modulo datos procesamiento"
@@ -8765,6 +8760,7 @@
     (printout t crlf)
     (focus datos-procesamiento)
 )
+
 
 ; Datos-procesamiento -------------------------------------------------
 
@@ -9142,9 +9138,7 @@
     (test (eq ?autor2 (send ?autorl get-nombre)))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
-
     =>
-
     (bind ?p (+ ?p 10))
     (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El autor del libro es parecido a uno de los autores favoritos del usuario: +10 puntos!."))
     (send ?s put-calificacion ?p)
@@ -9191,9 +9185,7 @@
     (test (member$ ?generol $?generou))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
-
     =>
-
     (bind ?p (+ ?p 22))
     (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El genero del libro esta entre los favoritos del usuario: +22 puntos!."))
     (send ?s put-calificacion ?p)
@@ -9208,9 +9200,7 @@
     (test (member$ ?sgenerol $?sgenerou))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
-
     =>
-
     (bind ?p (+ ?p 15))
     (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El subgenero del libro esta entre los favoritos del usuario: +15 puntos!."))
     (send ?s put-calificacion ?p)
@@ -9248,9 +9238,7 @@
 (defrule generacion-solucion-abstracta::libros-pasados-parecidos
     ?u <- (object (is-a Usuario)(genero $?genero) (subgenero $?subgenero) (edad ?edad) (lugar ?lugar) (momento ?momento) (decada $?decada) (autor $?autor) (tiempo_lectura ?tiempo_lectura) (tiempo_diario ?tiempo_diario) (tiempo_total ?tiempo_total) (se_fija_valoraciones ?se_fija_valoraciones))
     ?up <- (object (is-a Usuario_pasado)(libro_leido ?libro_leido) (genero $?genero_pasado) (lugar ?lugar_pasado) (subgenero $?subgenero_pasado) (edad ?edad_pasado) (momento ?momento_pasado) (decada $?decada_pasado) (autor $?autor_pasado) (tiempo_lectura ?tiempo_lectura_pasado) (tiempo_diario ?tiempo_diario_pasado) (tiempo_total ?tiempo_total_pasado) (se_fija_valoraciones ?se_fija_valoraciones_pasado) (me_gusto ?me_gusto))
-    
     =>
-    ;asigna a ?num (?me_gusto menos 5):
     (bind ?num (- ?me_gusto 5))
     (bind ?libro_leido_nombre (send ?libro_leido get-nombre))
     (bind ?genero_comun (member$ $?genero $?genero_pasado))
@@ -9281,9 +9269,7 @@
     (if (and (>= ?coincidencias 3) (<= ?coincidencias 5)) 
         then 
         (bind ?num (* 2 ?num))
-    
     )
-
     (if (> ?coincidencias 5) then (bind ?num (* 2.4 ?num)))
 
     (assert (libro-pasado-parecido ?libro_leido_nombre ?num))
@@ -9294,7 +9280,6 @@
     ?s <- (object (is-a Sugerencia) (nombre ?nombre) (calificacion ?calificacion) (argumento $?argumento))
     (libro-pasado-parecido ?nombre ?num)
     (not (valorando-libro-pasado-parecido ?nombre))
-
     =>
     (bind ?calificacion (+ ?calificacion ?num))
     (bind $?argumento (insert$ $?argumento (+ (length$ $?argumento) 1) (str-cat "El libro ha sido leido por un usuario muy similar a usted: " (str-cat ?num " puntos!."))))
@@ -9307,7 +9292,6 @@
 (defrule generacion-solucion-abstracta::manejar-sugerencias
     (declare (salience -1000))
     =>
-    
     (bind ?lista (find-all-instances ((?s Sugerencia)) TRUE))
     (bind ?lista (generacion-solucion-abstracta::ordenar-sugerencias ?lista))
     (bind ?*lista-sugerencias* ?lista)
@@ -9376,7 +9360,6 @@
     (send ?u delete_past_usuario)
     (send ?l delete_past_fake)
     (assert (valorando-sugerencias))
-    
 )
 
 
