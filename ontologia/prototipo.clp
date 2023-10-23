@@ -9397,7 +9397,7 @@
 (deffunction presentacion-solucion::imprimir-top-3 (?lista)
     (bind ?len (min 3 (length$ ?lista)))
     (printout t crlf)
-    (printout t "Top 5 sugerencias:" crlf)
+    (printout t "Top 3 sugerencias:" crlf)
     (printout t crlf)
     (loop-for-count (?i 1 ?len)
         (bind ?sugerencia (nth$ ?i ?lista))
