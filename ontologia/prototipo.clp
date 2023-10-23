@@ -262,7 +262,9 @@
 )
 
 (defmessage-handler Fake_class imprimir_nombre ()
-    (printout t "Atencion! Guarda tu identificador para valorar el libro que has leido en un futuro y ayudarme a hacer mejores recomendaciones! Podras valorar el libro escribiendo (send [indentificador] copy_past)." crlf)
+    (printout t "Atencion! Guarda tu identificador para valorar el libro que has leido en un futuro y ayudarme a hacer mejores recomendaciones!" crlf)
+    (printout t " " crlf)
+    (printout t  "Podras valorar el libro escribiendo (send [indentificador] copy_past)." crlf)
     (printout t " " crlf)
     (printout t "Tu identificador es (detras de Instance - *): " ?self crlf)
     (printout t " " crlf)
