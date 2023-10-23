@@ -261,6 +261,13 @@
     (delete-instance)
 )
 
+(defmessage-handler Fake_class imprimir_nombre ()
+    (printout t "Atencion! Guarda tu identificador para valorar el libro que has leido en un futuro y ayudarme a hacer mejores recomendaciones! Podras valorar el libro escribiendo (send [indentificador] copy_past)." crlf)
+    (printout t " " crlf)
+    (printout t "Tu identificador es (detras de Instance - *): " ?self crlf)
+    (printout t " " crlf)
+    (printout t "Gracias por usar el sistema de recomendacion de libros!" crlf)
+)
 
 ;;; Instances-------------------------------------------------------------
 (definstances instances
@@ -9417,7 +9424,7 @@
         (printout t "Por favor, introduzca un numero entre 1 y " ?len crlf)
         (bind ?eleccion (read))
     )
-    (printout t "Espero que le guste! Muchas gracias y hasta otra!" crlf)
+    (printout t " " crlf)
     (bind ?sugerencia (nth$ ?eleccion ?lista))
     (bind ?calificacion (send ?sugerencia get-calificacion))
     (bind ?nombre (send ?sugerencia get-nombre))
@@ -9448,8 +9455,9 @@
     (send ?l put-x_libro ?nombre)
     ;(send ?l copy_past)
     (send ?u delete_past_usuario)
-    (send ?l delete_past_fake)
+    ;(send ?l delete_past_fake)
     (assert (valorando-sugerencias))
+    (send ?l imprimir_nombre)
     
 )
 
