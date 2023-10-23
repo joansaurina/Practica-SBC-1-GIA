@@ -9319,8 +9319,7 @@
     ?up <- (object (is-a Usuario_pasado)(libro_leido ?libro_leido) (genero $?genero_pasado) (lugar ?lugar_pasado) (subgenero $?subgenero_pasado) (edad ?edad_pasado) (momento ?momento_pasado) (decada $?decada_pasado) (autor $?autor_pasado) (tiempo_lectura ?tiempo_lectura_pasado) (tiempo_diario ?tiempo_diario_pasado) (tiempo_total ?tiempo_total_pasado) (se_fija_valoraciones ?se_fija_valoraciones_pasado) (me_gusto ?me_gusto))
     
     =>
-    ;asigna a ?num (?me_gusto menos 5):
-    (bind ?num (- ?me_gusto 5))
+    (bind ?calificacion_2 (- ?me_gusto 5))
     (bind ?libro_leido_nombre (send ?libro_leido get-nombre))
     (bind ?genero_comun (member$ $?genero $?genero_pasado))
     (bind ?subgenero_comun (member$ $?subgenero $?subgenero_pasado))
@@ -9330,7 +9329,6 @@
     (bind ?momento_comun (eq ?momento ?momento_pasado))
     (bind ?lugar_comun (eq ?lugar ?lugar_pasado))
 
-    
     (bind ?edad_comun (and (>= ?edad_pasado (- ?edad 5)) (<= ?edad_pasado (+ ?edad 5))))
     (bind ?tiempo_lectura_comun (and (>= ?tiempo_lectura_pasado (- ?tiempo_lectura 5)) (<= ?tiempo_lectura_pasado (+ ?tiempo_lectura 5))))
     (bind ?tiempo_diario_comun (and (>= ?tiempo_diario_pasado (- ?tiempo_diario 5)) (<= ?tiempo_diario_pasado (+ ?tiempo_diario 5))))
@@ -9349,24 +9347,24 @@
     
     (if (and (>= ?coincidencias 3) (<= ?coincidencias 5)) 
         then 
-        (bind ?num (* 2 ?num))
+        (bind ?calificacion_2 (* 2 ?calificacion_2))
     
     )
 
-    (if (> ?coincidencias 5) then (bind ?num (* 2.4 ?num)))
+    (if (> ?coincidencias 5) then (bind ?calificacion_2 (* 2.4 ?calificacion_2)))
 
-    (assert (libro-pasado-parecido ?libro_leido_nombre ?num))
+    (assert (libro-pasado-parecido ?libro_leido_nombre ?calificacion_2))
 )
 
-(defrule generacion-solucion-abstracta::multiplicar-por-coincidencias-muy-similiar
+(defrule generacion-solucion-abstracta::sumar-por-coincidencias
     ?l <- (object (is-a Libro) (nombre ?nombre))
     ?s <- (object (is-a Sugerencia) (nombre ?nombre) (calificacion ?calificacion) (argumento $?argumento))
-    (libro-pasado-parecido ?nombre ?num)
+    (libro-pasado-parecido ?nombre ?calificacion_2)
     (not (valorando-libro-pasado-parecido ?nombre))
 
     =>
-    (bind ?calificacion (+ ?calificacion ?num))
-    (bind $?argumento (insert$ $?argumento (+ (length$ $?argumento) 1) (str-cat "El libro ha sido leido por un usuario muy similar a usted: " (str-cat ?num " puntos!."))))
+    (bind ?calificacion (+ ?calificacion ?calificacion_2))
+    (bind $?argumento (insert$ $?argumento (+ (length$ $?argumento) 1) (str-cat "El libro ha sido leido por un usuario muy similar a usted: " (str-cat ?calificacion_2 " puntos!."))))
 
     (send ?s put-calificacion ?calificacion)
     (send ?s put-argumento $?argumento)
