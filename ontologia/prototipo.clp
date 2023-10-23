@@ -9230,6 +9230,7 @@
     (test (>= ?popularidad 25))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
+    (test (eq ?modas TRUE))
     =>
     (bind ?p (+ ?p 8))
     (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro es popular: +8 puntos!."))
@@ -9245,13 +9246,13 @@
     (test (>= ?valoracion 3.5))
     ?s <- (object (is-a Sugerencia) (nombre ?nombres) (calificacion ?p) (argumento $?a))
     (test (eq ?nombrel ?nombres))
+    (test (eq ?se_fija_valoraciones TRUE))
     =>
-    (if (eq ?se_fija_valoraciones TRUE) then
-        (bind ?p (+ ?p 7))
-        (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro tiene una valoracion mayor que 3.5: +7 puntos!."))
-        (send ?s put-calificacion ?p)
-        (send ?s put-argumento $?a)
-    )
+    (bind ?p (+ ?p 7))
+    (bind $?a (insert$ $?a (+ (length$ $?a) 1) "El libro tiene una valoracion mayor que 3.5: +7 puntos!."))
+    (send ?s put-calificacion ?p)
+    (send ?s put-argumento $?a)
+
     (assert (valorando-valoracion ?nombrel))
 )
 
