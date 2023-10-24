@@ -2,7 +2,25 @@
 ;;; onto_5.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology onto_5.ttl
-;;; :Date 22/10/2023 19:05:44
+;;; :Date 24/10/2023 10:16:48
+
+(defclass Genero
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot nombre
+        (type STRING)
+        (create-accessor read-write))
+)
+
+(defclass Subgenero
+    (is-a Genero)
+    (role concrete)
+    (pattern-match reactive)
+    (slot subgenero_de
+        (type INSTANCE)
+        (create-accessor read-write))
+)
 
 (defclass Lector
     (is-a USER)
@@ -67,24 +85,6 @@
         (create-accessor read-write))
 )
 
-(defclass Genero
-    (is-a USER)
-    (role concrete)
-    (pattern-match reactive)
-    (slot nombre
-        (type STRING)
-        (create-accessor read-write))
-)
-
-(defclass Subgenero
-    (is-a Genero)
-    (role concrete)
-    (pattern-match reactive)
-    (slot subgenero_de
-        (type INSTANCE)
-        (create-accessor read-write))
-)
-
 (defclass Sugerencia
     (is-a USER)
     (role concrete)
@@ -138,9 +138,6 @@
     ;;; numero de personajes
     (slot complejidad
         (type FLOAT)
-        (create-accessor read-write))
-    (slot estilo
-        (type STRING)
         (create-accessor read-write))
     (slot paginas
         (type INTEGER)
