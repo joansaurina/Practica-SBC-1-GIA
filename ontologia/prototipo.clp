@@ -249,6 +249,8 @@
     (printout t "Que puntuacion le darias al libro que has leido? (1-10): ")
     (bind ?response (read))
     (send ?past-user put-me_gusto ?response)
+    
+    (delete-instance)
 )
 
 (defmessage-handler Fake_class delete_past_fake ()
