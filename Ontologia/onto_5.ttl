@@ -119,12 +119,6 @@
 	rdfs:domain <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#Sugerencia> ;
 	rdfs:range xsd:string .
 # 
-# http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#estilo
-
-<http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#estilo> a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Libro ;
-	rdfs:range xsd:string .
-# 
 # http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#lugar
 
 <http://www.semanticweb.org/estebangatein/ontologies/2023/9/untitled-ontology-4#lugar> a owl:DatatypeProperty , owl:FunctionalProperty ;
