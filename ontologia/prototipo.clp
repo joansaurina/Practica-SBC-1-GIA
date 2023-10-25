@@ -227,29 +227,40 @@
 ;Messages-handlers--------------------------------------------------------
 
 (defmessage-handler Fake_class copy_past ()
-    ;; Crear una nueva instancia de Usuario_pasado
-    (bind ?past-user (make-instance (gensym*) of Usuario_pasado))
-    
-    ;; Copiar atributos del Usuario actual al Usuario_pasado
-    (send ?past-user put-genero ?self:genero)
-    (send ?past-user put-subgenero ?self:subgenero)
-    (send ?past-user put-autor ?self:autor)
-    (send ?past-user put-tiempo_total  ?self:tiempo_total)
-    (send ?past-user put-tiempo_diario ?self:tiempo_diario)
-    (send ?past-user put-lugar ?self:lugar)
-    (send ?past-user put-momento ?self:momento)
-    (send ?past-user put-se_fija_valoraciones ?self:se_fija_valoraciones)
-    (send ?past-user put-modas ?self:modas)
-    (send ?past-user put-edad ?self:edad)
-    (send ?past-user put-tiempo_lectura ?self:tiempo_lectura)
-    (send ?past-user put-decada ?self:decada)
-    (send ?past-user put-libro_leido ?self:x_libro)
-
     ;; Preguntar al usuario si le gustó el libro
-    (printout t "Que puntuacion le darias al libro que has leido? (1-10): ")
-    (bind ?response (read))
-    (send ?past-user put-me_gusto ?response)
-    
+    (printout t "Quieres guardar tus datos para ayudarnos a mejorar nuestro sistema? (si/no)" crlf)
+    (printout t " " crlf)
+    (printout t "Tus datos seran tratados de forma anonima y respetando totalmente tu privacidad." crlf)
+    (printout t " " crlf)
+    (bind ?seguir (read))
+    (printout t " " crlf)
+
+    ;si seguir es igual a si:
+    (if (eq ?seguir si) then
+        (printout t "Que puntuacion le darias al libro que has leido? (1-10): ")
+        (bind ?response (read))
+        (printout t " " crlf)
+        ;; Crear una nueva instancia de Usuario_pasado
+        (bind ?past-user (make-instance (gensym*) of Usuario_pasado))
+        
+        ;; Copiar atributos del Usuario actual al Usuario_pasado
+        (send ?past-user put-genero ?self:genero)
+        (send ?past-user put-subgenero ?self:subgenero)
+        (send ?past-user put-autor ?self:autor)
+        (send ?past-user put-tiempo_total  ?self:tiempo_total)
+        (send ?past-user put-tiempo_diario ?self:tiempo_diario)
+        (send ?past-user put-lugar ?self:lugar)
+        (send ?past-user put-momento ?self:momento)
+        (send ?past-user put-se_fija_valoraciones ?self:se_fija_valoraciones)
+        (send ?past-user put-modas ?self:modas)
+        (send ?past-user put-edad ?self:edad)
+        (send ?past-user put-tiempo_lectura ?self:tiempo_lectura)
+        (send ?past-user put-decada ?self:decada)
+        (send ?past-user put-libro_leido ?self:x_libro)
+
+
+        (send ?past-user put-me_gusto ?response)
+    )
     (delete-instance)
 )
 
